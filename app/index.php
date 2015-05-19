@@ -30,7 +30,7 @@ $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
 
   <!-- <link rel="icon" type="image/gif" href="http://cdn-s.hellomonday.com/assets/images/icons/favicon.png" /> -->
 
@@ -53,7 +53,7 @@ $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
   <?php endforeach ?>
 
   <!--[if lt IE 9]>
-    <script src="<?php echo PATH ?>dist/javascripts/html5shiv.js" type="text/javascript"></script>
+    <script src="<?php echo PATH ?>dist/javascripts/vendor/html5shiv.min.js" type="text/javascript"></script>
   <![endif]-->
 
 </head>
