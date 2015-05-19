@@ -1,0 +1,160 @@
+// MIXINS
+// -----------------
+
+// LAYOUT
+// Position shorthand
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null)
+  position: $position
+  @if $top != null
+    top: $top
+  @if $right != null
+    right: $right
+  @if $bottom != null
+    bottom: $bottom
+  @if $left != null
+    left: $left
+
+// Horizontal & vertical align
+@mixin center($width, $height)
+  +position(absolute, 0, 0, 0, 0)
+  +size($width, $height)
+  margin: auto
+
+// Horizontal align
+@mixin centerH($width)
+  position: relative
+  width: 100%
+  max-width: $width
+  margin: 0 auto
+
+// Retina Image
+@mixin retina-image($img, $size, $ext: png)
+  background-image: url(#{$img}.#{$ext})
+  background-size: $size
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)
+    background-image: url(#{$img}@2x.#{$ext})
+
+// Size shorthand
+@mixin size($width, $height)
+  width: $width
+  height: $height
+
+// Square shorthand
+@mixin square($size)
+  +size($size, $size)
+
+// Font shorthand
+@mixin font($color, $family, $size, $weight: null, $lineHeight: null)
+  @if $color != null
+    color: $color
+  @if $family != null
+    font-family: $family
+  @if $size != null
+    font-size: $size
+  @if $weight != null
+    font-weight: $weight
+  @if $lineHeight != null
+    line-height: $lineHeight
+
+@mixin multilineEllipsis($width, $fontSize, $lineHeight, $linesToShow)
+  display: block // Fallback for non-webkit
+  display: -webkit-box
+  max-width: $width
+  max-height: $fontSize * $lineHeight * $linesToShow // Fallback for non-webkit
+  font-size: $fontSize
+  line-height: $lineHeight
+  -webkit-line-clamp: $linesToShow
+  -webkit-box-orient: vertical
+  overflow: hidden
+  text-overflow: ellipsis
+
+
+// CSS3
+// Appearance
+@mixin appearance($value)
+  -webkit-appearance: $value
+  -moz-appearance: $value
+  -o-appearance: $value
+  -ms-appearance: $value
+  appearance: $value
+
+// Calc
+@mixin calc($property, $value)
+  #{$property}: calc( #{$value} )
+
+// Filter
+@mixin filter($property)
+  -webkit-filter: $property
+  -moz-filter: $property
+  -o-filter: $property
+  -ms-filter: $property
+  filter: $property
+
+// CSS Shapes
+@mixin triangle($size, $color, $direction)
+  +square(0)
+  border-width: $size
+  border-style: solid
+  border-color: transparent
+  border-#{$direction}-color: $color
+
+
+// Transforms
+
+// generic transform
+@mixin transform($transforms)
+  transform: $transforms
+
+// rotate
+@mixin rotate($deg)
+  @include transform(rotate(#{$deg}deg))
+
+ 
+// scale
+@mixin scale($scale)
+  @include transform(scale($scale))
+
+// translate
+@mixin translate($x, $y)
+  @include transform(translate($x, $y))
+
+// Animation
+@mixin animation($properties)
+  animation: $properties
+
+// Animation Delay
+@mixin animation-delay($delay)
+  animation-delay: $delay
+
+
+// Image replacement
+%image-replacement
+  overflow: hidden
+  text-indent: 200%
+  white-space: nowrap
+
+%text-overflow
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+// MEDIA QUERIES
+// Max width
+@mixin max-screen($res)
+  @media screen and (max-width: $res)
+    @content
+
+// min width
+@mixin min-screen($res)
+  @media screen and (min-width: $res)
+    @content
+
+@mixin min-max-screen($minRes, $maxRes)
+  @media screen and (min-width: $minRes) and (max-width: $maxRes)
+    @content
+
+// Max height
+@mixin max-screen-height($res)
+  @media screen and (max-height: $res)
+    @content

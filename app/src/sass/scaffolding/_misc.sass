@@ -1,0 +1,20 @@
+// MISC
+// -----------------
+
+.mb-r
+  margin-bottom: 0!important
+
+// Size / device specifics
++max-screen($small)
+  .mobile-hidden
+    display: none
+
++min-screen($small + 1)
+  .mobile-only
+    display: none
+
+html:not(.touch) .touch-only
+  display: none
+
+.touch .non-touch
+  display: none

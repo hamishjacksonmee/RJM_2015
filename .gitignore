@@ -1,4 +1,7 @@
-# Include your project-specific ignores in this file
-
-.sass-cache/
-
+.sass-cache/*
+node_modules/
+_templates/
+src/.sass-cache
+*.sublime-project
+*.sublime-workspace
+*.css.map
