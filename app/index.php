@@ -61,7 +61,7 @@ $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
 
   <div id="container" class="container hidden">
 
-    <div class="wrapper">
+    <div class="page-wrapper">
       <?php if (is_file("views/$controller.php")) include("views/$controller.php"); ?>
     </div>
 

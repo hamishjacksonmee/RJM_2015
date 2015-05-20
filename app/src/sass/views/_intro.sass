@@ -1,26 +1,43 @@
-.intro-wrap
+.intro-wrap 
+    // cd-background-wrapper
     position: relative
     width: 100%
+    overflow: hidden
+    .no-touch &
+        perspective: 500px
+    &::before 
+        // never visible - this is used in jQuery to check the device type
+        content: 'web'
+        display: none
+    .touch &::before 
+        // never visible - this is used in jQuery to check the device type
+        content: 'mobile'
 
-.text-wrap
+.text-wrap 
+    // cd-floating-background
     position: relative
     +size(100%,100%)
-    //overflow: hidden
-    perspective: 2000px
+    .no-touch &
+        transform-style: preserve-3d
+        transform: translate3d(0,0,0)
+        &.is-absolute
+            position: absolute
+    .no-touch.no-preserve-3d & 
+        // we target browsers that don't support preserve-3d and show just a standard image - no effect visible
+        position: relative
 
 .title-wrap
     //position: relative
     text-align: left
     font-family: helvetica
     font-weight: 100
-    font-size: 2.5em
+    font-size: 2em
     text-transform: uppercase
     transition: all 400ms linear
     transform-style: preserve-3d
+    transform: translate3d(0,0,0)
     +center(300px,200px)
 
-    &:hover
-        transform: rotate3d(1,0,0,55deg)
     span
         display: inline-block
         transition: all 400ms linear

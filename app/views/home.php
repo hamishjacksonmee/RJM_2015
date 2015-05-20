@@ -1,8 +1,8 @@
 <?php defined('PATH') or die('access denied'); ?>
 
-<div class="intro-wrap">
+<div class="intro-wrap"> <!-- cd-background-wrapper -->
 
-    <div class="text-wrap">
+    <div class="text-wrap"> <!--  cd-floating-background -->
         <p class="title-wrap">
             <span class="front">r</span>
             <span class="back">o</span>
@@ -25,8 +25,6 @@
             <span class="front">e</span>
         </p>
     </div>
-
-    <a href="<?php echo PATH; ?>test">Test Link</a>
 
 </div>
 
