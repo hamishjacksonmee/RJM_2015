@@ -1,0 +1,104 @@
+// NAVIGATION
+// -----------------
+
+.nav--trigger
+	+position(fixed, 20px, null, null, 20px)
+	+square(50px)
+	z-index: 99
+	transition: transform 0.5s, left 0.3s
+
+	.no-touch &:hover
+		left: 15px
+
+	.nav--open &
+		// rotate trigger when navigation becomes visible
+		transform: rotate(180deg)
+		.menu-btn::after,
+		.menu-btn::before
+			// animate arrow --> from hamburger to arrow
+			//width: 70%
+			transition: transform 0.5s
+		.menu-btn::before
+			transform: rotate(45deg) translateY(3px)
+		.menu-btn::after
+			transform: rotate(-45deg) translateY(-3px)
+
+.menu-btn
+	position: absolute
+	+centerT
+	+size(25px, 5px)
+	//transition: width 0.3s
+
+	&::before, &::after
+		// upper and lower lines of the menu icon 
+		content: ''
+		+position(absolute, 0, 0, null, null)
+		+square(100%)
+		background-color: white
+
+		// Hardware Acceleration in WebKit -- might be bottlenecking with homepage perspective
+		transform: translateZ(0)
+		backface-visibility: hidden
+
+		transition: transform 0.7s
+
+	&::before
+		transform-origin: right top
+		transform: translateY(-6px)
+
+	&::after
+		transform-origin: right bottom
+		transform: translateY(6px)
+
+.nav--wrapper
+	position: fixed
+	z-index: 1
+	top: 0
+	left: 0
+	height: 100%
+	width: 100%
+	background-color: #090C9B
+	visibility: hidden
+	transition: visibility 0s $nav-animation-duration
+
+	.nav--open &
+		visibility: visible
+		transition: visibility 0s 0s
+
+	.no-js &
+		position: static
+		visibility: visible
+
+.nav--content
+	// all navigation content
+	height: 100%
+	overflow-y: auto
+	overflow-scrolling: touch
+	transition: transform $nav-animation-duration cubic-bezier(.86,.01,.77,.78)
+
+	// Force Hardware Acceleration in WebKit  -- if bottlenecking with homepage perspective
+	// remove translateZ(0) below
+	transform: translateZ(0) translateX(-50%)
+	backface-visibility: hidden
+
+	.nav--open &
+		transform: translateX(0)
+		transition: transform 0.5s cubic-bezier(.82,.01,.77,.78)
+
+	.no-js &
+		height: auto
+		overflow: visible
+		padding: 100px 5%
+		transform: translateX(0)
+
+.half-block
+	position: relative
+	width: 50%
+	float: left
+
+
+
+
+
+
+
