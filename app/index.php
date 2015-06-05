@@ -48,6 +48,8 @@ $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
 
   <link rel="icon" href="<?php echo IMAGES_PATH ?>layout/favicon.ico" type="image/x-icon"/>
 
+  <script src="<?php echo PATH ?>dist/javascripts/vendor/modernizr.js" type="text/javascript"></script>
+
   <?php foreach ($assets['stylesheets'] as $file_path) : ?>
     <link rel="stylesheet" href="<?php echo $file_path ?>" type="text/css" />
   <?php endforeach ?>
@@ -61,9 +63,25 @@ $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
 
   <div id="container" class="container hidden">
 
-    <div class="page-wrapper">
-      <?php if (is_file("views/$controller.php")) include("views/$controller.php"); ?>
+    <div class="preloader--wrapper">
     </div>
+
+    <a href="#site-nav" class="nav--trigger">
+      <span class="menu-btn"></span>
+    </a>
+
+    <nav id="site-nav" class="nav--wrapper">
+      <div class="nav--content">
+        <div class="half-block">
+        </div>
+        <div class="half-block">
+        </div>
+      </div>
+    </nav>
+
+    <main class="page--wrapper">
+      <?php if (is_file("views/$controller.php")) include("views/$controller.php"); ?>
+    </main>
 
   </div>
 

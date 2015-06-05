@@ -20,6 +20,23 @@
   +size($width, $height)
   margin: auto
 
+// Center using transforms
+@mixin centerT($xy:xy)
+  @if $xy == xy
+    left: 50%
+    top: 50%
+    bottom: auto
+    right: auto
+    transform: translateX(-50%) translateY(-50%)
+  @else if $xy == x
+    left: 50%
+    right: auto
+    transform: translateX(-50%)
+  @else if $xy == y
+    top: 50%
+    bottom: auto
+    transform: translateY(-50%)
+
 // Horizontal align
 @mixin centerH($width)
   position: relative
@@ -98,34 +115,6 @@
   border-style: solid
   border-color: transparent
   border-#{$direction}-color: $color
-
-
-// Transforms
-
-// generic transform
-@mixin transform($transforms)
-  transform: $transforms
-
-// rotate
-@mixin rotate($deg)
-  @include transform(rotate(#{$deg}deg))
-
- 
-// scale
-@mixin scale($scale)
-  @include transform(scale($scale))
-
-// translate
-@mixin translate($x, $y)
-  @include transform(translate($x, $y))
-
-// Animation
-@mixin animation($properties)
-  animation: $properties
-
-// Animation Delay
-@mixin animation-delay($delay)
-  animation-delay: $delay
 
 
 // Image replacement

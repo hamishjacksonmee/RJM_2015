@@ -1,10 +1,13 @@
-.intro-wrap 
-    // cd-background-wrapper
+// INTRO
+// -----------------
+
+.intro--wrap 
     position: relative
     width: 100%
+    height: 100%
     overflow: hidden
     .no-touch &
-        perspective: 500px
+        perspective: 1000px
     &::before 
         // never visible - this is used in jQuery to check the device type
         content: 'web'
@@ -13,8 +16,7 @@
         // never visible - this is used in jQuery to check the device type
         content: 'mobile'
 
-.text-wrap 
-    // cd-floating-background
+.intro--text-wrap
     position: relative
     +size(100%,100%)
     .no-touch &
@@ -22,26 +24,70 @@
         transform: translate3d(0,0,0)
         &.is-absolute
             position: absolute
+        .img-wrap
+            transform: translate3d(0,0,-200px)
+            opacity: 0.2
+        
+        .intro--white-wrap:nth-child(2)
+            transform: translate3d(0,0,100px)
+        .intro--white-wrap:nth-child(3)
+            transform: translate3d(0,0,50px)
+        .intro--white-wrap:first-child
+            transform: translate3d(0,0,0)
+        .intro--white-wrap:nth-child(4)
+            transform: translate3d(0,0,-50px)
+        .intro--white-wrap:nth-child(5)
+            transform: translate3d(0,0,-100px)
+        .intro--white-wrap:nth-child(6)
+            transform: translate3d(0,0,-150px)
+        .intro--white-wrap:nth-child(7)
+            transform: translate3d(0,0,-200px)
+        .intro--white-wrap:nth-child(8)
+            transform: translate3d(0,0,-250px)
+        .intro--white-wrap:nth-child(9)
+            transform: translate3d(0,0,-300px)
+        .intro--white-wrap:nth-child(10)
+            transform: translate3d(0,0,-350px)
+            opacity: 0.15
+            
     .no-touch.no-preserve-3d & 
         // we target browsers that don't support preserve-3d and show just a standard image - no effect visible
         position: relative
 
-.title-wrap
-    //position: relative
-    text-align: left
+    .intro--img-wrap
+        +center(100%,100%)
+        backface-visibility: hidden
+        display: none
+        img
+            display: block
+            width: 100%
+            backface-visibility: hidden
+            // fixes a Firefox bug - images not correctly rendered
+            background-color: rgba(#FFF, .01)
+
+    .intro--white-wrap
+        +center(100%,100%)
+        background-color: rgba(50,50,50,0.5)
+        background: url('#{$imagePath}layout/megan2.jpg') no-repeat center center fixed
+        background-size: cover
+        opacity: 0.05
+    
+.intro--title-wrap
+    text-align: center
     font-family: helvetica
-    font-weight: 100
-    font-size: 2em
+    font-weight: 800
+    font-size: 2.4em
+    z-index: 4
     text-transform: uppercase
-    transition: all 400ms linear
     transform-style: preserve-3d
-    transform: translate3d(0,0,0)
-    +center(300px,200px)
+    transform: translate3d(0,0,100px)
+    +center(400px,200px)
 
     span
         display: inline-block
-        transition: all 400ms linear
     .front
-        transform: translate3d(0,0,8px)
+        transform: translate3d(0,0,6px)
     .back
-        transform: translate3d(0,0,-8px)
+        transform: translate3d(0,0,-6px)
+
+

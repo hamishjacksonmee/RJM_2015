@@ -1,6 +1,10 @@
 // GLOBALS
 // -----------------
 
+body, html
+    // prevent horizontal scrolling
+    overflow-x: hidden
+
 body
     font-family: helvetica, arial, sans-serif
     font-size: 1em
@@ -17,3 +21,32 @@ p
 
 small 
     font-size: 0.8em
+
+ul
+    margin: 0
+    padding: 0
+
+.page--wrapper
+    position: relative
+    z-index: 2
+    overflow-scrolling: touch
+    background-color: black
+    transition: transform $nav-animation-duration cubic-bezier(.91,.01,.6,.99)
+
+    // fix bug on iOS 
+    min-height: 100vh
+    overflow-y: auto
+    
+    // Force Hardware Acceleration in WebKit -- might be bottlenecking with homepage perspective
+    transform: translateZ(0)
+    backface-visibility: hidden
+
+    .nav--open & 
+        transform: translateX(100%)
+
+    .no-js &
+        height: auto
+        overflow: visible 
+
+
+

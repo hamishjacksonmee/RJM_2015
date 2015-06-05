@@ -1,9 +1,24 @@
 <?php defined('PATH') or die('access denied'); ?>
 
-<div class="intro-wrap"> <!-- cd-background-wrapper -->
+<div class="intro--wrap"> <!-- perspective wrap -->
 
-    <div class="text-wrap"> <!--  cd-floating-background -->
-        <p class="title-wrap">
+    <div class="intro--text-wrap"> <!--  rotating wrap -->
+        <!-- <div class="img-wrap">
+             <img src="<?php echo IMAGES_PATH ?>layout/johna.jpg" alt="Johna Lomu" />
+        </div> -->
+
+        <div class="intro--white-wrap"></div>
+        <div class="intro--white-wrap"></div>
+        <div class="intro--white-wrap"></div>
+        <div class="intro--white-wrap"></div>
+        <div class="intro--white-wrap"></div>
+        <div class="intro--white-wrap"></div>
+        <div class="intro--white-wrap"></div>
+        <div class="intro--white-wrap"></div>
+        <div class="intro--white-wrap"></div>
+        <div class="intro--white-wrap"></div>
+
+        <p class="intro--title-wrap">
             <span class="front">r</span>
             <span class="back">o</span>
             <span class="front">b</span>
@@ -19,11 +34,13 @@
             <span class="front">o</span>
             <span class="back">n</span>
             <span class="front">-</span>
-            <br />
             <span class="front">m</span>
             <span class="back">e</span>
             <span class="front">e</span>
         </p>
+    </div>
+
+    <div class="intro-down">
     </div>
 
 </div>
