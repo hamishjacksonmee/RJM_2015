@@ -1,20 +1,3 @@
-$(function() {
-
-    // Init Functions
-    setHeight();
-    introEffect();
-
-    $(window).on('resize', function(){
-        setHeight();
-    });
-    
-    // open/close lateral navigation
-    $('.nav--trigger').on('click', function(event){
-        toggleMenu(event);
-    });
-
-});
-
 
 function toggleMenu(event) {
 
@@ -38,7 +21,11 @@ function setHeight() {
 
     var windowHeight = $(window).innerHeight();
 
-    $('.intro--text-wrap').height(windowHeight);
+    $('.intro--rotating-wrap').height(windowHeight);
+
+    $('.bg--line-wrap').css({
+        'min-height': windowHeight
+    });
 
     $('.page--wrapper').css({
         'min-height': windowHeight
@@ -60,6 +47,10 @@ function introEffect() {
         //define a max rotation value (X and Y axises)
         maxRotationY = 8,
         maxRotationX = 5,
+        // DOM Elements
+        $introWrap = $('.intro--wrap'),
+        $introRotating = $('.intro--rotating-wrap'),
+
         aspectRatio;
     
     $('.intro--wrap').on('mousemove', function(event){
@@ -79,8 +70,8 @@ function introEffect() {
                 halfWindowW = $(window).width()*0.5;
             });
         } else {
-            $('.intro--wrap').attr('style', '');
-            $('.intro--text-wrap').attr('style', '').removeClass('is-absolute');
+            $introWrap.attr('style', '');
+            $introRotating.attr('style', '').removeClass('is-absolute');
         }
     });
 
@@ -93,21 +84,50 @@ function introEffect() {
         if( rotateX > maxRotationX) rotateX = maxRotationX;
         if( rotateX < -maxRotationX ) rotateX = -maxRotationX;
 
+        TweenLite.to( $introRotating, 0.8, {
+            rotationX: rotateX,
+            rotationY: rotateY,
+            ease: Power2.easeOut
+        });
+
         // $('.intro--text-wrap').velocity({
-        //     translateZ: 0,
         //     rotateX: rotateX + 'deg',
         //     rotateY: rotateY + 'deg'
-        // }, 0);
+        // }, {
+        //     easing: 'easeOut'
+        // }, 0.1);
 
-        $('.intro--text-wrap').css({
-            '-moz-transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
-            '-webkit-transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
-            '-ms-transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
-            '-o-transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
-            'transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
-        });
+        // $('.intro--text-wrap').css({
+        //     '-moz-transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
+        //     '-webkit-transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
+        //     '-ms-transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
+        //     '-o-transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
+        //     'transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
+        // });
     }
 }
+
+
+
+$(function() {
+
+    // Init Functions
+
+    setHeight();
+    introEffect();
+
+
+    // Events
+
+    $(window).on('resize', function(){
+        setHeight();
+    });
+    
+    $('.nav--trigger').on('click', function(event){
+        toggleMenu(event);
+    });
+
+});
 
 
 /*  Detect "transform-style: preserve-3d" support, or update csstransforms3d for IE10 ? #762
@@ -145,3 +165,4 @@ function introEffect() {
     document.body.removeChild(element);
 
 })();
+

@@ -3,8 +3,7 @@
 
 .intro--wrap 
     position: relative
-    width: 100%
-    height: 100%
+    +square(100%)
     overflow: hidden
     .no-touch &
         perspective: 1000px
@@ -16,7 +15,7 @@
         // never visible - this is used in jQuery to check the device type
         content: 'mobile'
 
-.intro--text-wrap
+.intro--rotating-wrap
     position: relative
     +size(100%,100%)
     .no-touch &
@@ -89,5 +88,25 @@
         transform: translate3d(0,0,6px)
     .back
         transform: translate3d(0,0,-6px)
+
+
+.intro--enter
+    +position(absolute, 70%, null, null, 50%)
+    +square(100px)
+    margin-left: -50px
+    text-align: center
+    text-decoration: none
+
+.intro--enter-shape
+    +square(20px)
+    display: block
+    background-color: $yellow
+    margin-left: 40px
+
+.intro--enter-text
+    opacity: 0
+
+
+
 
 

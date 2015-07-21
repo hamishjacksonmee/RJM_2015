@@ -2,10 +2,7 @@
 
 <div class="intro--wrap"> <!-- perspective wrap -->
 
-    <div class="intro--text-wrap"> <!--  rotating wrap -->
-        <!-- <div class="img-wrap">
-             <img src="<?php echo IMAGES_PATH ?>layout/johna.jpg" alt="Johna Lomu" />
-        </div> -->
+    <div class="intro--rotating-wrap"> <!--  rotating wrap -->
 
         <div class="intro--white-wrap"></div>
         <div class="intro--white-wrap"></div>
@@ -38,10 +35,19 @@
             <span class="back">e</span>
             <span class="front">e</span>
         </p>
+        
     </div>
 
-    <div class="intro-down">
+    <div class="bg--line-wrap">
+        <span class="bg--line left"></span>
+        <span class="bg--line mid"></span>
+        <span class="bg--line right"></span>
     </div>
 
 </div>
+
+<a href="#" class="intro--enter">
+    <span class="intro--enter-shape"></span>
+    <span class="intro--enter-text">Enter</span>
+</a>
 

@@ -71,12 +71,7 @@ $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
     </a>
 
     <nav id="site-nav" class="nav--wrapper">
-      <div class="nav--content">
-        <div class="half-block">
-        </div>
-        <div class="half-block">
-        </div>
-      </div>
+      <?php include("views/navigation.php"); ?>
     </nav>
 
     <main class="page--wrapper">

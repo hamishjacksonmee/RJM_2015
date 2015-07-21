@@ -38,7 +38,9 @@ if (IS_DEVELOPMENT) {
   $css_path = PATH.'src/css/';
   $assets['javascripts'] = array(
     $js_path.'vendor/jquery-1.11.1.min.js',
-    $js_path.'vendor/velocity.min.js',
+    $js_path.'vendor/EasePack.min.js',
+    $js_path.'vendor/CSSPlugin.min.js',
+    $js_path.'vendor/TweenLite.min.js',
     $js_path.'main.js'
   );
   $assets['stylesheets'] = array(

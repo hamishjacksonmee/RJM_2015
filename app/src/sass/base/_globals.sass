@@ -48,5 +48,23 @@ ul
         height: auto
         overflow: visible 
 
+.bg--line-wrap
+    +position(absolute, 0, null, null, 0)
+    +square(100%)
+    display: block
+
+.bg--line
+    +position(absolute, 0)
+    +size(1px, 100%)
+    opacity: 0.15
+    background-color: $yellow
+
+    &.left
+        left: 25%
+    &.mid
+        left: 50%
+    &.right
+        left: 75%
+
 
 
