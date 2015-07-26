@@ -74,6 +74,9 @@
   @if $lineHeight != null
     line-height: $lineHeight
 
+@mixin font-family($family)
+  font-family: $family, helvetica, arial, sans-serif
+
 @mixin multilineEllipsis($width, $fontSize, $lineHeight, $linesToShow)
   display: block // Fallback for non-webkit
   display: -webkit-box

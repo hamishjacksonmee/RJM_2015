@@ -73,38 +73,65 @@
     
 .intro--title-wrap
     text-align: center
-    font-family: helvetica
-    font-weight: 800
-    font-size: 2.4em
+    line-height: 1.1
+    font-size: 3.6em
     z-index: 4
     text-transform: uppercase
     transform-style: preserve-3d
     transform: translate3d(0,0,100px)
-    +center(400px,200px)
+    +center(600px,150px)
 
     span
-        display: inline-block
-    .front
-        transform: translate3d(0,0,6px)
-    .back
-        transform: translate3d(0,0,-6px)
+        margin-left: -3px
+
+    // span
+    //     display: inline-block
+    //     width: 50px
+    //     margin-left: -5px
+
+    //     &:nth-child(8)
+    //         margin-left: 3px
+    //     &:nth-child(9)
+    //         margin-left: -8px
+    //     &:last-child
+    //         margin-left: -12px
+
+    // .no-touch &
+    //     .front
+    //         transform: translate3d(0,0,6px)
+    //     .back
+    //         transform: translate3d(0,0,-6px)
 
 
 .intro--enter
     +position(absolute, 70%, null, null, 50%)
-    +square(100px)
-    margin-left: -50px
+    +size(200px, 60px)
+    margin-left: -100px
     text-align: center
     text-decoration: none
+    z-index: 11
+
+    &:hover
+        .intro--enter-shape
+            transform: scale(7, 0.05)
+        .intro--enter-text
+            opacity: 1
+            transform: translateY(0)
 
 .intro--enter-shape
     +square(20px)
     display: block
-    background-color: $yellow
-    margin-left: 40px
+    background-color: $white
+    margin-left: 90px
+    transition: transform 300ms ease
 
 .intro--enter-text
     opacity: 0
+    transform: translateY(30px)
+    transition: all 400ms ease
+    +font($white,'aktivbd',1.2em)
+    white-space: nowrap
+    text-transform: uppercase
 
 
 

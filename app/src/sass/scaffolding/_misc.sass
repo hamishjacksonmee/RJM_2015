@@ -4,6 +4,39 @@
 .mb-r
   margin-bottom: 0!important
 
+
+.yellow
+  color: $yellow
+
+.maroon
+  color: $maroon
+
+.lt-maroon
+  color: $ltMaroon
+
+.font-italic
+  +font-family('aktivthit')
+
+.font-medium
+  +font-family('aktivmd')
+
+.font-bold
+  +font-family('aktivbd')
+
+.font-black
+  +font-family('aktivblk')
+
+.font-black-italic
+  +font-family('aktivblkit')
+
+.font-large
+  font-size: 1.5em
+
+.cf:after 
+  content: ""
+  display: table
+  clear: both
+
 // Size / device specifics
 +max-screen($small)
   .mobile-hidden

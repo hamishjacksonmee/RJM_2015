@@ -114,8 +114,10 @@ $(function() {
     // Init Functions
 
     setHeight();
-    introEffect();
 
+    if( $('body').hasClass('home') ){
+        introEffect();
+    }
 
     // Events
 

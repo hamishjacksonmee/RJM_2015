@@ -5,17 +5,29 @@ body, html
     // prevent horizontal scrolling
     overflow-x: hidden
 
+div
+    box-sizing: border-box
+
+
 body
-    font-family: helvetica, arial, sans-serif
+    font-family: 'aktivth',helvetica, arial, sans-serif
     font-size: 1em
     line-height: 1.4
     background-color: #000000
     color: #ffffff
 
 h1 
-    font-size: 3em  
+    font-size: 3em
+    margin: 0
+
+h3 
+    font-weight: 300
+    margin: 0
+    font-size: 1.1em
+    line-height: 1.25
 
 p
+    margin: 0
     font-size: 1em
     line-height: 1.4
 
@@ -26,12 +38,17 @@ ul
     margin: 0
     padding: 0
 
+a
+    text-decoration: none
+
+
 .page--wrapper
     position: relative
     z-index: 2
+    -webkit-overflow-scrolling: touch
     overflow-scrolling: touch
     background-color: black
-    transition: transform $nav-animation-duration cubic-bezier(.91,.01,.6,.99)
+    transition: transform $nav-animation-duration cubic-bezier(0.455, 0.030, 0.515, 0.955)
 
     // fix bug on iOS 
     min-height: 100vh
