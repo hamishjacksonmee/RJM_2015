@@ -2,11 +2,6 @@
 
 <div class="intro--wrap"> <!-- perspective wrap -->
 
-    <a href="<?php echo PATH; ?>test" class="intro--enter">
-        <span class="intro--enter-shape"></span>
-        <span class="intro--enter-text">View Gallery</span>
-    </a>
-
     <div class="intro--rotating-wrap"> <!--  rotating wrap -->
 
         <div class="intro--white-wrap"></div>
@@ -42,6 +37,42 @@
             Robert<br />Ja<span>c</span>kson-Mee
         </p>
         
+    </div>
+
+    <a href="#" class="intro--enter">
+        <span class="intro--enter-shape"></span>
+        <span class="intro--enter-text">View Gallery</span>
+    </a>
+
+    <div class="categories--wrap">
+        <a href="#" class="categories--single">
+            <span class="categories--img"></span>
+            <div class="categories--hover">
+                <span class="vert-rule"></span>
+                <p class="font-black-italic yellow">All</p>
+            </div>
+        </a
+        ><a href="#" class="categories--single">
+            <span class="categories--img"></span>
+            <div class="categories--hover">
+                <span class="vert-rule"></span>
+                <p class="font-black-italic yellow">Studio</p>
+            </div>
+        </a
+        ><a href="#" class="categories--single">
+            <span class="categories--img"></span>
+            <div class="categories--hover">
+                <span class="vert-rule"></span>
+                <p class="font-black-italic yellow">Landscapes</p>
+            </div>
+        </a
+        ><a href="#" class="categories--single">
+            <span class="categories--img"></span>
+            <div class="categories--hover">
+                <span class="vert-rule"></span>
+                <p class="font-black-italic yellow">Travel</p>
+            </div>
+        </a>
     </div>
 
     <div class="bg--line-wrap">

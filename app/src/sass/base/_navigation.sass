@@ -75,7 +75,7 @@
 	overflow-y: auto
 	-webkit-overflow-scrolling: touch
 	overflow-scrolling: touch
-	transition: transform $nav-animation-duration cubic-bezier(0.455, 0.030, 0.515, 0.955)
+	transition: transform $nav-animation-duration cubic-bezier(0.645, 0.045, 0.355, 1.000)
 
 	// Force Hardware Acceleration in WebKit  -- if bottlenecking with homepage perspective
 	// remove translateZ(0) below
@@ -85,7 +85,7 @@
 
 	.nav--open &
 		transform: translateX(0)
-		transition: transform 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955)
+		transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1.000)
 
 	.no-js &
 		height: auto

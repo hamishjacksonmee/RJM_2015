@@ -16,6 +16,31 @@ function toggleMenu(event) {
     }
 }
 
+function showCategories(event) {
+
+    var $categories = $('.categories--single'),
+        $enterBtn = $('.intro--enter'),
+        $body = $('body'),
+        $bgLines = $('.bg--line-wrap');
+
+    $body.removeClass('home').addClass('categories');
+
+    TweenLite.to( $categories, 0.7, {
+        width: '25%',
+        ease: Power2.easeInOut
+    });
+    TweenLite.to( $enterBtn, 0.5, {
+        opacity: 0,
+        display: 'none'
+    });
+    TweenLite.to( $bgLines, 0.3, {
+        opacity: 0,
+        display: 'none'
+    });
+
+    event.preventDefault();
+}
+
 
 function setHeight() {
 
@@ -54,7 +79,7 @@ function introEffect() {
         aspectRatio;
     
     $('.intro--wrap').on('mousemove', function(event){
-        if( mediaQuery == 'web' && $('html').hasClass('preserve-3d') ) {
+        if( mediaQuery == 'web' && $('html').hasClass('preserve-3d') && $('body').hasClass('home') ) {
             window.requestAnimationFrame(function(){
                 moveBackground(event);
             });
@@ -123,6 +148,10 @@ $(function() {
 
     $(window).on('resize', function(){
         setHeight();
+    });
+
+    $('.intro--enter').on('click', function(event){
+        showCategories(event);
     });
     
     $('.nav--trigger').on('click', function(event){
