@@ -23,10 +23,10 @@ function toggleMenu(event) {
 
 function showCategories(event) {
 
-    var $categories = $('.categories--single'),
+    var $body = $('body'),
+        $categories = $('.categories--single'),
         $enterBtn = $('.intro--enter'),
         $exitBtn = $('.intro--exit'),
-        $body = $('body'),
         $bgLines = $('.bg--line-wrap'),
         $categoriesWrap = $('.categories--wrap'),
         $cellInner = $('.cell-inner');
@@ -53,7 +53,7 @@ function showCategories(event) {
                 display: 'block'
             });
             categoriesNoEffect = false;
-            categoriesEffect();
+            categoriesEffect(categoriesNoEffect);
         }
     });
     
@@ -71,10 +71,10 @@ function showCategories(event) {
 
 function hideCategories(event) {
 
-    var $categories = $('.categories--single'),
+    var $body = $('body'),
+        $categories = $('.categories--single'),
         $enterBtn = $('.intro--enter'),
         $exitBtn = $('.intro--exit'),
-        $body = $('body'),
         $bgLines = $('.bg--line-wrap'),
         $categoriesWrap = $('.categories--wrap'),
         $cellInner = $('.cell-inner');
@@ -118,13 +118,13 @@ function hideCategories(event) {
     event.preventDefault();
 }
 
-function categoriesEffect() {
+function categoriesEffect(doEffect) {
 
-    var $categoriesWrap = $(".categories--wrap"),
-        $categories = $(".categories--track"),
-        $row = $(".row"),
-        $cell = $(".cell"),
-        $cellInner = $(".cell-inner"),
+    var $categoriesWrap = $('.categories--wrap'),
+        $categories = $('.categories--track'),
+        $row = $('.row'),
+        $cell = $('.cell'),
+        $cellInner = $('.cell-inner'),
 
         winW = $(window).width(),
         winW_half = winW/2,
@@ -142,7 +142,7 @@ function categoriesEffect() {
 
     $cell.mouseover(function() {
         var $currentCell = $(this);
-        if(categoriesNoEffect){
+        if(doEffect){
             return;
         } else {
             TweenLite.to($currentCell, 0.5, {
@@ -167,7 +167,7 @@ function categoriesEffect() {
     });
 
     $categories.on('mousemove', function(event) {
-        if(categoriesNoEffect) {
+        if(doEffect) {
             return;
         } else {
             window.requestAnimationFrame(function() {
@@ -302,17 +302,20 @@ $(function() {
 
     // Global variables
 
-    var categoriesNoEffect = true;
+    var categoriesNoEffect = true,
+        $body = $('body');
+
 
     // Init Functions
 
     setHeight();
 
-    if( $('body').hasClass('home') ){
+    if( $body.hasClass('home') ){
         introEffect();
     }
-    if( $('body').hasClass('categories') ){
-        categoriesEffect();
+
+    if( $body.hasClass('categories') ){
+        categoriesEffect(categoriesNoEffect);
     }
 
     // Events
@@ -332,6 +335,22 @@ $(function() {
     $('.nav--trigger').on('click', function(event){
         toggleMenu(event);
     });
+
+    // Page transitions
+
+    $body.css('display', 'none');
+ 
+    $body.fadeIn(500);
+ 
+    $('a.do-fade').click(function(event){
+        event.preventDefault();
+        linkLocation = this.href;
+        $body.fadeOut(500, redirectPage);      
+    });
+         
+    function redirectPage() {
+        window.location = linkLocation;
+    }
 
 });
 
