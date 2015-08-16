@@ -1,7 +1,27 @@
-	
-.categories--wrap
-	+position(absolute, 0, null, null, 0)
-	+square(100%)
+
+// ------------- Categories close button
+
+.intro--exit
+	+position(absolute, 0, 0)
+	+size(200px, 50px)
+	text-align: center
+	text-decoration: none
+	z-index: 11
+
+.intro--exit-text
+	transition: all 400ms ease
+	+font($white,'aktivbd',1.2em)
+	white-space: nowrap
+	text-transform: uppercase
+
+
+// ------------- Categories OG
+
+// -- uncomment this below for OG
+
+// .categories--wrap
+// 	+position(absolute, 0, null, null, 0)
+// 	+square(100%)
 
 .categories--single
 	+size(0, 100%)
@@ -74,4 +94,84 @@
 	transform: translateY(-30%)
 	opacity: 0
 	transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000)
+
+
+
+// ------------- Categories Interactive
+
+.categories--wrap
+	+square(100%)
+	+position(absolute, 0, null, null, 0)
+	overflow: hidden
+	//background-color: black
+	display: none
+
+.categories--track
+	+square(100%)
+	transform: translate3d(0,0,0)
+
+.row
+	+square(100%)
+	white-space: nowrap
+	text-align: center
+	font-size: 0
+	transform: translate3d(0,0,0)
+
+.cell
+	height: 100%
+	width: 25%
+	z-index: 1
+	display: inline-block
+	vertical-align: top
+	transform: translate3d(0,0,0)
+
+.cell-inner
+	width: 0
+	height: 100%
+	display: block
+	transform: translate3d(0,0,0)
+
+.cell-content
+	+square(100%)
+	display: block
+	color: white
+	font-size: 50px
+	padding-top: 100px
+	transform: translate3d(0,0,0)
+
+
+.cell:nth-child(1)
+	.cell-content
+		background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 100%)
+	.cell-inner
+		background: url(http://www.villard.biz/assets/Uploads/projects/portrait-f1.jpg)
+		background-size: auto
+		background-position: center center
+		background-repeat: no-repeat
+
+
+.cell:nth-child(2)
+	.cell-inner
+		background: url(http://webodysseum.com/wp-content/uploads/2013/08/yousuf-karsh-01.jpg)
+		background-size: auto
+		background-position: center center
+		background-repeat: no-repeat
+
+.cell:nth-child(3)
+	.cell-inner
+		background: url(https://felixhoward.files.wordpress.com/2012/02/homeless-black-and-white-portraits-lee-jeffries-22.jpg)
+		background-size: auto
+		background-position: center center
+		background-repeat: no-repeat
+
+.cell:nth-child(4)
+	.cell-content
+		background: linear-gradient(to left, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 100%)
+	.cell-inner
+		background: url(http://www.immaginidigitali.com/en/img/portraits6.jpg)
+		background-size: auto
+		background-position: center center
+		background-repeat: no-repeat
+
+
 

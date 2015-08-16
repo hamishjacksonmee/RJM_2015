@@ -16,24 +16,6 @@
         <div class="intro--white-wrap"></div>
 
         <p class="intro--title-wrap font-black-italic yellow">
-            <!-- <span class="front">r</span
-            ><span class="back">o</span
-            ><span class="front">b</span
-            ><span class="back">e</span
-            ><span class="front">r</span
-            ><span class="back">t</span>
-            <br />
-            <span class="back">j</span
-            ><span class="front">a</span
-            ><span class="back">c</span
-            ><span class="front">k</span
-            ><span class="back">s</span
-            ><span class="front">o</span
-            ><span class="back">n</span
-            ><span class="front">-</span
-            ><span class="front">m</span
-            ><span class="back">e</span
-            ><span class="front">e</span> -->
             Robert<br />Ja<span>c</span>kson-Mee
         </p>
         
@@ -45,7 +27,11 @@
     </a>
 
     <div class="categories--wrap">
-        <a href="#" class="categories--single">
+        <a href="#" class="intro--exit">
+            <span class="inro--exit-shape"></span>
+            <span class="intro--exit-text">Close</span>
+        </a>
+        <!-- <a href="#" class="categories--single">
             <span class="categories--img"></span>
             <div class="categories--hover">
                 <span class="vert-rule"></span>
@@ -72,7 +58,32 @@
                 <span class="vert-rule"></span>
                 <p class="font-black-italic yellow">Travel</p>
             </div>
-        </a>
+        </a> -->
+        <div class="categories--track">
+            <div class="row">
+                <div class="cell first">
+                    <div class="cell-inner">
+                        <div class="cell-content">1</div>
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="cell-inner">
+                        <div class="cell-content">2</div>
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="cell-inner">
+                        <div class="cell-content">3</div>
+                    </div>
+                </div>
+                <div class="cell last">
+                    <div class="cell-inner last">
+                        <div class="cell-content">4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <div class="bg--line-wrap">

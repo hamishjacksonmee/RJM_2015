@@ -21,7 +21,7 @@ if (IS_DEVELOPMENT) {
   ini_set('display_errors', 'on');
 
 } elseif (IS_STAGING) {
-  define('PATH', 'http://staging.itshamish.com/rjm_2015/');
+  define('PATH', 'http://itshamish.com/rjm-2015/');
   define('EMAIL', 'hamishjacksonmee@yahoo.co.nz');
 
 } else {

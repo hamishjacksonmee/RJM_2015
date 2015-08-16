@@ -1,4 +1,6 @@
 
+// ----------------- Navigation
+
 function toggleMenu(event) {
 
     var isLateralNavAnimating = false;
@@ -16,19 +18,45 @@ function toggleMenu(event) {
     }
 }
 
+
+// ----------------- Categories
+
 function showCategories(event) {
 
     var $categories = $('.categories--single'),
         $enterBtn = $('.intro--enter'),
+        $exitBtn = $('.intro--exit'),
         $body = $('body'),
-        $bgLines = $('.bg--line-wrap');
+        $bgLines = $('.bg--line-wrap'),
+        $categoriesWrap = $('.categories--wrap'),
+        $cellInner = $('.cell-inner');
 
     $body.removeClass('home').addClass('categories');
 
-    TweenLite.to( $categories, 0.7, {
-        width: '25%',
-        ease: Power2.easeInOut
+    // Un comment for OG
+
+    // TweenLite.to( $categories, 0.7, {
+    //     width: '25%',
+    //     ease: Power2.easeInOut
+    // });
+    TweenLite.set($categoriesWrap, {
+        display: 'block'
     });
+    TweenLite.to($cellInner, 0.5, {
+        width: '100%',
+        onComplete: function(){
+            TweenLite.set($categoriesWrap, {
+                backgroundColor: 'black'
+            });
+            TweenLite.to( $exitBtn, 0.5, {
+                opacity: 1,
+                display: 'block'
+            });
+            categoriesNoEffect = false;
+            categoriesEffect();
+        }
+    });
+    
     TweenLite.to( $enterBtn, 0.5, {
         opacity: 0,
         display: 'none'
@@ -41,6 +69,139 @@ function showCategories(event) {
     event.preventDefault();
 }
 
+function hideCategories(event) {
+
+    var $categories = $('.categories--single'),
+        $enterBtn = $('.intro--enter'),
+        $exitBtn = $('.intro--exit'),
+        $body = $('body'),
+        $bgLines = $('.bg--line-wrap'),
+        $categoriesWrap = $('.categories--wrap'),
+        $cellInner = $('.cell-inner');
+
+    setTimeout(function(){
+        $body.removeClass('categories').addClass('home');
+    }, 700);
+
+    TweenLite.set($categoriesWrap, {
+        backgroundColor: 'rgba(255,255,255,0)'
+    });
+    TweenLite.to( $exitBtn, 0.5, {
+        opacity: 0,
+        display: 'none'
+    });
+
+    // TweenLite.to( $categories, 0.7, {
+    //     width: 0,
+    //     ease: Power2.easeInOut
+    // });
+
+    categoriesNoEffect = true;
+
+    TweenLite.to($cellInner, 0.5, {
+        width: '0',
+        onComplete: function(){
+            TweenLite.set($categoriesWrap, {
+                display: 'none'
+            });
+            TweenLite.to( $enterBtn, 0.5, {
+                opacity: 1,
+                display: 'block'
+            });
+            TweenLite.to( $bgLines, 0.3, {
+                opacity: 1,
+                display: 'block'
+            });
+        }
+    });
+
+    event.preventDefault();
+}
+
+function categoriesEffect() {
+
+    var $categoriesWrap = $(".categories--wrap"),
+        $categories = $(".categories--track"),
+        $row = $(".row"),
+        $cell = $(".cell"),
+        $cellInner = $(".cell-inner"),
+
+        winW = $(window).width(),
+        winW_half = winW/2,
+        winW_third = winW/3,
+        winW_fourth = winW/4,
+        difference = -((winW/3)-(winW/4))/2;
+
+    $(window).on('resize', function(){
+        winW = $(window).width();
+        winW_half = winW/2;
+        winW_third = winW/3;
+        winW_fourth = winW/4;
+        difference = -((winW/3)-(winW/4))/2;
+    });
+
+    $cell.mouseover(function() {
+        var $currentCell = $(this);
+        if(categoriesNoEffect){
+            return;
+        } else {
+            TweenLite.to($currentCell, 0.5, {
+                width: winW_third,
+                z: 0
+            });
+            TweenLite.to($categories, 0.5, {
+                x: difference,
+                z: 0
+                // -((winW/3)-(winW/4))/2 -winW / 21
+            });
+        }
+    }).mouseout(function() {
+        TweenLite.to($cell, 0.5, {
+            width: winW_fourth,
+            z: 0
+        });
+        TweenLite.to($categories, 0.5, {
+            x: 0,
+            z: 0
+        });
+    });
+
+    $categories.on('mousemove', function(event) {
+        if(categoriesNoEffect) {
+            return;
+        } else {
+            window.requestAnimationFrame(function() {
+                moveBackground(event);
+            });
+        }
+    });
+
+    $categoriesWrap.mouseout(function(){
+        TweenLite.to($row, 0.8, {
+            x: 0,
+            z: 0,
+            ease: Power2.easeOut
+        });
+    });
+
+
+    function moveBackground(event) {
+  
+        var moveAmount = 4,
+            mouseX = event.pageX,
+            moveX = (-mouseX + winW_half) / moveAmount;
+
+        TweenLite.to($row, 0.8, {
+            x: moveX,
+            z: 0,
+            ease: Power2.easeOut
+        });
+    }
+
+}
+
+
+// ----------------- Height Items
 
 function setHeight() {
 
@@ -62,6 +223,8 @@ function setHeight() {
 
 }
 
+
+// ----------------- Intro effects
 
 function introEffect() {
 
@@ -133,8 +296,13 @@ function introEffect() {
 }
 
 
+// ----------------- Events & initialize functions
 
 $(function() {
+
+    // Global variables
+
+    var categoriesNoEffect = true;
 
     // Init Functions
 
@@ -142,6 +310,9 @@ $(function() {
 
     if( $('body').hasClass('home') ){
         introEffect();
+    }
+    if( $('body').hasClass('categories') ){
+        categoriesEffect();
     }
 
     // Events
@@ -152,6 +323,10 @@ $(function() {
 
     $('.intro--enter').on('click', function(event){
         showCategories(event);
+    });
+
+    $('.intro--exit').on('click', function(event){
+        hideCategories(event);
     });
     
     $('.nav--trigger').on('click', function(event){
