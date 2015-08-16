@@ -8,7 +8,7 @@ $controller = isset($q[0]) ? $q[0] : 'home';
 $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
 
 ?><!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" style="background-color: #000000;">
 <head>
   <title>Website Title</title>
   <meta charset="utf-8">
