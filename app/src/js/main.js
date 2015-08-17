@@ -53,7 +53,9 @@ function showCategories(event) {
                 display: 'block'
             });
             categoriesNoEffect = false;
-            categoriesEffect(categoriesNoEffect);
+            if( $('html').hasClass('no-touch') ){
+                categoriesEffect(categoriesNoEffect);
+            }
         }
     });
     
@@ -313,11 +315,11 @@ $(function() {
 
     setHeight();
 
-    if( $body.hasClass('home') ){
+    if( $body.hasClass('home') && $('html').hasClass('preserve-3d') ){
         introEffect();
     }
 
-    if( $body.hasClass('categories') ){
+    if( $body.hasClass('categories') && $('html').hasClass('no-touch') ){
         categoriesEffect(categoriesNoEffect);
     }
 

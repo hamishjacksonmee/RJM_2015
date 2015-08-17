@@ -484,13 +484,21 @@ a {
 
 .intro--exit {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 200px;
+  top: 20px;
+  right: 20px;
+  width: 120px;
   height: 50px;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
   z-index: 11; }
+  .intro--exit:hover .intro--exit-shape:before {
+    -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+            transform: rotate(0); }
+  .intro--exit:hover .intro--exit-shape:after {
+    -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+            transform: rotate(0); }
 
 .intro--exit-text {
   -webkit-transition: all 400ms ease;
@@ -499,109 +507,42 @@ a {
   font-family: "aktivbd";
   font-size: 1.2em;
   white-space: nowrap;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  line-height: 50px; }
 
-.categories--single {
-  width: 0;
-  height: 100%;
-  overflow: hidden;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  background-color: #000; }
-  .categories--single:nth-child(1) {
-    position: absolute;
-    top: 0;
-    left: 0; }
-    .categories--single:nth-child(1) .categories--hover {
-      border-left: none; }
-  .categories--single:nth-child(2) {
-    position: absolute;
-    top: 0;
-    left: 25%; }
-  .categories--single:nth-child(3) {
-    position: absolute;
-    top: 0;
-    left: 50%; }
-  .categories--single:nth-child(4) {
-    position: absolute;
-    top: 0;
-    left: 75%; }
-  .open .categories--single {
-    width: 25%; }
-  .categories--single:hover p {
-    -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1; }
-  .categories--single:hover .vert-rule {
-    -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 0.4; }
-  .categories--single:hover .categories--img {
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
-    opacity: 1; }
-
-.categories--img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background: url("../../dist/images/layout/johnny.jpg") no-repeat center center;
-  opacity: 0.3;
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: all 2s;
-          transition: all 2s;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  z-index: 5; }
-
-.categories--hover {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  border-left: 1px rgba(246, 249, 48, 0.15) solid;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  z-index: 6; }
-  .categories--hover p {
-    position: absolute;
-    bottom: 10%;
-    width: 100%;
-    text-align: center;
-    font-size: 1.2em;
-    -webkit-transform: translateY(100%);
-        -ms-transform: translateY(100%);
-            transform: translateY(100%);
-    opacity: 0;
-    -webkit-transition: all 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
-            transition: all 500ms cubic-bezier(0.165, 0.84, 0.44, 1); }
-
-.vert-rule {
-  width: 1px;
-  height: 70%;
+.intro--exit-shape {
+  -webkit-transition: all 400ms ease;
+          transition: all 400ms ease;
+  width: 20px;
+  height: 0;
   display: block;
-  margin: 0 auto;
   position: absolute;
-  top: 10%;
-  left: 50%;
-  background-color: #f6f930;
-  -webkit-transform: translateY(-30%);
-      -ms-transform: translateY(-30%);
-          transform: translateY(-30%);
-  opacity: 0;
-  -webkit-transition: all 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
-          transition: all 500ms cubic-bezier(0.165, 0.84, 0.44, 1); }
+  top: 24px;
+  right: 20px; }
+  .intro--exit-shape:before {
+    -webkit-transition: all 400ms ease;
+            transition: all 400ms ease;
+    content: "";
+    width: 30px;
+    height: 4px;
+    display: block;
+    background-color: #73405b;
+    position: absolute;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg); }
+  .intro--exit-shape:after {
+    -webkit-transition: all 400ms ease;
+            transition: all 400ms ease;
+    content: "";
+    width: 30px;
+    height: 4px;
+    display: block;
+    background-color: #73405b;
+    position: absolute;
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
 
 .categories--wrap {
   width: 100%;

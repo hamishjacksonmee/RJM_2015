@@ -28,37 +28,9 @@
 
     <div class="categories--wrap">
         <a href="#" class="intro--exit">
-            <span class="inro--exit-shape"></span>
+            <span class="intro--exit-shape"></span>
             <span class="intro--exit-text">Close</span>
         </a>
-        <!-- <a href="#" class="categories--single">
-            <span class="categories--img"></span>
-            <div class="categories--hover">
-                <span class="vert-rule"></span>
-                <p class="font-black-italic yellow">All</p>
-            </div>
-        </a
-        ><a href="#" class="categories--single">
-            <span class="categories--img"></span>
-            <div class="categories--hover">
-                <span class="vert-rule"></span>
-                <p class="font-black-italic yellow">Studio</p>
-            </div>
-        </a
-        ><a href="#" class="categories--single">
-            <span class="categories--img"></span>
-            <div class="categories--hover">
-                <span class="vert-rule"></span>
-                <p class="font-black-italic yellow">Landscapes</p>
-            </div>
-        </a
-        ><a href="#" class="categories--single">
-            <span class="categories--img"></span>
-            <div class="categories--hover">
-                <span class="vert-rule"></span>
-                <p class="font-black-italic yellow">Travel</p>
-            </div>
-        </a> -->
         <div class="categories--track">
             <div class="row">
                 <div class="cell first">
@@ -103,7 +75,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <div class="bg--line-wrap">
