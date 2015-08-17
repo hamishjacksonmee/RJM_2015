@@ -125,53 +125,98 @@
 	vertical-align: top
 	transform: translate3d(0,0,0)
 
+	&:hover
+		p
+			transform: translateY(0)
+			opacity: 1
+		.vert-rule
+			transform: translateY(0)
+			opacity: 0.4
+		.categories--img
+			transform: scale(1.1)
+			opacity: 1
+
 .cell-inner
 	width: 0
 	height: 100%
 	display: block
 	transform: translate3d(0,0,0)
+	overflow: hidden
 
 .cell-content
 	+square(100%)
+	position: relative
 	display: block
-	color: white
-	font-size: 50px
-	padding-top: 100px
 	transform: translate3d(0,0,0)
 
 
 .cell:nth-child(1)
 	.cell-content
 		background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 100%)
+		margin-left: -1px
 	.cell-inner
 		background: url(http://www.villard.biz/assets/Uploads/projects/portrait-f1.jpg)
-		background-size: auto
+		//background-size: auto 100%
 		background-position: center center
 		background-repeat: no-repeat
+	.cell-hover
+		border-left: none
 
 
 .cell:nth-child(2)
 	.cell-inner
 		background: url(http://webodysseum.com/wp-content/uploads/2013/08/yousuf-karsh-01.jpg)
-		background-size: auto
+		//background-size: auto 100%
 		background-position: center center
 		background-repeat: no-repeat
 
 .cell:nth-child(3)
 	.cell-inner
 		background: url(https://felixhoward.files.wordpress.com/2012/02/homeless-black-and-white-portraits-lee-jeffries-22.jpg)
-		background-size: auto
+		//background-size: auto 100%
 		background-position: center center
 		background-repeat: no-repeat
 
 .cell:nth-child(4)
 	.cell-content
 		background: linear-gradient(to left, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 100%)
+		margin-left: 1px
 	.cell-inner
 		background: url(http://www.immaginidigitali.com/en/img/portraits6.jpg)
-		background-size: auto
+		//background-size: auto 100%
 		background-position: center center
 		background-repeat: no-repeat
+
+.cell-hover
+	+square(100%)
+	position: relative
+	border-left: 1px rgba($yellow, 0.15) solid
+	transform: translateZ(0)
+	backface-visibility: hidden
+	z-index: 6
+	background-color: rgba(0,0,0,0.6)
+
+	p
+		+position(absolute, null, null, 10%)
+		width: 100%
+		text-align: center
+		font-size: 1.2rem
+		transform: translateY(100%) translateZ(0)
+		opacity: 0
+		transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000)
+		backface-visibility: hidden
+
+.vert-rule
+	+size(2px, 70%)
+	display: block
+	margin: 0 auto
+	//opacity: 0
+	+position(absolute, 10%, null, null, 50%)
+	background-color: $yellow
+	transform: translateY(-30%) translateZ(0)
+	opacity: 0
+	transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000)
+	backface-visibility: hidden
 
 
 

@@ -187,7 +187,7 @@ function categoriesEffect(doEffect) {
 
     function moveBackground(event) {
   
-        var moveAmount = 4,
+        var moveAmount = 6, //  higher = smaller effect
             mouseX = event.pageX,
             moveX = (-mouseX + winW_half) / moveAmount;
 
@@ -278,20 +278,6 @@ function introEffect() {
             ease: Power2.easeOut
         });
 
-        // $('.intro--text-wrap').velocity({
-        //     rotateX: rotateX + 'deg',
-        //     rotateY: rotateY + 'deg'
-        // }, {
-        //     easing: 'easeOut'
-        // }, 0.1);
-
-        // $('.intro--text-wrap').css({
-        //     '-moz-transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
-        //     '-webkit-transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
-        //     '-ms-transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
-        //     '-o-transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
-        //     'transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
-        // });
     }
 }
 
@@ -306,6 +292,23 @@ $(function() {
         $body = $('body');
 
 
+    // Page transitions
+
+    $body.css('display', 'none');
+ 
+    $body.fadeIn(500);
+ 
+    $('a.do-fade').click(function(event){
+        event.preventDefault();
+        linkLocation = this.href;
+        $body.fadeOut(500, redirectPage);      
+    });
+         
+    function redirectPage() {
+        window.location = linkLocation;
+    }
+
+
     // Init Functions
 
     setHeight();
@@ -317,6 +320,7 @@ $(function() {
     if( $body.hasClass('categories') ){
         categoriesEffect(categoriesNoEffect);
     }
+
 
     // Events
 
@@ -336,21 +340,7 @@ $(function() {
         toggleMenu(event);
     });
 
-    // Page transitions
-
-    $body.css('display', 'none');
- 
-    $body.fadeIn(500);
- 
-    $('a.do-fade').click(function(event){
-        event.preventDefault();
-        linkLocation = this.href;
-        $body.fadeOut(500, redirectPage);      
-    });
-         
-    function redirectPage() {
-        window.location = linkLocation;
-    }
+    
 
 });
 

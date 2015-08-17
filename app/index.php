@@ -10,7 +10,7 @@ $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
 ?><!DOCTYPE html>
 <html class="no-js" lang="en" style="background-color: #000000;">
 <head>
-  <title>Website Title</title>
+  <title>Robert Jackson-Mee | International Photographer</title>
   <meta charset="utf-8">
 
   <meta name="description" content="">

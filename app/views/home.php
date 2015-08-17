@@ -63,22 +63,42 @@
             <div class="row">
                 <div class="cell first">
                     <div class="cell-inner">
-                        <div class="cell-content">1</div>
+                        <div class="cell-content">
+                            <div class="cell-hover">
+                                <span class="vert-rule"></span>
+                                <p class="font-black-italic yellow">All</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="cell">
                     <div class="cell-inner">
-                        <div class="cell-content">2</div>
+                        <div class="cell-content">
+                            <div class="cell-hover">
+                                <span class="vert-rule"></span>
+                                <p class="font-black-italic yellow">Studio</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="cell">
                     <div class="cell-inner">
-                        <div class="cell-content">3</div>
+                        <div class="cell-content">
+                            <div class="cell-hover">
+                                <span class="vert-rule"></span>
+                                <p class="font-black-italic yellow">Landscapes</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="cell last">
                     <div class="cell-inner last">
-                        <div class="cell-content">4</div>
+                        <div class="cell-content">
+                            <div class="cell-hover">
+                                <span class="vert-rule"></span>
+                                <p class="font-black-italic yellow">Travel</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
