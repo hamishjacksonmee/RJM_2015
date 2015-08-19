@@ -8,6 +8,9 @@
 	text-decoration: none
 	z-index: 11
 
+	.categories &
+		display: none !important
+
 	&:hover
 		.intro--exit-shape
 			&:before
@@ -17,7 +20,8 @@
 
 .intro--exit-text
 	transition: all 400ms ease
-	+font($white,'aktivbd',1.2em)
+	+font($white,'aktivmd',1em)
+	padding-left: 5px
 	white-space: nowrap
 	text-transform: uppercase
 	line-height: 50px
@@ -26,7 +30,7 @@
 	transition: all 400ms ease
 	+size(20px, 0)
 	display: block
-	+position(absolute, 24px, 20px)
+	+position(absolute, 22px, 20px)
 
 	&:before
 		transition: all 400ms ease
@@ -54,7 +58,11 @@
 	+position(absolute, 0, null, null, 0)
 	overflow: hidden
 	//background-color: black
-	display: none
+
+	.home &
+		display: none
+	.categories &
+		display: block
 
 .categories--track
 	+square(100%)
@@ -92,6 +100,9 @@
 	display: block
 	transform: translate3d(0,0,0)
 	overflow: hidden
+
+	.categories &
+		width: 100%
 
 .cell-content
 	+square(100%)

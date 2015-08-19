@@ -20,10 +20,38 @@
 	</div>
 
 	<div class="nav--categories-wrap">
-		<span class="nav--category all"></span
-		><span class="nav--category landscapes"></span
-		><span class="nav--category studio"></span
-		><span class="nav--category travel"></span>
+		<span class="nav--category all">
+			<div class="cell-content">
+	      <div class="cell-hover">
+	        <span class="vert-rule"></span>
+	        <p class="font-black-italic yellow">All</p>
+	      </div>
+	    </div>
+		</span
+		><span class="nav--category landscapes">
+			<div class="cell-content">
+	      <div class="cell-hover">
+	        <span class="vert-rule"></span>
+	        <p class="font-black-italic yellow">Studio</p>
+	      </div>
+	    </div>
+		</span
+		><span class="nav--category studio">
+			<div class="cell-content">
+	      <div class="cell-hover">
+	        <span class="vert-rule"></span>
+	        <p class="font-black-italic yellow">Landscapes</p>
+	      </div>
+	    </div>
+		</span
+		><span class="nav--category travel">
+			<div class="cell-content">
+	      <div class="cell-hover">
+	        <span class="vert-rule"></span>
+	        <p class="font-black-italic yellow">Travel</p>
+	      </div>
+	    </div>
+		</span>
 	</div>
 
 </div>

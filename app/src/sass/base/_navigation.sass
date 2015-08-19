@@ -30,7 +30,7 @@
 	//transition: width 0.3s
 
 	&::before, &::after
-		// upper and lower lines of the menu icon 
+		// upper and lower lines of the menu icon
 		content: ''
 		+position(absolute, 0, 0, null, null)
 		+square(100%)
@@ -59,6 +59,7 @@
 	width: 100%
 	background: $white
 	visibility: hidden
+	overflow-y: scroll
 	transition: visibility 0s $nav-animation-duration
 
 	.nav--open &
@@ -72,6 +73,7 @@
 .nav--content
 	// all navigation content
 	height: 100%
+	min-height: 800px
 	overflow-y: auto
 	-webkit-overflow-scrolling: touch
 	overflow-scrolling: touch
@@ -125,12 +127,17 @@
 
 .nav--categories-wrap
 	+position(absolute, null, null, 0, 0)
-	+size(100%, 200px)
+	+size(100%, 50%)
 
 .nav--category
 	display: inline-block
 	+size(25%, 100%)
 	background-size: cover
+	cursor: pointer
+
+	.cell-hover
+		background-color: rgba(0,0,0,0.2)
+		transition: all 500ms
 
 	&.all
 		background: url('#{$imagePath}layout/johnny.jpg') no-repeat center center
@@ -140,6 +147,19 @@
 		background: url('#{$imagePath}layout/johnny.jpg') no-repeat center center
 	&.travel
 		background: url('#{$imagePath}layout/johnny.jpg') no-repeat center center
+
+	&:hover
+		.cell-hover
+			background-color: rgba(0,0,0,0.8)
+		p
+			transform: translateY(0)
+			opacity: 1
+		.vert-rule
+			transform: translateY(0)
+			opacity: 0.4
+		.categories--img
+			transform: scale(1.1)
+			opacity: 1
 
 .lrg-half
 	+min-screen($medium)

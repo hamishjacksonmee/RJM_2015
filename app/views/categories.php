@@ -1,36 +1,52 @@
 <?php defined('PATH') or die('access denied'); ?>
 
-
-<div class="categories--wrap open">
-    <a href="#" class="categories--single">
-        <span class="categories--img"></span>
-        <div class="categories--hover">
-            <span class="vert-rule"></span>
-            <p class="font-black-italic yellow">All</p>
+<div class="categories--wrap">
+        <a href="#" class="intro--exit">
+            <span class="intro--exit-shape"></span>
+            <span class="intro--exit-text">Close</span>
+        </a>
+        <div class="categories--track">
+            <div class="row">
+                <div class="cell first">
+                    <div class="cell-inner">
+                        <div class="cell-content">
+                            <div class="cell-hover">
+                                <span class="vert-rule"></span>
+                                <p class="font-black-italic yellow">All</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="cell-inner">
+                        <div class="cell-content">
+                            <div class="cell-hover">
+                                <span class="vert-rule"></span>
+                                <p class="font-black-italic yellow">Studio</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="cell-inner">
+                        <div class="cell-content">
+                            <div class="cell-hover">
+                                <span class="vert-rule"></span>
+                                <p class="font-black-italic yellow">Landscapes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell last">
+                    <div class="cell-inner last">
+                        <div class="cell-content">
+                            <div class="cell-hover">
+                                <span class="vert-rule"></span>
+                                <p class="font-black-italic yellow">Travel</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </a
-    ><a href="#" class="categories--single">
-        <span class="categories--img"></span>
-        <div class="categories--hover">
-            <span class="vert-rule"></span>
-            <p class="font-black-italic yellow">Studio</p>
-        </div>
-    </a
-    ><a href="#" class="categories--single">
-        <span class="categories--img"></span>
-        <div class="categories--hover">
-            <span class="vert-rule"></span>
-            <p class="font-black-italic yellow">Landscapes</p>
-        </div>
-    </a
-    ><a href="#" class="categories--single">
-        <span class="categories--img"></span>
-        <div class="categories--hover">
-            <span class="vert-rule"></span>
-            <p class="font-black-italic yellow">Travel</p>
-        </div>
-    </a>
-</div>
-
-
-
+    </div>

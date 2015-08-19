@@ -241,6 +241,7 @@ a {
   width: 100%;
   background: #fff;
   visibility: hidden;
+  overflow-y: scroll;
   -webkit-transition: visibility 0s 0.5s;
           transition: visibility 0s 0.5s; }
   .nav--open .nav--wrapper {
@@ -253,6 +254,7 @@ a {
 
 .nav--content {
   height: 100%;
+  min-height: 800px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch;
@@ -309,13 +311,18 @@ a {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 200px; }
+  height: 50%; }
 
 .nav--category {
   display: inline-block;
   width: 25%;
   height: 100%;
-  background-size: cover; }
+  background-size: cover;
+  cursor: pointer; }
+  .nav--category .cell-hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 500ms;
+            transition: all 500ms; }
   .nav--category.all {
     background: url("../../dist/images/layout/johnny.jpg") no-repeat center center; }
   .nav--category.landscapes {
@@ -324,6 +331,23 @@ a {
     background: url("../../dist/images/layout/johnny.jpg") no-repeat center center; }
   .nav--category.travel {
     background: url("../../dist/images/layout/johnny.jpg") no-repeat center center; }
+  .nav--category:hover .cell-hover {
+    background-color: rgba(0, 0, 0, 0.8); }
+  .nav--category:hover p {
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1; }
+  .nav--category:hover .vert-rule {
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 0.4; }
+  .nav--category:hover .categories--img {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+    opacity: 1; }
 
 @media screen and (min-width: 1023px) {
   .lrg-half {
@@ -496,6 +520,8 @@ a {
   text-align: left;
   text-decoration: none;
   z-index: 11; }
+  .categories .intro--exit {
+    display: none !important; }
   .intro--exit:hover .intro--exit-shape:before {
     -webkit-transform: rotate(0);
         -ms-transform: rotate(0);
@@ -509,8 +535,9 @@ a {
   -webkit-transition: all 400ms ease;
           transition: all 400ms ease;
   color: #fff;
-  font-family: "aktivbd";
-  font-size: 1.2em;
+  font-family: "aktivmd";
+  font-size: 1em;
+  padding-left: 5px;
   white-space: nowrap;
   text-transform: uppercase;
   line-height: 50px; }
@@ -522,7 +549,7 @@ a {
   height: 0;
   display: block;
   position: absolute;
-  top: 24px;
+  top: 22px;
   right: 20px; }
   .intro--exit-shape:before {
     -webkit-transition: all 400ms ease;
@@ -555,8 +582,11 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  overflow: hidden;
-  display: none; }
+  overflow: hidden; }
+  .home .categories--wrap {
+    display: none; }
+  .categories .categories--wrap {
+    display: block; }
 
 .categories--track {
   width: 100%;
@@ -604,6 +634,8 @@ a {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
   overflow: hidden; }
+  .categories .cell-inner {
+    width: 100%; }
 
 .cell-content {
   width: 100%;

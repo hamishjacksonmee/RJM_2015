@@ -1,15 +1,21 @@
 
+
+// ----------------- Global Variables
+
+var categoriesNoEffect = true;
+
+
 // ----------------- Navigation
 
-function toggleMenu(event) {
+function toggleMenu() {
 
     var isLateralNavAnimating = false;
 
     event.preventDefault();
     //stop if nav animation is running
     if( !isLateralNavAnimating ) {
-        if($(this).parents('.csstransitions').length > 0 ) isLateralNavAnimating = true; 
-        
+        if($(this).parents('.csstransitions').length > 0 ) isLateralNavAnimating = true;
+
         $('body').toggleClass('nav--open');
         $('.nav--wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
             //animation is over
@@ -19,9 +25,12 @@ function toggleMenu(event) {
 }
 
 
+
+
+
 // ----------------- Categories
 
-function showCategories(event) {
+function showCategories() {
 
     var $body = $('body'),
         $categories = $('.categories--single'),
@@ -31,14 +40,8 @@ function showCategories(event) {
         $categoriesWrap = $('.categories--wrap'),
         $cellInner = $('.cell-inner');
 
-    $body.removeClass('home').addClass('categories');
+    //$body.removeClass('home').addClass('categories');
 
-    // Un comment for OG
-
-    // TweenLite.to( $categories, 0.7, {
-    //     width: '25%',
-    //     ease: Power2.easeInOut
-    // });
     TweenLite.set($categoriesWrap, {
         display: 'block'
     });
@@ -58,7 +61,7 @@ function showCategories(event) {
             }
         }
     });
-    
+
     TweenLite.to( $enterBtn, 0.5, {
         opacity: 0,
         display: 'none'
@@ -67,11 +70,9 @@ function showCategories(event) {
         opacity: 0,
         display: 'none'
     });
-
-    event.preventDefault();
 }
 
-function hideCategories(event) {
+function hideCategories() {
 
     var $body = $('body'),
         $categories = $('.categories--single'),
@@ -81,9 +82,9 @@ function hideCategories(event) {
         $categoriesWrap = $('.categories--wrap'),
         $cellInner = $('.cell-inner');
 
-    setTimeout(function(){
-        $body.removeClass('categories').addClass('home');
-    }, 700);
+    // setTimeout(function(){
+    //     $body.removeClass('categories').addClass('home');
+    // }, 700);
 
     TweenLite.set($categoriesWrap, {
         backgroundColor: 'rgba(255,255,255,0)'
@@ -92,11 +93,6 @@ function hideCategories(event) {
         opacity: 0,
         display: 'none'
     });
-
-    // TweenLite.to( $categories, 0.7, {
-    //     width: 0,
-    //     ease: Power2.easeInOut
-    // });
 
     categoriesNoEffect = true;
 
@@ -116,8 +112,6 @@ function hideCategories(event) {
             });
         }
     });
-
-    event.preventDefault();
 }
 
 function categoriesEffect(doEffect) {
@@ -188,7 +182,7 @@ function categoriesEffect(doEffect) {
 
 
     function moveBackground(event) {
-  
+
         var moveAmount = 6, //  higher = smaller effect
             mouseX = event.pageX,
             moveX = (-mouseX + winW_half) / moveAmount;
@@ -203,27 +197,6 @@ function categoriesEffect(doEffect) {
 }
 
 
-// ----------------- Height Items
-
-function setHeight() {
-
-    var windowHeight = $(window).innerHeight();
-
-    $('.intro--rotating-wrap').height(windowHeight);
-
-    $('.bg--line-wrap').css({
-        'min-height': windowHeight
-    });
-
-    $('.page--wrapper').css({
-        'min-height': windowHeight
-    });
-
-    $('.nav--wrapper').css({
-        'min-height': windowHeight
-    });
-
-}
 
 
 // ----------------- Intro effects
@@ -242,7 +215,7 @@ function introEffect() {
         $introRotating = $('.intro--rotating-wrap'),
 
         aspectRatio;
-    
+
     $('.intro--wrap').on('mousemove', function(event){
         if( mediaQuery == 'web' && $('html').hasClass('preserve-3d') && $('body').hasClass('home') ) {
             window.requestAnimationFrame(function(){
@@ -284,28 +257,59 @@ function introEffect() {
 }
 
 
+
+// ----------------- Height Items
+
+function setDimensions() {
+
+    var windowHeight = $(window).innerHeight(),
+        windowWidth = $(window).innerWidth();
+
+    $('.intro--rotating-wrap').height(windowHeight);
+
+    $('.bg--line-wrap').css({
+        'min-height': windowHeight
+    });
+
+    $('.page--wrapper').css({
+        'min-height': windowHeight
+    });
+
+    $('.nav--wrapper').css({
+        'min-height': windowHeight
+    });
+
+    if(windowWidth > 1080) {
+        $('.categories--wrap').css({
+            'height': windowHeight
+        });
+    }
+
+}
+
+
+
 // ----------------- Events & initialize functions
 
 $(function() {
 
     // Global variables
 
-    var categoriesNoEffect = true,
-        $body = $('body');
+    var $body = $('body');
 
 
     // Page transitions
 
     $body.css('display', 'none');
- 
+
     $body.fadeIn(500);
- 
+
     $('a.do-fade').click(function(event){
         event.preventDefault();
         linkLocation = this.href;
-        $body.fadeOut(500, redirectPage);      
+        $body.fadeOut(500, redirectPage);
     });
-         
+
     function redirectPage() {
         window.location = linkLocation;
     }
@@ -313,36 +317,38 @@ $(function() {
 
     // Init Functions
 
-    setHeight();
+    setDimensions();
 
     if( $body.hasClass('home') && $('html').hasClass('preserve-3d') ){
         introEffect();
     }
 
     if( $body.hasClass('categories') && $('html').hasClass('no-touch') ){
-        categoriesEffect(categoriesNoEffect);
+        showCategories();
     }
 
 
     // Events
 
     $(window).on('resize', function(){
-        setHeight();
+        setDimensions();
     });
 
     $('.intro--enter').on('click', function(event){
-        showCategories(event);
+        event.preventDefault();
+        showCategories();
     });
 
     $('.intro--exit').on('click', function(event){
-        hideCategories(event);
-    });
-    
-    $('.nav--trigger').on('click', function(event){
-        toggleMenu(event);
+        event.preventDefault();
+        hideCategories();
     });
 
-    
+    $('.nav--trigger').on('click', function(event){
+        event.preventDefault();
+        toggleMenu();
+    });
+
 
 });
 

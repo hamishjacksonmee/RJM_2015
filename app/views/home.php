@@ -18,7 +18,7 @@
         <p class="intro--title-wrap font-black-italic yellow">
             Robert<br />Ja<span>c</span>kson-Mee
         </p>
-        
+
     </div>
 
     <a href="#" class="intro--enter">
@@ -26,56 +26,7 @@
         <span class="intro--enter-text">View Gallery</span>
     </a>
 
-    <div class="categories--wrap">
-        <a href="#" class="intro--exit">
-            <span class="intro--exit-shape"></span>
-            <span class="intro--exit-text">Close</span>
-        </a>
-        <div class="categories--track">
-            <div class="row">
-                <div class="cell first">
-                    <div class="cell-inner">
-                        <div class="cell-content">
-                            <div class="cell-hover">
-                                <span class="vert-rule"></span>
-                                <p class="font-black-italic yellow">All</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="cell">
-                    <div class="cell-inner">
-                        <div class="cell-content">
-                            <div class="cell-hover">
-                                <span class="vert-rule"></span>
-                                <p class="font-black-italic yellow">Studio</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="cell">
-                    <div class="cell-inner">
-                        <div class="cell-content">
-                            <div class="cell-hover">
-                                <span class="vert-rule"></span>
-                                <p class="font-black-italic yellow">Landscapes</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="cell last">
-                    <div class="cell-inner last">
-                        <div class="cell-content">
-                            <div class="cell-hover">
-                                <span class="vert-rule"></span>
-                                <p class="font-black-italic yellow">Travel</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php include("categories.php"); ?>
 
     <div class="bg--line-wrap">
         <span class="bg--line left"></span>
