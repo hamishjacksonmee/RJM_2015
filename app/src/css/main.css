@@ -325,6 +325,11 @@ a {
   .nav--category.travel {
     background: url("../../dist/images/layout/johnny.jpg") no-repeat center center; }
 
+@media screen and (min-width: 1023px) {
+  .lrg-half {
+    width: 75%;
+    max-width: 600px; } }
+
 .intro--wrap {
   position: relative;
   width: 100%;

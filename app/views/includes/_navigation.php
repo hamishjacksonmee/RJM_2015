@@ -1,4 +1,4 @@
-<div class="nav--content cf">
+<div class="nav--content">
 
 	<div class="nav--left half-block">
 		<h3>Portfolio of<br />
@@ -8,7 +8,7 @@
 		</h3>
 	</div
 	><div class="nav--right half-block">
-		<p class="font-large font-bold">'I love this industry and cannot see me ever doing anything else, the digital era has brought a new and exciting dimension to us all and I embrace that'.</p>
+		<p class="font-large font-bold lrg-half">'I love this industry and cannot see me ever doing anything else, the digital era has brought a new and exciting dimension to us all and I embrace that'.</p>
 	</div
 	><div class="nav--left half-block">
 		<a class="nav--home-btn maroon do-fade" href="<?php echo PATH; ?>home">Go to Home</a>
