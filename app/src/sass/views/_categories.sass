@@ -116,46 +116,38 @@
 		background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 100%)
 		margin-left: -1px
 	.cell-inner
-		background: url(http://www.villard.biz/assets/Uploads/projects/portrait-f1.jpg)
+		background: url('#{$imagePath}categories/cat_all.jpg') no-repeat center center
 		//background-size: auto 100%
-		background-position: center center
-		background-repeat: no-repeat
 	.cell-hover
 		border-left: none
 
 
 .cell:nth-child(2)
 	.cell-inner
-		background: url(http://webodysseum.com/wp-content/uploads/2013/08/yousuf-karsh-01.jpg)
+		background: url('#{$imagePath}categories/cat_studio.jpg') no-repeat center center
 		//background-size: auto 100%
-		background-position: center center
-		background-repeat: no-repeat
 
 .cell:nth-child(3)
 	.cell-inner
-		background: url(https://felixhoward.files.wordpress.com/2012/02/homeless-black-and-white-portraits-lee-jeffries-22.jpg)
+		background: url('#{$imagePath}categories/cat_landscape.jpg') no-repeat center center
 		//background-size: auto 100%
-		background-position: center center
-		background-repeat: no-repeat
 
 .cell:nth-child(4)
 	.cell-content
 		background: linear-gradient(to left, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 100%)
 		margin-left: 1px
 	.cell-inner
-		background: url(http://www.immaginidigitali.com/en/img/portraits6.jpg)
+		background: url('#{$imagePath}categories/cat_travel.jpg') no-repeat center center
 		//background-size: auto 100%
-		background-position: center center
-		background-repeat: no-repeat
 
 .cell-hover
 	+square(100%)
 	position: relative
-	border-left: 1px rgba($yellow, 0.15) solid
+	//border-left: 1px rgba($yellow, 0.15) solid
 	transform: translateZ(0)
 	backface-visibility: hidden
 	z-index: 6
-	background-color: rgba(0,0,0,0.6)
+	//background-color: rgba(0,0,0,0.6)
 
 	p
 		+position(absolute, null, null, 10%)

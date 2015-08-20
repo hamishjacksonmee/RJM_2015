@@ -132,25 +132,28 @@
 .nav--category
 	display: inline-block
 	+size(25%, 100%)
-	background-size: cover
 	cursor: pointer
 
 	.cell-hover
-		background-color: rgba(0,0,0,0.2)
+		//background-color: rgba(0,0,0,0.2)
 		transition: all 500ms
 
 	&.all
-		background: url('#{$imagePath}layout/johnny.jpg') no-repeat center center
+		background: url('#{$imagePath}categories/cat_all.jpg') no-repeat center center
+		background-size: 120%
 	&.landscapes
-		background: url('#{$imagePath}layout/johnny.jpg') no-repeat center center
+		background: url('#{$imagePath}categories/cat_landscape.jpg') no-repeat center center
+		background-size: 120%
 	&.studio
-		background: url('#{$imagePath}layout/johnny.jpg') no-repeat center center
+		background: url('#{$imagePath}categories/cat_studio.jpg') no-repeat center center
+		background-size: auto 120%
 	&.travel
-		background: url('#{$imagePath}layout/johnny.jpg') no-repeat center center
+		background: url('#{$imagePath}categories/cat_travel.jpg') no-repeat center center
+		background-size: auto 120%
 
 	&:hover
 		.cell-hover
-			background-color: rgba(0,0,0,0.8)
+			background-color: rgba(0,0,0,0.4)
 		p
 			transform: translateY(0)
 			opacity: 1
