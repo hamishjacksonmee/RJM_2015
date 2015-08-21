@@ -20,38 +20,38 @@
 	</div>
 
 	<div class="nav--categories-wrap">
-		<span class="nav--category all">
+		<a href="<?php echo PATH; ?>all" class="nav--category all do-fade">
 			<div class="cell-content">
-	      <div class="cell-hover">
-	        <span class="vert-rule"></span>
-	        <p class="font-black-italic yellow">All</p>
-	      </div>
-	    </div>
-		</span
-		><span class="nav--category landscapes">
+			    <div class="cell-hover">
+			        <span class="vert-rule"></span>
+			        <p class="font-black-italic yellow">All</p>
+			    </div>
+		    </div>
+		</a
+		><a href="<?php echo PATH; ?>studio" class="nav--category landscapes do-fade">
 			<div class="cell-content">
-	      <div class="cell-hover">
-	        <span class="vert-rule"></span>
-	        <p class="font-black-italic yellow">Studio</p>
-	      </div>
-	    </div>
-		</span
-		><span class="nav--category studio">
+			    <div class="cell-hover">
+			        <span class="vert-rule"></span>
+			        <p class="font-black-italic yellow">Studio</p>
+			    </div>
+		    </div>
+		</a
+		><a href="<?php echo PATH; ?>landscapes" class="nav--category studio do-fade">
 			<div class="cell-content">
-	      <div class="cell-hover">
-	        <span class="vert-rule"></span>
-	        <p class="font-black-italic yellow">Landscapes</p>
-	      </div>
-	    </div>
-		</span
-		><span class="nav--category travel">
+			    <div class="cell-hover">
+			        <span class="vert-rule"></span>
+			        <p class="font-black-italic yellow">Landscapes</p>
+			    </div>
+		    </div>
+		</a
+		><a href="<?php echo PATH; ?>travel" class="nav--category travel do-fade">
 			<div class="cell-content">
-	      <div class="cell-hover">
-	        <span class="vert-rule"></span>
-	        <p class="font-black-italic yellow">Travel</p>
-	      </div>
-	    </div>
-		</span>
+			    <div class="cell-hover">
+			        <span class="vert-rule"></span>
+			        <p class="font-black-italic yellow">Travel</p>
+			    </div>
+		    </div>
+		</a>
 	</div>
 
 </div>

@@ -7,7 +7,7 @@
         </a>
         <div class="categories--track">
             <div class="row">
-                <div class="cell first">
+                <a href="<?php echo PATH; ?>all" class="cell first do-fade">
                     <div class="cell-inner">
                         <div class="cell-content">
                             <div class="cell-hover">
@@ -16,8 +16,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="cell">
+                </a>
+                <a href="<?php echo PATH; ?>studio" class="cell do-fade">
                     <div class="cell-inner">
                         <div class="cell-content">
                             <div class="cell-hover">
@@ -26,8 +26,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="cell">
+                </a>
+                <a href="<?php echo PATH; ?>landscapes" class="cell do-fade">
                     <div class="cell-inner">
                         <div class="cell-content">
                             <div class="cell-hover">
@@ -36,8 +36,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="cell last">
+                </a>
+                <a href="<?php echo PATH; ?>travel" class="cell last do-fade">
                     <div class="cell-inner last">
                         <div class="cell-content">
                             <div class="cell-hover">
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>

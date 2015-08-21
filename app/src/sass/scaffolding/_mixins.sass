@@ -150,3 +150,7 @@
 @mixin max-screen-height($res)
   @media screen and (max-height: $res)
     @content
+
+@mixin max-screen-height-width($resX, $resY)
+  @media screen and (max-width: $resX) and (max-height: $resY)
+    @content

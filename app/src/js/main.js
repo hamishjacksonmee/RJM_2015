@@ -121,6 +121,7 @@ function categoriesEffect(doEffect) {
         $row = $('.row'),
         $cell = $('.cell'),
         $cellInner = $('.cell-inner'),
+        $cellHover = $('.cell-hover'),
 
         winW = $(window).width(),
         winW_half = winW/2,
@@ -137,7 +138,9 @@ function categoriesEffect(doEffect) {
     });
 
     $cell.mouseover(function() {
-        var $currentCell = $(this);
+        var $currentCell = $(this),
+            $currentCellHover = $currentCell.find('.cell-hover');
+
         if(doEffect){
             return;
         } else {
@@ -148,7 +151,9 @@ function categoriesEffect(doEffect) {
             TweenLite.to($categories, 0.5, {
                 x: difference,
                 z: 0
-                // -((winW/3)-(winW/4))/2 -winW / 21
+            });
+            TweenLite.to($currentCellHover, 0.5, {
+                opacity: 1
             });
         }
     }).mouseout(function() {
@@ -159,6 +164,9 @@ function categoriesEffect(doEffect) {
         TweenLite.to($categories, 0.5, {
             x: 0,
             z: 0
+        });
+        TweenLite.to($cellHover, 0.5, {
+            opacity: 0
         });
     });
 

@@ -129,6 +129,9 @@
 	+position(absolute, null, null, 0, 0)
 	+size(100%, 50%)
 
+	+max-screen-height-width($large,$medium)
+		position: relative
+
 .nav--category
 	display: inline-block
 	+size(25%, 100%)
@@ -139,30 +142,26 @@
 		transition: all 500ms
 
 	&.all
-		background: url('#{$imagePath}categories/cat_all.jpg') no-repeat center center
-		background-size: 120%
+		background: url('#{$imagePath}categories/nav_cat_all.jpg') no-repeat center center
+		background-size: cover
 	&.landscapes
-		background: url('#{$imagePath}categories/cat_landscape.jpg') no-repeat center center
-		background-size: 120%
+		background: url('#{$imagePath}categories/nav_cat_landscape.jpg') no-repeat center center
+		background-size: cover
 	&.studio
-		background: url('#{$imagePath}categories/cat_studio.jpg') no-repeat center center
-		background-size: auto 120%
+		background: url('#{$imagePath}categories/nav_cat_studio.jpg') no-repeat center center
+		background-size: cover
 	&.travel
-		background: url('#{$imagePath}categories/cat_travel.jpg') no-repeat center center
-		background-size: auto 120%
+		background: url('#{$imagePath}categories/nav_cat_travel.jpg') no-repeat center center
+		background-size: cover
 
 	&:hover
 		.cell-hover
-			background-color: rgba(0,0,0,0.4)
+			opacity: 1 !important
 		p
 			transform: translateY(0)
-			opacity: 1
 		.vert-rule
 			transform: translateY(0)
-			opacity: 0.4
-		.categories--img
-			transform: scale(1.1)
-			opacity: 1
+
 
 .lrg-half
 	+min-screen($medium)
