@@ -41,6 +41,7 @@ if (IS_DEVELOPMENT) {
     $js_path.'vendor/EasePack.min.js',
     $js_path.'vendor/CSSPlugin.min.js',
     $js_path.'vendor/TweenLite.min.js',
+    $js_path.'vendor/slick.min.js',
     $js_path.'main.js'
   );
   $assets['stylesheets'] = array(

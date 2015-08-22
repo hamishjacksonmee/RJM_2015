@@ -5,6 +5,7 @@ body, html
     // prevent horizontal scrolling
     overflow-x: hidden
     background-color: #000000
+    text-rendering: optimizeLegibility
 
 div
     box-sizing: border-box
@@ -17,11 +18,11 @@ body
     background-color: #000000
     color: #ffffff
 
-h1 
+h1
     font-size: 3em
     margin: 0
 
-h3 
+h3
     font-weight: 300
     margin: 0
     font-size: 1.1em
@@ -32,7 +33,7 @@ p
     font-size: 1em
     line-height: 1.4
 
-small 
+small
     font-size: 0.8em
 
 ul
@@ -51,20 +52,20 @@ a
     background-color: black
     transition: transform $nav-animation-duration cubic-bezier(0.645, 0.045, 0.355, 1.000)
 
-    // fix bug on iOS 
+    // fix bug on iOS
     min-height: 100vh
     overflow-y: auto
-    
+
     // Force Hardware Acceleration in WebKit -- might be bottlenecking with homepage perspective
     transform: translateZ(0)
     backface-visibility: hidden
 
-    .nav--open & 
+    .nav--open &
         transform: translateX(100%)
 
     .no-js &
         height: auto
-        overflow: visible 
+        overflow: visible
 
 .bg--line-wrap
     +position(absolute, 0, null, null, 0)

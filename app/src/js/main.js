@@ -40,8 +40,6 @@ function showCategories() {
         $categoriesWrap = $('.categories--wrap'),
         $cellInner = $('.cell-inner');
 
-    //$body.removeClass('home').addClass('categories');
-
     TweenLite.set($categoriesWrap, {
         display: 'block'
     });
@@ -81,10 +79,6 @@ function hideCategories() {
         $bgLines = $('.bg--line-wrap'),
         $categoriesWrap = $('.categories--wrap'),
         $cellInner = $('.cell-inner');
-
-    // setTimeout(function(){
-    //     $body.removeClass('categories').addClass('home');
-    // }, 700);
 
     TweenLite.set($categoriesWrap, {
         backgroundColor: 'rgba(255,255,255,0)'
@@ -266,6 +260,147 @@ function introEffect() {
 
 
 
+// ----------------- Gallery Arrows
+
+function animateLeftArrow() {
+    var $topLine = $('.arrow-left .top-line'),
+        $middleLine = $('.arrow-left .middle-line'),
+        $bottomLine = $('.arrow-left .bottom-line');
+
+    TweenLite.to( $topLine, 0.4, {
+        y: -8,
+        rotation: -135,
+        ease: Power2.easeInOut,
+        onComplete: function() {
+            TweenLite.to( $topLine, 0.2, {
+                y: 0,
+                ease: Power2.easeInOut,
+                onComplete: function() {
+                    TweenLite.set( $topLine, {
+                        rotation: 45
+                    });
+                }
+            });
+        }
+    });
+    TweenLite.to( $bottomLine, 0.4, {
+        y: 8,
+        rotation: 135,
+        ease: Power2.easeInOut,
+        onComplete: function() {
+            TweenLite.to( $bottomLine, 0.2, {
+                y: 0,
+                ease: Power2.easeInOut,
+                onComplete: function() {
+                    TweenLite.set( $bottomLine, {
+                        rotation: -45
+                    });
+                }
+            });
+        }
+    });
+    TweenLite.to( $middleLine, 0.4, {
+        x: 100,
+        opacity: 0,
+        ease: Power2.easeInOut,
+        onComplete: function() {
+            TweenLite.fromTo( $middleLine, 0.2, {
+                x: -50,
+                opacity: 0
+            }, {
+                x: 0,
+                opacity: 1,
+                ease: Power2.easeOut
+            });
+        }
+    });
+}
+
+function animateRightArrow() {
+    var $topLine = $('.arrow-right .top-line'),
+        $middleLine = $('.arrow-right .middle-line'),
+        $bottomLine = $('.arrow-right .bottom-line');
+
+    TweenLite.to( $topLine, 0.4, {
+        y: -8,
+        rotation: 135,
+        ease: Power2.easeInOut,
+        onComplete: function() {
+            TweenLite.to( $topLine, 0.2, {
+                y: 0,
+                ease: Power2.easeInOut,
+                onComplete: function() {
+                    TweenLite.set( $topLine, {
+                        rotation: -45
+                    });
+                }
+            });
+        }
+    });
+    TweenLite.to( $bottomLine, 0.4, {
+        y: 8,
+        rotation: -135,
+        ease: Power2.easeInOut,
+        onComplete: function() {
+            TweenLite.to( $bottomLine, 0.2, {
+                y: 0,
+                ease: Power2.easeInOut,
+                onComplete: function() {
+                    TweenLite.set( $bottomLine, {
+                        rotation: 45
+                    });
+                }
+            });
+        }
+    });
+    TweenLite.to( $middleLine, 0.4, {
+        x: -100,
+        opacity: 0,
+        ease: Power2.easeInOut,
+        onComplete: function() {
+            TweenLite.fromTo( $middleLine, 0.2, {
+                x: 50,
+                opacity: 0
+            }, {
+                x: 0,
+                opacity: 1,
+                ease: Power2.easeOut
+            });
+        }
+    });
+}
+
+
+// ----------------- Slider
+
+function initSlider() {
+    var $slider = $('.gallery--slider-wrap');
+
+    $slider.slick({
+        dots: true,
+        autoplay: false,
+        prevArrow: '.gallery--previous',
+        nextArrow: '.gallery--next',
+        cssEase: 'cubic-bezier(0.770, 0.000, 0.175, 1.000)',
+        speed: 600,
+        lazyLoad: 'progressive',
+        infinite: false,
+        // responsive: [
+        //     {
+        //         breakpoint: 1023,
+        //         settings: {
+        //             dots: false,
+        //             autoplay: false
+        //         }
+        //     }
+        // ],
+        customPaging: function() {
+            return '<span class="gallery--pager"></span>';
+        }
+    });
+}
+
+
 // ----------------- Height Items
 
 function setDimensions() {
@@ -335,6 +470,10 @@ $(function() {
         showCategories();
     }
 
+    if( $body.hasClass('all') || $body.hasClass('studio') || $body.hasClass('landscape') || $body.hasClass('travel') ){
+        initSlider();
+    }
+
 
     // Events
 
@@ -355,6 +494,18 @@ $(function() {
     $('.nav--trigger').on('click', function(event){
         event.preventDefault();
         toggleMenu();
+    });
+
+    $('.gallery--previous').on('click', function(){
+        if(!$(this).hasClass('slick-disabled')) {
+            animateLeftArrow();
+        }
+    });
+
+    $('.gallery--next').on('click', function(){
+        if(!$('.gallery--next').hasClass('slick-disabled')) {
+            animateRightArrow();
+        }
     });
 
 

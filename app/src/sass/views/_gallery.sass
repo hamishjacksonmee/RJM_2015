@@ -1,0 +1,201 @@
+// GALLERY
+// -----------------
+
+.gallery--wrap
+  +square(100%)
+  +position(absolute, 0, null, null, 0)
+  overflow: hidden
+
+.gallery--side
+  display: table
+  +position(absolute, 0, null, 0)
+  +size(90px,100%)
+  padding: 20px
+  z-index: 6
+  +no-select
+
+  &.gallery--right
+    right: 0
+  &.gallery--left
+    left: 0
+
+.gallery--mid
+  display: table-cell
+  vertical-align: middle
+  white-space: nowrap
+  width: 50px
+  +no-select
+
+.gallery--copyright
+  span
+    transform: rotate(-90deg)
+    display: block
+    position: absolute
+    left: -38px
+
+.gallery--nav-btn
+  +position(absolute, 20px)
+  +square(50px)
+  text-align: center
+  cursor: pointer
+
+  &:hover
+    .thumbs-btn:before
+      transform: translateX(25px)
+      border-color: $yellow
+    .thumbs-btn:after
+      transform: translateX(-25px)
+      border-color: $yellow
+
+.thumbs-btn
+  +position(relative, 15px)
+  +size(50px, 30px)
+
+  &:before
+    display: inline-block
+    content: ''
+    +square(20px)
+    border: 3px $ltMaroon solid
+    vertical-align: top
+    box-sizing: border-box
+    transition: all 300ms
+  &:after
+    display: inline-block
+    content: ''
+    +square(20px)
+    border: 3px $ltMaroon solid
+    vertical-align: top
+    box-sizing: border-box
+    margin-left: 5px
+    transition: all 300ms
+
+.gallery--details-wrap
+  transform: rotate(90deg)
+  display: block
+
+.gallery--arrow
+  +position(absolute,null,null,20px)
+  +square(50px)
+  cursor: pointer
+  +no-select
+  transition: opacity 300ms
+
+  &:hover
+    .top-line
+      background-color: $yellow
+    .middle-line
+      background-color: $yellow
+    .bottom-line
+      background-color: $yellow
+  &.slick-disabled
+    opacity: 0.6
+    &:hover
+      .arrow-left
+        transform: translateX(0)
+      .arrow-right
+        transform: translateX(0)
+      .top-line
+        background-color: $ltMaroon
+      .middle-line
+        background-color: $ltMaroon
+      .bottom-line
+        background-color: $ltMaroon
+
+
+.gallery--previous
+  left: 20px
+  &:hover
+    .arrow-left
+      transform: translateX(15px)
+
+.gallery--next
+  right: 20px
+  &:hover
+    .arrow-right
+      transform: translateX(-15px)
+
+
+.arrow-left
+  +position(relative,15px)
+  +size(50px,19px)
+  display: block
+  transition: transform 300ms
+
+  .top-line
+    +position(absolute, 0, null, null, 4px)
+    transform: rotate(45deg)
+  .middle-line
+    +position(absolute, 8px, null, null, 0)
+  .bottom-line
+    +position(absolute, null, null, 0, 4px)
+    transform: rotate(-45deg)
+
+.arrow-right
+  +position(relative,15px)
+  +size(50px,19px)
+  display: block
+  transition: transform 300ms
+
+  .top-line
+    +position(absolute, 0, 4px)
+    transform: rotate(-45deg)
+  .middle-line
+    +position(absolute, 8px, 0)
+  .bottom-line
+    +position(absolute, null, 4px, 0)
+    transform: rotate(45deg)
+
+.top-line
+  display: block
+  +size(3px, 10px)
+  background-color: $ltMaroon
+  transition: background-color 300ms
+
+.middle-line
+  display: block
+  +size(50px,3px)
+  background-color: $ltMaroon
+  transition: background-color 300ms
+
+.bottom-line
+  display: block
+  +size(3px, 10px)
+  background-color: $ltMaroon
+  transition: background-color 300ms
+
+
+// -------------------- SLIDER STUFF
+
+.gallery--imgs
+  +position(relative)
+  +square(100%)
+  z-index: 5
+  //padding: 20px 90px
+
+.gallery--slider-wrap
+  +square(100%)
+
+.slick-list
+  height: 100%
+  transform: scale(0.2)
+
+.slick-track
+  height: 100%
+
+.gallery--slide
+  +square(100%)
+  padding: 20px 90px
+  +no-select
+  outline: none
+
+.gallery--image
+  +square(100%)
+  display: block
+
+  &.guiness
+    background: url('#{$imagePath}gallery/guiness.jpg') no-repeat center center
+    background-size: contain
+
+
+
+

@@ -111,6 +111,14 @@
   -ms-filter: $property
   filter: $property
 
+@mixin no-select()
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
 // CSS Shapes
 @mixin triangle($size, $color, $direction)
   +square(0)
