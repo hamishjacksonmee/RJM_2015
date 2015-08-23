@@ -34,7 +34,9 @@
     <div class="gallery--imgs">
         <div class="gallery--slider-wrap">
             <div class="gallery--slide">
-                <span class="gallery--image guiness"></span>
+                <span class="gallery--image guiness">
+                    <span class="gallery--slide-fill"></span>
+                </span>
             </div>
             <div class="gallery--slide">
                 <span class="gallery--image guiness"></span>

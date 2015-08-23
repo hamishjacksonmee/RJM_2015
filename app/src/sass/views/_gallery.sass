@@ -196,6 +196,17 @@
     background: url('#{$imagePath}gallery/guiness.jpg') no-repeat center center
     background-size: contain
 
+.gallery--slide-fill
+  +square(100%)
+  display: block
+  opacity: 0
+  background-color: rgba(150,150,150,0.2)
+  transition: opacity 500ms
+
+  .zoomed-out &
+    opacity: 1
+
+
 
 
 

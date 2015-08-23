@@ -381,10 +381,13 @@ function initSlider() {
         autoplay: false,
         prevArrow: '.gallery--previous',
         nextArrow: '.gallery--next',
-        cssEase: 'cubic-bezier(0.770, 0.000, 0.175, 1.000)',
+        //cssEase: 'cubic-bezier(0.770, 0.000, 0.175, 1.000)',
         speed: 600,
-        lazyLoad: 'progressive',
+        //lazyLoad: 'progressive',
         infinite: false,
+        swipeToSlide: true,
+        touchThreshold: 20,
+        edgeFriction: 0.5,
         // responsive: [
         //     {
         //         breakpoint: 1023,
