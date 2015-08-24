@@ -266,7 +266,7 @@
 
 .zoom--title-rule
   +position(relative,-20px)
-  +size(100px,10px)
+  +size(150px,8px)
   background-color: $yellow
   display: inline-block
   margin-left: 15px
@@ -300,15 +300,20 @@
   text-align: center
 
   li
-    +size(60px, 5px)
+    +size(50px, 3px)
     display: inline-block
-    margin: 10px
-    background-color: $maroon
+    padding: 10px
     transition: all 300ms
 
     &.slick-active
-      background-color: $yellow
-      transform: scaleY(3)
+      transform: scaleY(5)
+      .gallery--pager
+        background-color: $yellow
+
+.gallery--pager
+  +square(100%)
+  display: block
+  background-color: $ltMaroon
 
 .gallery--slide
   +square(100%)

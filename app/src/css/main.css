@@ -1116,8 +1116,8 @@ a {
 .zoom--title-rule {
   position: relative;
   top: -20px;
-  width: 100px;
-  height: 10px;
+  width: 150px;
+  height: 8px;
   background-color: #f6f930;
   display: inline-block;
   margin-left: 15px; }
@@ -1157,18 +1157,24 @@ a {
           transition: all 400ms;
   text-align: center; }
   .slick-dots li {
-    width: 60px;
-    height: 5px;
+    width: 50px;
+    height: 3px;
     display: inline-block;
-    margin: 10px;
-    background-color: #3a1227;
+    padding: 10px;
     -webkit-transition: all 300ms;
             transition: all 300ms; }
     .slick-dots li.slick-active {
-      background-color: #f6f930;
-      -webkit-transform: scaleY(3);
-          -ms-transform: scaleY(3);
-              transform: scaleY(3); }
+      -webkit-transform: scaleY(5);
+          -ms-transform: scaleY(5);
+              transform: scaleY(5); }
+      .slick-dots li.slick-active .gallery--pager {
+        background-color: #f6f930; }
+
+.gallery--pager {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #73405b; }
 
 .gallery--slide {
   width: 100%;

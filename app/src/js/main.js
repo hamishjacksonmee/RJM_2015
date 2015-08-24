@@ -414,6 +414,7 @@ function initZoomGallery() {
 
     if( !$gallery.hasClass('zoomed-out') ) {
         $gallery.addClass('zoomed-out');
+        console.log('zoomed-out');
 
         // setTimeout(function(){
         //     $image.css('background-size','cover');
@@ -428,20 +429,28 @@ function initZoomGallery() {
         });
         TweenLite.to( $galleryEnterBtn, 0.2, {
             opacity: 0,
-            onComplete: function() {
-                TweenLite.set( $galleryEnterBtn, {
-                    display: 'none'
-                });
-                TweenLite.set( $closeBtn, {
-                    display: 'block',
-                    onComplete: function() {
-                        TweenLite.to( $closeBtn, 0.3, {
-                            opacity: 1
-                        });
-                    }
-                });
-            }
+            display: 'none'
         });
+        TweenLite.to( $closeBtn, 0.4, {
+            opacity: 1,
+            display: 'block'
+        });
+        // TweenLite.to( $galleryEnterBtn, 0.2, {
+        //     opacity: 0,
+        //     onComplete: function() {
+        //         TweenLite.set( $galleryEnterBtn, {
+        //             display: 'none'
+        //         });
+        //         TweenLite.set( $closeBtn, {
+        //             display: 'block',
+        //             onComplete: function() {
+        //                 TweenLite.to( $closeBtn, 0.3, {
+        //                     opacity: 1
+        //                 });
+        //             }
+        //         });
+        //     }
+        // });
     }
 
 }
@@ -459,6 +468,7 @@ function closeZoomGallery() {
     if( $gallery.hasClass('zoomed-out') ) {
 
         $gallery.removeClass('zoomed-out');
+        console.log('zoomed-in');
 
         // TweenLite.to( $arrows, 0.4, {
         //     opacity: 1
@@ -471,22 +481,30 @@ function closeZoomGallery() {
             opacity: 1,
             display: 'block'
         });
+        TweenLite.to( $galleryEnterBtn, 0.4, {
+            opacity: 1,
+            display: 'block'
+        });
         TweenLite.to( $closeBtn, 0.2, {
             opacity: 0,
-            onComplete: function() {
-                TweenLite.set( $closeBtn, {
-                    display: 'none'
-                });
-                TweenLite.set( $galleryEnterBtn, {
-                    display: 'block',
-                    onComplete: function() {
-                        TweenLite.to( $galleryEnterBtn, 0.3, {
-                            opacity: 1
-                        });
-                    }
-                });
-            }
+            display: 'none'
         });
+        // TweenLite.to( $closeBtn, 0.2, {
+        //     opacity: 0,
+        //     onComplete: function() {
+        //         TweenLite.set( $closeBtn, {
+        //             display: 'none'
+        //         });
+        //         TweenLite.set( $galleryEnterBtn, {
+        //             display: 'block',
+        //             onComplete: function() {
+        //                 TweenLite.to( $galleryEnterBtn, 0.3, {
+        //                     opacity: 1
+        //                 });
+        //             }
+        //         });
+        //     }
+        // });
     }
 
 }
@@ -612,6 +630,12 @@ $(function() {
             initZoomGallery();
         }
     });
+
+    // $('.gallery--slide.slick-active').click( function(){
+    //     if( $('.gallery--wrap').hasClass('zoomed-out') ) {
+    //         closeZoomGallery();
+    //     }
+    // });
 
 
     var isDragging = false;
