@@ -8,7 +8,7 @@ $controller = isset($q[0]) ? $q[0] : 'home';
 $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
 
 ?><!DOCTYPE html>
-<html class="no-js" lang="en" style="background-color: #000000;">
+<html class="no-js" lang="en" style="background-color: rgb(0,0,0);">
 <head>
   <title>Robert Jackson-Mee | International Photographer</title>
   <meta charset="utf-8">

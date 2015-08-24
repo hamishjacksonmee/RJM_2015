@@ -1,10 +1,89 @@
 // GALLERY
 // -----------------
 
+
+// ------------- Categories close button
+
+.zoom--exit
+  +position(absolute, 20px, 20px)
+  +size(120px, 50px)
+  text-align: left
+  text-decoration: none
+  z-index: 11
+  display: none
+  opacity: 0
+
+  &:hover
+    .zoom--exit-shape
+      &:before
+        transform: rotate(0)
+      &:after
+        transform: rotate(0)
+
+.zoom--exit-text
+  +font($white,'aktivmd',1em)
+  padding-left: 5px
+  white-space: nowrap
+  text-transform: uppercase
+  line-height: 50px
+
+.zoom--exit-shape
+  +size(20px, 0)
+  display: block
+  +position(absolute, 22px, 20px)
+
+  &:before
+    transition: transform 400ms ease
+    content: ''
+    +size(30px, 4px)
+    display: block
+    background-color: $ltMaroon
+    +position(absolute)
+    transform: rotate(45deg)
+  &:after
+    transition: transform 400ms ease
+    content: ''
+    +size(30px, 4px)
+    display: block
+    background-color: $ltMaroon
+    +position(absolute)
+    transform: rotate(-45deg)
+
+
+// ------------- Pagination
+
+
+
+
+// ------------- Everything Else
+
+
 .gallery--wrap
   +square(100%)
   +position(absolute, 0, null, null, 0)
   overflow: hidden
+
+  &.zoomed-out
+    .slick-list
+      transform: scale(0.25)
+    .slick-dots
+      opacity: 1
+      transform: translate(-50%,0)
+    .zoom--content
+      opacity: 1
+      transform: translateY(0)
+    .gallery--side
+      opacity: 0
+    .gallery--image-wrap
+      border-color: $maroon
+    .gallery--image
+      transform: scale(2)
+    .gallery--slide
+      transform: scale(0.7)
+      &.slick-active
+        transform: scale(1)
+        .gallery--image-wrap
+          border-color: $yellow
 
 .gallery--side
   display: table
@@ -12,6 +91,7 @@
   +size(90px,100%)
   padding: 20px
   z-index: 6
+  transition: opacity 500ms
   +no-select
 
   &.gallery--right
@@ -163,6 +243,34 @@
   background-color: $ltMaroon
   transition: background-color 300ms
 
+.zoom--content
+  +position(absolute,20px,null,null,50px)
+  opacity: 0
+  transform: translateY(-200px)
+  transition: all 500ms
+  z-index: 6
+
+  a
+    color: $white
+    text-decoration: underline
+    cursor: pointer
+    transition: color 300ms
+    &:hover
+      color: $ltMaroon
+
+.zoom--title
+  h1
+    display: inline-block
+    font-size: 5rem
+
+
+.zoom--title-rule
+  +position(relative,-20px)
+  +size(100px,10px)
+  background-color: $yellow
+  display: inline-block
+  margin-left: 15px
+
 
 // -------------------- SLIDER STUFF
 
@@ -177,34 +285,68 @@
 
 .slick-list
   height: 100%
-  transform: scale(0.2)
+  transform: scale(1)
+  transition: transform 500ms
 
 .slick-track
   height: 100%
+
+.slick-dots
+  +position(absolute,null,null,10%,50%)
+  +size(50%,100px)
+  transform: translate(-50%,200px)
+  opacity: 0
+  transition: all 400ms
+  text-align: center
+
+  li
+    +size(60px, 5px)
+    display: inline-block
+    margin: 10px
+    background-color: $maroon
+    transition: all 300ms
+
+    &.slick-active
+      background-color: $yellow
+      transform: scaleY(3)
 
 .gallery--slide
   +square(100%)
   padding: 20px 90px
   +no-select
   outline: none
+  transition: transform 500ms
+
+.gallery--image-wrap
+  +square(100%)
+  display: block
+  border: 8px $black solid
+  transition: border-color 500ms
+  overflow: hidden
+  //background-color: $black
 
 .gallery--image
   +square(100%)
   display: block
+  transition: transform 500ms
 
+  &.analise
+    background: url('#{$imagePath}gallery/analise.jpg') no-repeat center center
+    background-size: contain
+  &.assasin
+    background: url('#{$imagePath}gallery/assasin.jpg') no-repeat center center
+    background-size: contain
+  &.basin
+    background: url('#{$imagePath}gallery/basin.jpg') no-repeat center center
+    background-size: contain
+  &.fish
+    background: url('#{$imagePath}gallery/fish.jpg') no-repeat center center
+    background-size: contain
   &.guiness
     background: url('#{$imagePath}gallery/guiness.jpg') no-repeat center center
     background-size: contain
 
-.gallery--slide-fill
-  +square(100%)
-  display: block
-  opacity: 0
-  background-color: rgba(150,150,150,0.2)
-  transition: opacity 500ms
 
-  .zoomed-out &
-    opacity: 1
 
 
 

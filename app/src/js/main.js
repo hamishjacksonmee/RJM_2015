@@ -11,7 +11,6 @@ function toggleMenu() {
 
     var isLateralNavAnimating = false;
 
-    event.preventDefault();
     //stop if nav animation is running
     if( !isLateralNavAnimating ) {
         if($(this).parents('.csstransitions').length > 0 ) isLateralNavAnimating = true;
@@ -403,6 +402,95 @@ function initSlider() {
     });
 }
 
+function initZoomGallery() {
+    var $slider = $('.gallery--slider-wrap'),
+        $sliderList = $('.slick-list'),
+        $gallery = $('.gallery--wrap'),
+        $arrows = $('.gallery--arrow'),
+        $closeBtn = $('.zoom--exit'),
+        $galleryEnterBtn = $('.gallery--nav-btn'),
+        $image = $('.gallery--image'),
+        $navBtn = $('.nav--trigger');
+
+    if( !$gallery.hasClass('zoomed-out') ) {
+        $gallery.addClass('zoomed-out');
+
+        // setTimeout(function(){
+        //     $image.css('background-size','cover');
+        // }, 100);
+
+        // TweenLite.to( $arrows, 0.4, {
+        //     opacity: 0
+        // });
+        TweenLite.to( $navBtn, 0.4, {
+            opacity: 0,
+            display: 'none'
+        });
+        TweenLite.to( $galleryEnterBtn, 0.2, {
+            opacity: 0,
+            onComplete: function() {
+                TweenLite.set( $galleryEnterBtn, {
+                    display: 'none'
+                });
+                TweenLite.set( $closeBtn, {
+                    display: 'block',
+                    onComplete: function() {
+                        TweenLite.to( $closeBtn, 0.3, {
+                            opacity: 1
+                        });
+                    }
+                });
+            }
+        });
+    }
+
+}
+
+function closeZoomGallery() {
+    var $slider = $('.gallery--slider-wrap'),
+        $sliderList = $('.slick-list'),
+        $gallery = $('.gallery--wrap'),
+        $arrows = $('.gallery--arrow'),
+        $closeBtn = $('.zoom--exit'),
+        $galleryEnterBtn = $('.gallery--nav-btn'),
+        $image = $('.gallery--image'),
+        $navBtn = $('.nav--trigger');
+
+    if( $gallery.hasClass('zoomed-out') ) {
+
+        $gallery.removeClass('zoomed-out');
+
+        // TweenLite.to( $arrows, 0.4, {
+        //     opacity: 1
+        // });
+        // TweenLite.to( $closeBtn, 0.5, {
+        //     opacity: 0,
+        //     display: 'none'
+        // });
+        TweenLite.to( $navBtn, 0.4, {
+            opacity: 1,
+            display: 'block'
+        });
+        TweenLite.to( $closeBtn, 0.2, {
+            opacity: 0,
+            onComplete: function() {
+                TweenLite.set( $closeBtn, {
+                    display: 'none'
+                });
+                TweenLite.set( $galleryEnterBtn, {
+                    display: 'block',
+                    onComplete: function() {
+                        TweenLite.to( $galleryEnterBtn, 0.3, {
+                            opacity: 1
+                        });
+                    }
+                });
+            }
+        });
+    }
+
+}
+
 
 // ----------------- Height Items
 
@@ -499,6 +587,14 @@ $(function() {
         toggleMenu();
     });
 
+    $('.gallery--nav-btn').on('click', function(){
+        initZoomGallery();
+    });
+
+    $('.zoom--exit').on('click', function(){
+        closeZoomGallery();
+    });
+
     $('.gallery--previous').on('click', function(){
         if(!$(this).hasClass('slick-disabled')) {
             animateLeftArrow();
@@ -508,6 +604,32 @@ $(function() {
     $('.gallery--next').on('click', function(){
         if(!$('.gallery--next').hasClass('slick-disabled')) {
             animateRightArrow();
+        }
+    });
+
+    $('.gallery--slide').dblclick( function(){
+        if( !$('.gallery--wrap').hasClass('zoomed-out') ) {
+            initZoomGallery();
+        }
+    });
+
+
+    var isDragging = false;
+    $('.gallery--slide')
+    .mousedown(function() {
+        $(window).mousemove(function() {
+            isDragging = true;
+            $(window).unbind('mousemove');
+        });
+    })
+    .mouseup(function() {
+        var wasDragging = isDragging;
+        isDragging = false;
+        $(window).unbind('mousemove');
+        if (!wasDragging) {
+            if( $('.gallery--wrap').hasClass('zoomed-out') ) {
+                closeZoomGallery();
+            }
         }
     });
 

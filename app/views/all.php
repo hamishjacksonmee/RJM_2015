@@ -15,6 +15,19 @@
         </div>
     </div>
 
+    <div class="zoom--content">
+        <div class="zoom--title">
+            <h1 class="font-black-italic yellow">All</h1>
+            <span class="zoom--title-rule"></span>
+        </div>
+        <a href="<?php echo PATH; ?>categories" class="zoom--back-btn">Back To Categories</a>
+    </div>
+
+    <div class="zoom--exit">
+        <span class="zoom--exit-shape"></span>
+        <span class="zoom--exit-text">Close</span>
+    </div>
+
     <div class="gallery--right gallery--side">
         <div class="gallery--nav-btn">
             <span class="thumbs-btn"></span>
@@ -34,24 +47,44 @@
     <div class="gallery--imgs">
         <div class="gallery--slider-wrap">
             <div class="gallery--slide">
-                <span class="gallery--image guiness">
-                    <span class="gallery--slide-fill"></span>
+                <span class="gallery--image-wrap">
+                    <span class="gallery--image analise"></span>
                 </span>
             </div>
             <div class="gallery--slide">
-                <span class="gallery--image guiness"></span>
+                <span class="gallery--image-wrap">
+                    <span class="gallery--image assasin"></span>
+                </span>
             </div>
             <div class="gallery--slide">
-                <span class="gallery--image guiness"></span>
+                <span class="gallery--image-wrap">
+                    <span class="gallery--image basin"></span>
+                </span>
             </div>
             <div class="gallery--slide">
-                <span class="gallery--image guiness"></span>
+                <span class="gallery--image-wrap">
+                    <span class="gallery--image fish"></span>
+                </span>
             </div>
             <div class="gallery--slide">
-                <span class="gallery--image guiness"></span>
+                <span class="gallery--image-wrap">
+                    <span class="gallery--image guiness"></span>
+                </span>
             </div>
             <div class="gallery--slide">
-                <span class="gallery--image guiness"></span>
+                <span class="gallery--image-wrap">
+                    <span class="gallery--image analise"></span>
+                </span>
+            </div>
+            <div class="gallery--slide">
+                <span class="gallery--image-wrap">
+                    <span class="gallery--image analise"></span>
+                </span>
+            </div>
+            <div class="gallery--slide">
+                <span class="gallery--image-wrap">
+                    <span class="gallery--image analise"></span>
+                </span>
             </div>
         </div>
     </div>
