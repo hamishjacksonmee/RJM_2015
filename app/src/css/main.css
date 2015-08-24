@@ -1141,7 +1141,13 @@ a {
           transition: transform 500ms; }
 
 .slick-track {
-  height: 100%; }
+  height: 100%;
+  cursor: move;
+  cursor: grab;
+  cursor: -webkit-grab; }
+  .slick-track:active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing; }
 
 .slick-dots {
   position: absolute;

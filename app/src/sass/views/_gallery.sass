@@ -290,6 +290,15 @@
 
 .slick-track
   height: 100%
+  cursor: move
+  cursor: grab
+  cursor: -moz-grab
+  cursor: -webkit-grab
+
+  &:active
+    cursor: grabbing
+    cursor: -moz-grabbing
+    cursor: -webkit-grabbing
 
 .slick-dots
   +position(absolute,null,null,10%,50%)
