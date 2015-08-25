@@ -20,7 +20,7 @@
             <h1 class="font-black-italic yellow">All</h1>
             <span class="zoom--title-rule"></span>
         </div>
-        <a href="<?php echo PATH; ?>categories" class="zoom--back-btn">Back To Categories</a>
+        <a href="<?php echo PATH; ?>categories" class="zoom--back-btn do-fade">Back To Categories</a>
     </div>
 
     <div class="zoom--exit">

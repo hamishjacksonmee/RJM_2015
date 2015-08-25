@@ -404,65 +404,25 @@ function initSlider() {
 
 function initZoomGallery() {
     var $slider = $('.gallery--slider-wrap'),
-        $sliderList = $('.slick-list'),
         $gallery = $('.gallery--wrap'),
-        $arrows = $('.gallery--arrow'),
-        $closeBtn = $('.zoom--exit'),
-        $galleryEnterBtn = $('.gallery--nav-btn'),
-        $image = $('.gallery--image'),
         $navBtn = $('.nav--trigger');
 
     if( !$gallery.hasClass('zoomed-out') ) {
         $gallery.addClass('zoomed-out');
         console.log('zoomed-out');
 
-        // setTimeout(function(){
-        //     $image.css('background-size','cover');
-        // }, 100);
-
-        // TweenLite.to( $arrows, 0.4, {
-        //     opacity: 0
-        // });
         TweenLite.to( $navBtn, 0.4, {
             opacity: 0,
             display: 'none'
         });
-        TweenLite.to( $galleryEnterBtn, 0.2, {
-            opacity: 0,
-            display: 'none'
-        });
-        TweenLite.to( $closeBtn, 0.4, {
-            opacity: 1,
-            display: 'block'
-        });
-        // TweenLite.to( $galleryEnterBtn, 0.2, {
-        //     opacity: 0,
-        //     onComplete: function() {
-        //         TweenLite.set( $galleryEnterBtn, {
-        //             display: 'none'
-        //         });
-        //         TweenLite.set( $closeBtn, {
-        //             display: 'block',
-        //             onComplete: function() {
-        //                 TweenLite.to( $closeBtn, 0.3, {
-        //                     opacity: 1
-        //                 });
-        //             }
-        //         });
-        //     }
-        // });
+
     }
 
 }
 
 function closeZoomGallery() {
     var $slider = $('.gallery--slider-wrap'),
-        $sliderList = $('.slick-list'),
         $gallery = $('.gallery--wrap'),
-        $arrows = $('.gallery--arrow'),
-        $closeBtn = $('.zoom--exit'),
-        $galleryEnterBtn = $('.gallery--nav-btn'),
-        $image = $('.gallery--image'),
         $navBtn = $('.nav--trigger');
 
     if( $gallery.hasClass('zoomed-out') ) {
@@ -470,41 +430,11 @@ function closeZoomGallery() {
         $gallery.removeClass('zoomed-out');
         console.log('zoomed-in');
 
-        // TweenLite.to( $arrows, 0.4, {
-        //     opacity: 1
-        // });
-        // TweenLite.to( $closeBtn, 0.5, {
-        //     opacity: 0,
-        //     display: 'none'
-        // });
         TweenLite.to( $navBtn, 0.4, {
             opacity: 1,
             display: 'block'
         });
-        TweenLite.to( $galleryEnterBtn, 0.4, {
-            opacity: 1,
-            display: 'block'
-        });
-        TweenLite.to( $closeBtn, 0.2, {
-            opacity: 0,
-            display: 'none'
-        });
-        // TweenLite.to( $closeBtn, 0.2, {
-        //     opacity: 0,
-        //     onComplete: function() {
-        //         TweenLite.set( $closeBtn, {
-        //             display: 'none'
-        //         });
-        //         TweenLite.set( $galleryEnterBtn, {
-        //             display: 'block',
-        //             onComplete: function() {
-        //                 TweenLite.to( $galleryEnterBtn, 0.3, {
-        //                     opacity: 1
-        //                 });
-        //             }
-        //         });
-        //     }
-        // });
+
     }
 
 }

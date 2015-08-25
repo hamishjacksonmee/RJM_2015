@@ -5,13 +5,16 @@
 // ------------- Categories close button
 
 .zoom--exit
-  +position(absolute, 20px, 20px)
-  +size(120px, 50px)
+  +position(absolute, 40px, 30px)
+  +size(120px, 80px)
   text-align: left
   text-decoration: none
   z-index: 11
-  display: none
+  cursor: pointer
+  transform: translateY(-200px)
   opacity: 0
+  transition: all 500ms
+  +no-select
 
   &:hover
     .zoom--exit-shape
@@ -25,12 +28,12 @@
   padding-left: 5px
   white-space: nowrap
   text-transform: uppercase
-  line-height: 50px
+  line-height: 80px
 
 .zoom--exit-shape
   +size(20px, 0)
   display: block
-  +position(absolute, 22px, 20px)
+  +position(absolute, 37px, 20px)
 
   &:before
     transition: transform 400ms ease
@@ -69,11 +72,20 @@
     .slick-dots
       opacity: 1
       transform: translate(-50%,0)
+    .gallery--side
+      opacity: 0
     .zoom--content
       opacity: 1
       transform: translateY(0)
-    .gallery--side
-      opacity: 0
+    .zoom--exit
+      opacity: 1
+      transform: translateY(0)
+    // .gallery--nav-btn
+    //   //transform: translateY(100px)
+    // .zoom--exit
+
+    // .gallery--side
+    //   opacity: 0
     .gallery--image-wrap
       border-color: $maroon
     .gallery--image
@@ -111,7 +123,9 @@
     transform: rotate(-90deg)
     display: block
     position: absolute
-    left: -38px
+    left: -30px
+    font-size: 0.8rem
+    letter-spacing: 1px
 
 .gallery--nav-btn
   +position(absolute, 20px)
@@ -152,6 +166,8 @@
 .gallery--details-wrap
   transform: rotate(90deg)
   display: block
+  font-size: 0.8rem
+  letter-spacing: 1px
 
 .gallery--arrow
   +position(absolute,null,null,20px)
@@ -249,12 +265,14 @@
   transform: translateY(-200px)
   transition: all 500ms
   z-index: 6
+  +no-select
 
   a
     color: $white
     text-decoration: underline
     cursor: pointer
     transition: color 300ms
+    letter-spacing: 1px
     &:hover
       color: $ltMaroon
 
