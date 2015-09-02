@@ -1,17 +1,17 @@
 // INTRO
 // -----------------
 
-.intro--wrap 
+.intro--wrap
     position: relative
     +square(100%)
     overflow: hidden
     .no-touch &
         perspective: 1000px
-    &::before 
+    &::before
         // never visible - this is used in jQuery to check the device type
         content: 'web'
         display: none
-    .touch &::before 
+    .touch &::before
         // never visible - this is used in jQuery to check the device type
         content: 'mobile'
 
@@ -26,7 +26,7 @@
         .img-wrap
             transform: translate3d(0,0,-200px)
             opacity: 0.2
-        
+
         .intro--white-wrap:nth-child(2)
             transform: translate3d(0,0,100px)
         .intro--white-wrap:nth-child(3)
@@ -48,8 +48,8 @@
         .intro--white-wrap:nth-child(10)
             transform: translate3d(0,0,-350px)
             opacity: 0.15
-            
-    .no-touch.no-preserve-3d & 
+
+    .no-touch.no-preserve-3d &
         // we target browsers that don't support preserve-3d and show just a standard image - no effect visible
         position: relative
 
@@ -70,12 +70,11 @@
         background: url('#{$imagePath}layout/megan2.jpg') no-repeat center center fixed
         background-size: cover
         opacity: 0.05
-    
+
 .intro--title-wrap
     text-align: center
     line-height: 1.1
-    font-size: 3.6em
-    z-index: 4
+    font-size: 3.6rem
     text-transform: uppercase
     transform-style: preserve-3d
     transform: translate3d(0,0,100px)
@@ -83,6 +82,10 @@
 
     span
         margin-left: -3px
+
+    +max-screen($small)
+        font-size: 2rem
+        width: 100%
 
 
 .intro--enter
@@ -93,12 +96,27 @@
     text-decoration: none
     z-index: 11
 
-    &:hover
+    .no-touch &
+        &:hover
+            .intro--enter-shape
+                transform: scale(7, 0.05)
+            .intro--enter-text
+                opacity: 1
+                transform: translateY(0)
+    .touch
         .intro--enter-shape
             transform: scale(7, 0.05)
         .intro--enter-text
             opacity: 1
             transform: translateY(0)
+
+    +max-screen($small)
+        .intro--enter-shape
+            transform: scale(7, 0.05)
+        .intro--enter-text
+            opacity: 1
+            transform: translateY(0)
+
 
 .intro--enter-shape
     +square(20px)

@@ -16,12 +16,18 @@
   transition: all 500ms
   +no-select
 
+  +max-screen($small)
+    top: 20px
+    right: 20px
+
   &:hover
     .zoom--exit-shape
       &:before
         transform: rotate(0)
+        background-color: $yellow
       &:after
         transform: rotate(0)
+        background-color: $yellow
 
 .zoom--exit-text
   +font($white,'aktivmd',1em)
@@ -36,7 +42,7 @@
   +position(absolute, 37px, 20px)
 
   &:before
-    transition: transform 400ms ease
+    transition: all 400ms ease
     content: ''
     +size(30px, 4px)
     display: block
@@ -44,7 +50,7 @@
     +position(absolute)
     transform: rotate(45deg)
   &:after
-    transition: transform 400ms ease
+    transition: all 400ms ease
     content: ''
     +size(30px, 4px)
     display: block
@@ -65,6 +71,8 @@
   &.zoomed-out
     .slick-list
       transform: scale(0.25)
+      +max-screen($small)
+        transform: scale(0.5)
     .slick-dots
       opacity: 1
       transform: translate(-50%,0)
@@ -83,7 +91,7 @@
     // .gallery--side
     //   opacity: 0
     .gallery--image-wrap
-      border-color: $maroon
+      border-color: rgba($maroon,1)
     .gallery--image
       transform: scale(2)
     .gallery--slide
@@ -91,7 +99,7 @@
       &.slick-active
         transform: scale(1)
         .gallery--image-wrap
-          border-color: $yellow
+          border-color: rgba($yellow,1)
 
 .gallery--side
   display: table
@@ -164,6 +172,10 @@
   display: block
   font-size: 0.8rem
   letter-spacing: 1px
+  position: absolute
+
+  &.gallery--all
+    left: -6px
 
 .gallery--arrow
   +position(absolute,null,null,20px)
@@ -263,6 +275,9 @@
   z-index: 6
   +no-select
 
+  +max-screen($small)
+    left: 20px
+
   a
     color: $white
     text-decoration: underline
@@ -277,6 +292,10 @@
     display: inline-block
     font-size: 5rem
 
+    +max-screen($small)
+      font-size: 3rem
+
+
 
 .zoom--title-rule
   +position(relative,-20px)
@@ -284,6 +303,11 @@
   background-color: $yellow
   display: inline-block
   margin-left: 15px
+
+  +max-screen($small)
+    +size(50px,6px)
+    top: -12px
+    margin-left: 5px
 
 
 // -------------------- SLIDER STUFF
@@ -316,17 +340,23 @@
 
 .slick-dots
   +position(absolute,null,null,10%,50%)
-  +size(50%,100px)
+  +size(100%,50px)
   transform: translate(-50%,200px)
   opacity: 0
   transition: all 400ms
   text-align: center
+  white-space: nowrap
 
   li
     +size(50px, 3px)
     display: inline-block
-    padding: 10px
+    padding: 20px 10px
     transition: all 300ms
+    cursor: pointer
+
+    +max-screen($small)
+      +size(15px, 2px)
+      padding: 15px 3px
 
     &.slick-active
       transform: scaleY(5)
@@ -345,12 +375,17 @@
   outline: none
   transition: transform 500ms
 
+  +max-screen($small)
+    padding: 80px 10px
+
 .gallery--image-wrap
   +square(100%)
   display: block
-  border: 8px $black solid
+  border: 8px rgba($black,0) solid
   transition: border-color 500ms
   overflow: hidden
+  backface-visibility: hidden
+  box-sizing: border-box
   //background-color: $black
 
 .gallery--image

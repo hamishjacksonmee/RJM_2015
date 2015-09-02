@@ -59,9 +59,9 @@ $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
   <![endif]-->
 
 </head>
-<body class="<?php echo $controller; ?>">
+<body class="<?php echo $controller; ?>" style="display: none; opacity: 0;">
 
-  <div id="container" class="container hidden">
+  <div id="container" class="container">
 
     <div class="preloader--wrapper">
     </div>
@@ -84,13 +84,8 @@ $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
     <script type="text/javascript" src="<?php echo $file_path ?>"></script>
   <?php endforeach; ?>
 
-  <script>
-    function showContent() {
-      var container = document.getElementById('container');
-      container.className = 'container';
-    }
-    showContent();
 
+  <script type="text/javascript">
     // (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
     // function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
     // e=o.createElement(i);r=o.getElementsByTagName(i)[0];

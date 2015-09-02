@@ -37,27 +37,47 @@ function showCategories() {
         $exitBtn = $('.intro--exit'),
         $bgLines = $('.bg--line-wrap'),
         $categoriesWrap = $('.categories--wrap'),
-        $cellInner = $('.cell-inner');
+        $cellInner = $('.cell-inner'),
+        windowWidth = $(window).innerWidth();
 
     TweenLite.set($categoriesWrap, {
         display: 'block'
     });
-    TweenLite.to($cellInner, 0.5, {
-        width: '100%',
-        onComplete: function(){
-            TweenLite.set($categoriesWrap, {
-                backgroundColor: 'black'
-            });
-            TweenLite.to( $exitBtn, 0.5, {
-                opacity: 1,
-                display: 'block'
-            });
-            categoriesNoEffect = false;
-            if( $('html').hasClass('no-touch') ){
-                categoriesEffect(categoriesNoEffect);
+
+    if (windowWidth > 767) {
+        TweenLite.to($cellInner, 0.5, {
+            width: '100%',
+            onComplete: function(){
+                TweenLite.set($categoriesWrap, {
+                    backgroundColor: 'black'
+                });
+                TweenLite.to( $exitBtn, 0.5, {
+                    opacity: 1,
+                    display: 'block'
+                });
+                categoriesNoEffect = false;
+                if( $('html').hasClass('no-touch') ){
+                    categoriesEffect(categoriesNoEffect);
+                }
             }
-        }
-    });
+        });
+    } else {
+        TweenLite.fromTo($cellInner, 0.5, {
+            opacity: 0
+        }, {
+            opacity: 1,
+            onComplete: function(){
+                TweenLite.set($categoriesWrap, {
+                    backgroundColor: 'black'
+                });
+                TweenLite.to( $exitBtn, 0.5, {
+                    opacity: 1,
+                    display: 'block'
+                });
+            }
+        });
+    }
+
 
     TweenLite.to( $enterBtn, 0.5, {
         opacity: 0,
@@ -77,7 +97,8 @@ function hideCategories() {
         $exitBtn = $('.intro--exit'),
         $bgLines = $('.bg--line-wrap'),
         $categoriesWrap = $('.categories--wrap'),
-        $cellInner = $('.cell-inner');
+        $cellInner = $('.cell-inner'),
+        windowWidth = $(window).innerWidth();
 
     TweenLite.set($categoriesWrap, {
         backgroundColor: 'rgba(255,255,255,0)'
@@ -89,8 +110,26 @@ function hideCategories() {
 
     categoriesNoEffect = true;
 
-    TweenLite.to($cellInner, 0.5, {
-        width: '0',
+    if (windowWidth > 767) {
+        TweenLite.to($cellInner, 0.5, {
+            width: '0',
+            onComplete: function(){
+                TweenLite.set($categoriesWrap, {
+                    display: 'none'
+                });
+                TweenLite.to( $enterBtn, 0.5, {
+                    opacity: 1,
+                    display: 'block'
+                });
+                TweenLite.to( $bgLines, 0.3, {
+                    opacity: 1,
+                    display: 'block'
+                });
+            }
+        });
+    } else {
+        TweenLite.to($cellInner, 0.5, {
+        opacity: 0,
         onComplete: function(){
             TweenLite.set($categoriesWrap, {
                 display: 'none'
@@ -105,6 +144,9 @@ function hideCategories() {
             });
         }
     });
+    }
+
+
 }
 
 function categoriesEffect(doEffect) {
@@ -408,12 +450,16 @@ function initZoomGallery() {
         $navBtn = $('.nav--trigger');
 
     if( !$gallery.hasClass('zoomed-out') ) {
-        $gallery.addClass('zoomed-out');
-        console.log('zoomed-out');
 
-        TweenLite.to( $navBtn, 0.4, {
+        $gallery.addClass('zoomed-out');
+
+        TweenLite.to( $navBtn, 0.3, {
             opacity: 0,
-            display: 'none'
+            onComplete: function(){
+                TweenLite.set( $navBtn, {
+                    display: 'none'
+                });
+            }
         });
 
     }
@@ -428,9 +474,8 @@ function closeZoomGallery() {
     if( $gallery.hasClass('zoomed-out') ) {
 
         $gallery.removeClass('zoomed-out');
-        console.log('zoomed-in');
 
-        TweenLite.to( $navBtn, 0.4, {
+        TweenLite.to( $navBtn, 0.3, {
             opacity: 1,
             display: 'block'
         });
@@ -445,7 +490,8 @@ function closeZoomGallery() {
 function setDimensions() {
 
     var windowHeight = $(window).innerHeight(),
-        windowWidth = $(window).innerWidth();
+        windowWidth = $(window).innerWidth(),
+        $body = $('body');
 
     $('.intro--rotating-wrap').height(windowHeight);
 
@@ -467,6 +513,10 @@ function setDimensions() {
         });
     }
 
+    if( $body.hasClass('categories') && windowWidth > 767 ){
+        showCategories();
+    }
+
 }
 
 
@@ -482,9 +532,17 @@ $(function() {
 
     // Page transitions
 
-    $body.css('display', 'none');
+    //$body.css('display', 'none');
 
-    $body.fadeIn(500);
+    TweenLite.to( $body, 0.5, {
+        opacity: 1,
+        display: 'block',
+        onComplete: function(){
+            if( $body.hasClass('all') || $body.hasClass('studio') || $body.hasClass('landscape') || $body.hasClass('travel') ){
+                initSlider();
+            }
+        }
+    });
 
     $('a.do-fade').click(function(event){
         event.preventDefault();
@@ -505,12 +563,8 @@ $(function() {
         introEffect();
     }
 
-    if( $body.hasClass('categories') && $('html').hasClass('no-touch') ){
+    if( $body.hasClass('categories') ){
         showCategories();
-    }
-
-    if( $body.hasClass('all') || $body.hasClass('studio') || $body.hasClass('landscape') || $body.hasClass('travel') ){
-        initSlider();
     }
 
 
@@ -518,6 +572,7 @@ $(function() {
 
     $(window).on('resize', function(){
         setDimensions();
+
     });
 
     $('.intro--enter').on('click', function(event){

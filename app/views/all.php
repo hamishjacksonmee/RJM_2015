@@ -3,7 +3,7 @@
 <div class="gallery--wrap">
 
     <div class="gallery--left gallery--side">
-        <div class="gallery--copyright gallery--mid">
+        <div class="gallery--copyright gallery--mid mobile-hidden">
             <span>&copy; Copyright RJM 2015</span>
         </div>
         <div class="gallery--previous gallery--arrow">
@@ -25,15 +25,15 @@
 
     <div class="zoom--exit">
         <span class="zoom--exit-shape"></span>
-        <span class="zoom--exit-text">Close</span>
+        <span class="zoom--exit-text mobile-hidden">Close</span>
     </div>
 
     <div class="gallery--right gallery--side">
         <div class="gallery--nav-btn">
             <span class="thumbs-btn"></span>
         </div>
-        <div class="gallery--details gallery--mid">
-            <span class="gallery--details-wrap">Details <span class="shape-plus"></span></span>
+        <div class="gallery--details gallery--mid mobile-hidden">
+            <span class="gallery--details-wrap gallery--all">All Photographs</span>
         </div>
         <div class="gallery--next gallery--arrow">
             <span class="arrow-right">

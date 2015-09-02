@@ -5,10 +5,17 @@
 	+position(fixed, 20px, null, null, 20px)
 	+square(50px)
 	z-index: 99
-	transition: transform 0.5s, left 0.3s
+	transition: all 0.5s
 
 	.no-touch &:hover
-		left: 15px
+		.menu-btn::after,
+		.menu-btn::before
+			background-color: $yellow
+		.menu-btn::before
+			transform: translateY(-10px)
+		.menu-btn::after
+			transform: translateY(10px)
+
 
 	.nav--open &
 		// rotate trigger when navigation becomes visible
@@ -16,17 +23,30 @@
 		.menu-btn::after,
 		.menu-btn::before
 			// animate arrow --> from hamburger to arrow
-			//width: 70%
-			transition: transform 0.5s
+			transition: all 0.5s
 		.menu-btn::before
 			transform: rotate(45deg) translateY(3px)
 		.menu-btn::after
 			transform: rotate(-45deg) translateY(-3px)
 
+		.no-touch &:hover
+			left: 10px
+			.menu-btn::after,
+			.menu-btn::before
+				background-color: $ltMaroon
+			.menu-btn::before
+				transform: rotate(45deg) translateY(3px)
+			.menu-btn::after
+				transform: rotate(-45deg) translateY(-3px)
+
 .menu-btn
 	position: absolute
-	+centerT
-	+size(25px, 5px)
+	left: 50%
+	top: 50%
+	bottom: auto
+	right: auto
+	transform: translateX(-50%) translateY(-50%)
+	+size(32px, 5px)
 	//transition: width 0.3s
 
 	&::before, &::after
@@ -40,7 +60,7 @@
 		transform: translateZ(0)
 		backface-visibility: hidden
 
-		transition: transform 0.7s
+		transition: all 0.5s
 
 	&::before
 		transform-origin: right top
@@ -154,7 +174,16 @@
 		background: url('#{$imagePath}categories/nav_cat_travel.jpg') no-repeat center center
 		background-size: cover
 
-	&:hover
+	.no-touch &
+		&:hover
+			.cell-hover
+				opacity: 1 !important
+			p
+				transform: translateY(0)
+			.vert-rule
+				transform: translateY(0)
+
+	.touch &
 		.cell-hover
 			opacity: 1 !important
 		p

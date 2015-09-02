@@ -8,6 +8,9 @@
 	text-decoration: none
 	z-index: 11
 
+	+max-screen($small)
+		position: fixed
+
 	.categories &
 		display: none !important
 
@@ -15,8 +18,10 @@
 		.intro--exit-shape
 			&:before
 				transform: rotate(0)
+				background-color: $yellow
 			&:after
 				transform: rotate(0)
+				background-color: $yellow
 
 .intro--exit-text
 	+font($white,'aktivmd',1em)
@@ -31,7 +36,7 @@
 	+position(absolute, 22px, 20px)
 
 	&:before
-		transition: transform 400ms ease
+		transition: all 400ms ease
 		content: ''
 		+size(30px, 4px)
 		display: block
@@ -39,7 +44,7 @@
 		+position(absolute)
 		transform: rotate(45deg)
 	&:after
-		transition: transform 400ms ease
+		transition: all 400ms ease
 		content: ''
 		+size(30px, 4px)
 		display: block
@@ -55,6 +60,9 @@
 	+square(100%)
 	+position(absolute, 0, null, null, 0)
 	overflow: hidden
+
+	+max-screen($small)
+		overflow-y: visible
 	//background-color: black
 
 	.home &
@@ -73,22 +81,46 @@
 	font-size: 0
 	transform: translate3d(0,0,0)
 
+	+max-screen($small)
+		white-space: normal
+
 .cell
-	height: 100%
-	width: 25%
+	+size(25%,100%)
 	z-index: 1
 	display: inline-block
 	vertical-align: top
 	transform: translate3d(0,0,0)
 	cursor: pointer
 
-	&:hover
+	+max-screen($small)
+		+size(100%,50%)
+		border-bottom: 1px rgba($white,0.2) solid
+		p
+			transform: translateY(0) !important
+			//opacity: 1
+		.vert-rule
+			transform: translateY(0)
+			//opacity: 0.4
+
+
+	.no-touch &
+		&:hover
+			p
+				transform: translateY(0)
+				//opacity: 1
+			.vert-rule
+				transform: translateY(0)
+				//opacity: 0.4
+
+	.touch &
 		p
 			transform: translateY(0)
 			//opacity: 1
 		.vert-rule
 			transform: translateY(0)
 			//opacity: 0.4
+
+
 
 .cell-inner
 	width: 0
@@ -98,6 +130,9 @@
 	overflow: hidden
 
 	.categories &
+		width: 100%
+
+	+max-screen($small)
 		width: 100%
 
 .cell-content
@@ -141,7 +176,15 @@
 	position: relative
 	z-index: 6
 	background-color: rgba(0,0,0,0.6)
-	opacity: 0
+
+	.no-touch &
+		opacity: 0
+	.touch &
+		opacity: 1 !important
+		background-color: rgba(0,0,0,0.3)
+	+max-screen($small)
+		opacity: 1 !important
+		background-color: rgba(0,0,0,0.3)
 
 	p
 		+position(absolute, null, null, 10%)

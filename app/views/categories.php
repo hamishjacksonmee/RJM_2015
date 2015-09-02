@@ -3,7 +3,7 @@
 <div class="categories--wrap">
         <a href="#" class="intro--exit">
             <span class="intro--exit-shape"></span>
-            <span class="intro--exit-text">Close</span>
+            <span class="intro--exit-text mobile-hidden">Close</span>
         </a>
         <div class="categories--track">
             <div class="row">

@@ -32,19 +32,22 @@
 .font-large
   font-size: 1.5em
 
-.cf:after 
+.cf:after
   content: ""
   display: table
   clear: both
 
+.hidden
+  display: none !important
+
 // Size / device specifics
 +max-screen($small)
   .mobile-hidden
-    display: none
+    display: none !important
 
 +min-screen($small + 1)
   .mobile-only
-    display: none
+    display: none !important
 
 html:not(.touch) .touch-only
   display: none
