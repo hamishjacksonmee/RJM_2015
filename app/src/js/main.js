@@ -561,11 +561,11 @@ $(function() {
         }
     });
 
-    // $('.gallery--slide.slick-active').click( function(){
-    //     if( $('.gallery--wrap').hasClass('zoomed-out') ) {
-    //         closeZoomGallery();
-    //     }
-    // });
+    $('.gallery--slide.slick-active').click( function(){
+        if( $('.gallery--wrap').hasClass('zoomed-out') ) {
+            closeZoomGallery();
+        }
+    });
 
 
     var isDragging = false;
