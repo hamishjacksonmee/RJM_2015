@@ -10,7 +10,7 @@
 	><div class="nav--right half-block">
 		<p class="font-large font-bold lrg-half">'I love this industry and cannot see me ever doing anything else, the digital era has brought a new and exciting dimension to us all and I embrace that'.</p>
 	</div
-	><div class="nav--left half-block">
+	><div class="nav--left half-block home-link">
 		<a class="nav--home-btn maroon do-fade" href="<?php echo PATH; ?>home">Go to Home</a>
 	</div
 	><div class="nav--right half-block">

@@ -95,8 +95,8 @@
 	height: 100%
 	min-height: 800px
 	overflow-y: auto
-	-webkit-overflow-scrolling: touch
-	overflow-scrolling: touch
+	// -webkit-overflow-scrolling: touch
+	// overflow-scrolling: touch
 	transition: transform $nav-animation-duration cubic-bezier(0.645, 0.045, 0.355, 1.000)
 
 	// Force Hardware Acceleration in WebKit  -- if bottlenecking with homepage perspective
@@ -131,6 +131,23 @@
 	&:nth-child(3), &:nth-child(4)
 		padding-top: 40px
 
+	+max-screen($small)
+		width: 100%
+		padding: 20px 30px
+		&:first-child
+			padding: 100px 30px 10px
+		&:nth-child(2)
+			display: none
+		&:nth-child(3), &:nth-child(4)
+			padding-top: 20px
+		&.nav--left, &.nav--right
+			padding-right: 30px
+			padding-left: 30px
+		&.home-link
+			+position(absolute,12px,0)
+			text-align: right
+			text-decoration: none
+
 .nav--home-btn
 	font-size: 1.1em
 	text-decoration: underline
@@ -151,6 +168,10 @@
 
 	+max-screen-height-width($large,$medium)
 		position: relative
+	+max-screen($small)
+		position: relative
+		padding-top: 20px
+		height: auto
 
 .nav--category
 	display: inline-block
@@ -187,9 +208,21 @@
 		.cell-hover
 			opacity: 1 !important
 		p
-			transform: translateY(0)
+			transform: translateY(0) !important
 		.vert-rule
-			transform: translateY(0)
+			transform: translateY(0) !important
+
+	+max-screen($small)
+		+size(100%,150px)
+		display: block
+		border-bottom: 1px rgba($white,0.2) solid
+		.cell-hover
+			opacity: 1 !important
+		p
+			transform: translateY(0) !important
+			top: 42%
+		.vert-rule
+			display: none
 
 
 .lrg-half
