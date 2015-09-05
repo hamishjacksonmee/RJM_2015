@@ -55,6 +55,7 @@ $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
   <link rel="icon" href="<?php echo IMAGES_PATH ?>icons/favicon.png" type="image/x-icon"/>
 
   <script src="<?php echo PATH ?>dist/javascripts/vendor/modernizr.custom.js" type="text/javascript"></script>
+  <script type="text/javascript">document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
 
   <?php foreach ($assets['stylesheets'] as $file_path) : ?>
     <link rel="stylesheet" href="<?php echo $file_path ?>" type="text/css" />
