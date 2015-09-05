@@ -28,7 +28,7 @@
 			    </div>
 		    </div>
 		</a
-		><a href="<?php echo PATH; ?>studio" class="nav--category landscapes do-fade">
+		><a href="<?php echo PATH; ?>studio" class="nav--category studio do-fade">
 			<div class="cell-content">
 			    <div class="cell-hover">
 			        <span class="vert-rule"></span>
@@ -36,7 +36,7 @@
 			    </div>
 		    </div>
 		</a
-		><a href="<?php echo PATH; ?>landscapes" class="nav--category studio do-fade">
+		><a href="<?php echo PATH; ?>landscape" class="nav--category landscapes do-fade">
 			<div class="cell-content">
 			    <div class="cell-hover">
 			        <span class="vert-rule"></span>

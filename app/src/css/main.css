@@ -98,6 +98,13 @@ body {
   line-height: 1.4;
   background-color: #000000;
   color: #ffffff; }
+  .no-js body {
+    display: block !important;
+    opacity: 1 !important; }
+    .no-js body .container {
+      display: none !important; }
+    .no-js body .no-js-fallback {
+      display: block !important; }
 
 h1 {
   font-size: 3em;
@@ -123,6 +130,22 @@ ul {
 
 a {
   text-decoration: none; }
+
+.no-js-fallback {
+  display: none;
+  height: auto;
+  width: 100%;
+  text-align: center; }
+  .no-js-fallback h2 {
+    line-height: 1.5;
+    padding-top: 100px;
+    letter-spacing: 1px; }
+  .no-js-fallback p {
+    padding-top: 100px; }
+
+.no-page {
+  padding-top: 100px;
+  text-align: center; }
 
 .page--wrapper {
   position: relative;
@@ -948,6 +971,9 @@ a {
   white-space: nowrap;
   text-transform: uppercase;
   line-height: 80px; }
+  @media screen and (max-width: 1023px) {
+    .zoom--exit-text {
+      display: none; } }
 
 .zoom--exit-shape {
   width: 20px;
@@ -956,6 +982,9 @@ a {
   position: absolute;
   top: 37px;
   right: 20px; }
+  @media screen and (max-width: 767px) {
+    .zoom--exit-shape {
+      top: 26px; } }
   .zoom--exit-shape:before {
     -webkit-transition: all 400ms ease;
             transition: all 400ms ease;
@@ -1130,6 +1159,12 @@ a {
   position: absolute; }
   .gallery--details-wrap.gallery--all {
     left: -6px; }
+  .gallery--details-wrap.gallery--studio {
+    left: -20px; }
+  .gallery--details-wrap.gallery--travel {
+    left: -17px; }
+  .gallery--details-wrap.gallery--landscapes {
+    left: -37px; }
 
 .gallery--arrow {
   position: absolute;
@@ -1294,7 +1329,7 @@ a {
   font-size: 5rem; }
   @media screen and (max-width: 767px) {
     .zoom--title h1 {
-      font-size: 3rem; } }
+      font-size: 2.4rem; } }
 
 .zoom--title-rule {
   position: relative;
@@ -1306,10 +1341,7 @@ a {
   margin-left: 15px; }
   @media screen and (max-width: 767px) {
     .zoom--title-rule {
-      width: 50px;
-      height: 6px;
-      top: -12px;
-      margin-left: 5px; } }
+      display: none; } }
 
 .gallery--imgs {
   position: relative;
@@ -1340,10 +1372,10 @@ a {
 
 .slick-dots {
   position: absolute;
-  bottom: 10%;
+  bottom: 15%;
   left: 50%;
   width: 100%;
-  height: 50px;
+  height: 60px;
   -webkit-transform: translate(-50%, 200px);
       -ms-transform: translate(-50%, 200px);
           transform: translate(-50%, 200px);
@@ -1352,23 +1384,31 @@ a {
           transition: all 400ms;
   text-align: center;
   white-space: nowrap; }
+  @media screen and (max-width: 767px) {
+    .slick-dots {
+      bottom: 8%; } }
   .slick-dots li {
-    width: 50px;
-    height: 3px;
+    width: 2px;
+    height: 20px;
     display: inline-block;
-    padding: 20px 10px;
+    padding: 20px 5px;
     -webkit-transition: all 300ms;
             transition: all 300ms;
     cursor: pointer; }
     @media screen and (max-width: 767px) {
       .slick-dots li {
-        width: 18px;
-        height: 2px;
+        width: 2px;
+        height: 20px;
         padding: 15px 3px; } }
     .slick-dots li.slick-active {
       -webkit-transform: scaleY(5);
           -ms-transform: scaleY(5);
               transform: scaleY(5); }
+      @media screen and (max-width: 767px) {
+        .slick-dots li.slick-active {
+          -webkit-transform: scaleY(3.6);
+              -ms-transform: scaleY(3.6);
+                  transform: scaleY(3.6); } }
       .slick-dots li.slick-active .gallery--pager {
         background-color: #f6f930; }
 
@@ -1381,7 +1421,7 @@ a {
 .gallery--slide {
   width: 100%;
   height: 100%;
-  padding: 20px 90px;
+  padding: 20px 80px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -1413,18 +1453,114 @@ a {
   display: block;
   -webkit-transition: -webkit-transform 500ms;
           transition: transform 500ms; }
-  .gallery--image.analise {
-    background: url("../../dist/images/gallery/analise.jpg") no-repeat center center;
+  .gallery--image.s01 {
+    background: url("../../dist/images/gallery/s01_man.jpg") no-repeat center center;
     background-size: contain; }
-  .gallery--image.assasin {
-    background: url("../../dist/images/gallery/assasin.jpg") no-repeat center center;
+  .gallery--image.s02 {
+    background: url("../../dist/images/gallery/s02_women.jpg") no-repeat center center;
     background-size: contain; }
-  .gallery--image.basin {
-    background: url("../../dist/images/gallery/basin.jpg") no-repeat center center;
+  .gallery--image.s03 {
+    background: url("../../dist/images/gallery/s03_guiness.jpg") no-repeat center center;
     background-size: contain; }
-  .gallery--image.fish {
-    background: url("../../dist/images/gallery/fish.jpg") no-repeat center center;
+  .gallery--image.s04 {
+    background: url("../../dist/images/gallery/s04_man.jpg") no-repeat center center;
     background-size: contain; }
-  .gallery--image.guiness {
-    background: url("../../dist/images/gallery/guiness.jpg") no-repeat center center;
+  .gallery--image.s05 {
+    background: url("../../dist/images/gallery/s05_women.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.s06 {
+    background: url("../../dist/images/gallery/s06_wine.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.s07 {
+    background: url("../../dist/images/gallery/s07_stephen.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.s08 {
+    background: url("../../dist/images/gallery/s08_jonah.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.s09 {
+    background: url("../../dist/images/gallery/s09_resturant.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.s10 {
+    background: url("../../dist/images/gallery/s10_temple.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.s11 {
+    background: url("../../dist/images/gallery/s11_coke.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.s12 {
+    background: url("../../dist/images/gallery/s12_analise.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.s13 {
+    background: url("../../dist/images/gallery/s13_stonehenge.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.s14 {
+    background: url("../../dist/images/gallery/s14_jonah2.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.s15 {
+    background: url("../../dist/images/gallery/s15_fusion.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.s16 {
+    background: url("../../dist/images/gallery/s16_golf.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.s17 {
+    background: url("../../dist/images/gallery/s17_cut.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.s18 {
+    background: url("../../dist/images/gallery/s18_stella.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.s19 {
+    background: url("../../dist/images/gallery/s19_mangle.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.s20 {
+    background: url("../../dist/images/gallery/s20_nikki.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.s21 {
+    background: url("../../dist/images/gallery/s21_aimee.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.s22 {
+    background: url("../../dist/images/gallery/s22_nikki2.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.s23 {
+    background: url("../../dist/images/gallery/s23_fun.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.l01 {
+    background: url("../../dist/images/gallery/l01_sheep.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.l02 {
+    background: url("../../dist/images/gallery/l02_basin.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.l03 {
+    background: url("../../dist/images/gallery/l03_shed.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.l04 {
+    background: url("../../dist/images/gallery/l04_remarkables.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.l05 {
+    background: url("../../dist/images/gallery/l05_wood.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.l06 {
+    background: url("../../dist/images/gallery/l06_canterbury.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.l07 {
+    background: url("../../dist/images/gallery/l07_milford.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.t01 {
+    background: url("../../dist/images/gallery/t01_assasin.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.t02 {
+    background: url("../../dist/images/gallery/t02_train.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.t03 {
+    background: url("../../dist/images/gallery/t03_sandune.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.t04 {
+    background: url("../../dist/images/gallery/t04_oldlady.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.t05 {
+    background: url("../../dist/images/gallery/t05_fish.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.t06 {
+    background: url("../../dist/images/gallery/t06_haunted.jpg") no-repeat center center;
+    background-size: contain; }
+  .gallery--image.t07 {
+    background: url("../../dist/images/gallery/t07_boat.jpg") no-repeat center center;
     background-size: contain; }

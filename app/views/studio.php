@@ -17,7 +17,7 @@
 
     <div class="zoom--content">
         <div class="zoom--title">
-            <h1 class="font-black-italic yellow">All</h1>
+            <h1 class="font-black-italic yellow">Studio</h1>
             <span class="zoom--title-rule"></span>
         </div>
         <a href="<?php echo PATH; ?>categories" class="zoom--back-btn do-fade">Back To Categories</a>
@@ -33,7 +33,7 @@
             <span class="thumbs-btn"></span>
         </div>
         <div class="gallery--details gallery--mid mobile-hidden">
-            <span class="gallery--details-wrap gallery--all">All Photographs</span>
+            <span class="gallery--details-wrap gallery--studio">Studio Photographs</span>
         </div>
         <div class="gallery--next gallery--arrow">
             <span class="arrow-right">
@@ -53,27 +53,7 @@
             </div>
             <div class="gallery--slide">
                 <span class="gallery--image-wrap">
-                    <span class="gallery--image l01"></span>
-                </span>
-            </div>
-            <div class="gallery--slide">
-                <span class="gallery--image-wrap">
-                    <span class="gallery--image t01"></span>
-                </span>
-            </div>
-            <div class="gallery--slide">
-                <span class="gallery--image-wrap">
                     <span class="gallery--image s02"></span>
-                </span>
-            </div>
-            <div class="gallery--slide">
-                <span class="gallery--image-wrap">
-                    <span class="gallery--image l02"></span>
-                </span>
-            </div>
-            <div class="gallery--slide">
-                <span class="gallery--image-wrap">
-                    <span class="gallery--image t02"></span>
                 </span>
             </div>
             <div class="gallery--slide">
@@ -83,27 +63,7 @@
             </div>
             <div class="gallery--slide">
                 <span class="gallery--image-wrap">
-                    <span class="gallery--image l03"></span>
-                </span>
-            </div>
-            <div class="gallery--slide">
-                <span class="gallery--image-wrap">
-                    <span class="gallery--image t03"></span>
-                </span>
-            </div>
-            <div class="gallery--slide">
-                <span class="gallery--image-wrap">
                     <span class="gallery--image s04"></span>
-                </span>
-            </div>
-            <div class="gallery--slide">
-                <span class="gallery--image-wrap">
-                    <span class="gallery--image l04"></span>
-                </span>
-            </div>
-            <div class="gallery--slide">
-                <span class="gallery--image-wrap">
-                    <span class="gallery--image t04"></span>
                 </span>
             </div>
             <div class="gallery--slide">
@@ -113,42 +73,12 @@
             </div>
             <div class="gallery--slide">
                 <span class="gallery--image-wrap">
-                    <span class="gallery--image l05"></span>
-                </span>
-            </div>
-            <div class="gallery--slide">
-                <span class="gallery--image-wrap">
-                    <span class="gallery--image t05"></span>
-                </span>
-            </div>
-            <div class="gallery--slide">
-                <span class="gallery--image-wrap">
                     <span class="gallery--image s06"></span>
                 </span>
             </div>
             <div class="gallery--slide">
                 <span class="gallery--image-wrap">
-                    <span class="gallery--image l06"></span>
-                </span>
-            </div>
-            <div class="gallery--slide">
-                <span class="gallery--image-wrap">
-                    <span class="gallery--image t06"></span>
-                </span>
-            </div>
-            <div class="gallery--slide">
-                <span class="gallery--image-wrap">
                     <span class="gallery--image s07"></span>
-                </span>
-            </div>
-            <div class="gallery--slide">
-                <span class="gallery--image-wrap">
-                    <span class="gallery--image l07"></span>
-                </span>
-            </div>
-            <div class="gallery--slide">
-                <span class="gallery--image-wrap">
-                    <span class="gallery--image t07"></span>
                 </span>
             </div>
             <div class="gallery--slide">

@@ -27,7 +27,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="<?php echo PATH; ?>landscapes" class="cell do-fade">
+                <a href="<?php echo PATH; ?>landscape" class="cell do-fade">
                     <div class="cell-inner">
                         <div class="cell-content">
                             <div class="cell-hover">

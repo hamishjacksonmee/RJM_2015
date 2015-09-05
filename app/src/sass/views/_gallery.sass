@@ -36,10 +36,16 @@
   text-transform: uppercase
   line-height: 80px
 
+  +max-screen($medium)
+    display: none
+
 .zoom--exit-shape
   +size(20px, 0)
   display: block
   +position(absolute, 37px, 20px)
+
+  +max-screen($small)
+    top: 26px
 
   &:before
     transition: all 400ms ease
@@ -176,6 +182,12 @@
 
   &.gallery--all
     left: -6px
+  &.gallery--studio
+    left: -20px
+  &.gallery--travel
+    left: -17px
+  &.gallery--landscapes
+    left: -37px
 
 .gallery--arrow
   +position(absolute,null,null,20px)
@@ -292,7 +304,7 @@
     font-size: 5rem
 
     +max-screen($small)
-      font-size: 3rem
+      font-size: 2.4rem
 
 
 
@@ -304,9 +316,7 @@
   margin-left: 15px
 
   +max-screen($small)
-    +size(50px,6px)
-    top: -12px
-    margin-left: 5px
+    display: none
 
 
 // -------------------- SLIDER STUFF
@@ -338,27 +348,32 @@
     cursor: -webkit-grabbing
 
 .slick-dots
-  +position(absolute,null,null,10%,50%)
-  +size(100%,50px)
+  +position(absolute,null,null,15%,50%)
+  +size(100%,60px)
   transform: translate(-50%,200px)
   opacity: 0
   transition: all 400ms
   text-align: center
   white-space: nowrap
 
+  +max-screen($small)
+    bottom: 8%
+
   li
-    +size(50px, 3px)
+    +size(2px, 20px)
     display: inline-block
-    padding: 20px 10px
+    padding: 20px 5px
     transition: all 300ms
     cursor: pointer
 
     +max-screen($small)
-      +size(18px, 2px)
+      +size(2px, 20px)
       padding: 15px 3px
 
     &.slick-active
       transform: scaleY(5)
+      +max-screen($small)
+        transform: scaleY(3.6)
       .gallery--pager
         background-color: $yellow
 
@@ -369,7 +384,7 @@
 
 .gallery--slide
   +square(100%)
-  padding: 20px 90px
+  padding: 20px 80px
   +no-select
   outline: none
   transition: transform 500ms
@@ -392,20 +407,116 @@
   display: block
   transition: transform 500ms
 
-  &.analise
-    background: url('#{$imagePath}gallery/analise.jpg') no-repeat center center
+  &.s01
+    background: url('#{$imagePath}gallery/s01_man.jpg') no-repeat center center
     background-size: contain
-  &.assasin
-    background: url('#{$imagePath}gallery/assasin.jpg') no-repeat center center
+  &.s02
+    background: url('#{$imagePath}gallery/s02_women.jpg') no-repeat center center
     background-size: contain
-  &.basin
-    background: url('#{$imagePath}gallery/basin.jpg') no-repeat center center
+  &.s03
+    background: url('#{$imagePath}gallery/s03_guiness.jpg') no-repeat center center
     background-size: contain
-  &.fish
-    background: url('#{$imagePath}gallery/fish.jpg') no-repeat center center
+  &.s04
+    background: url('#{$imagePath}gallery/s04_man.jpg') no-repeat center center
     background-size: contain
-  &.guiness
-    background: url('#{$imagePath}gallery/guiness.jpg') no-repeat center center
+  &.s05
+    background: url('#{$imagePath}gallery/s05_women.jpg') no-repeat center center
+    background-size: contain
+  &.s06
+    background: url('#{$imagePath}gallery/s06_wine.jpg') no-repeat center center
+    background-size: contain
+  &.s07
+    background: url('#{$imagePath}gallery/s07_stephen.jpg') no-repeat center center
+    background-size: contain
+  &.s08
+    background: url('#{$imagePath}gallery/s08_jonah.jpg') no-repeat center center
+    background-size: contain
+  &.s09
+    background: url('#{$imagePath}gallery/s09_resturant.jpg') no-repeat center center
+    background-size: contain
+  &.s10
+    background: url('#{$imagePath}gallery/s10_temple.jpg') no-repeat center center
+    background-size: contain
+  &.s11
+    background: url('#{$imagePath}gallery/s11_coke.jpg') no-repeat center center
+    background-size: contain
+  &.s12
+    background: url('#{$imagePath}gallery/s12_analise.jpg') no-repeat center center
+    background-size: contain
+  &.s13
+    background: url('#{$imagePath}gallery/s13_stonehenge.jpg') no-repeat center center
+    background-size: contain
+  &.s14
+    background: url('#{$imagePath}gallery/s14_jonah2.jpg') no-repeat center center
+    background-size: contain
+  &.s15
+    background: url('#{$imagePath}gallery/s15_fusion.jpg') no-repeat center center
+    background-size: contain
+  &.s16
+    background: url('#{$imagePath}gallery/s16_golf.jpg') no-repeat center center
+    background-size: contain
+  &.s17
+    background: url('#{$imagePath}gallery/s17_cut.jpg') no-repeat center center
+    background-size: contain
+  &.s18
+    background: url('#{$imagePath}gallery/s18_stella.jpg') no-repeat center center
+    background-size: contain
+  &.s19
+    background: url('#{$imagePath}gallery/s19_mangle.jpg') no-repeat center center
+    background-size: contain
+  &.s20
+    background: url('#{$imagePath}gallery/s20_nikki.jpg') no-repeat center center
+    background-size: contain
+  &.s21
+    background: url('#{$imagePath}gallery/s21_aimee.jpg') no-repeat center center
+    background-size: contain
+  &.s22
+    background: url('#{$imagePath}gallery/s22_nikki2.jpg') no-repeat center center
+    background-size: contain
+  &.s23
+    background: url('#{$imagePath}gallery/s23_fun.jpg') no-repeat center center
+    background-size: contain
+  &.l01
+    background: url('#{$imagePath}gallery/l01_sheep.jpg') no-repeat center center
+    background-size: contain
+  &.l02
+    background: url('#{$imagePath}gallery/l02_basin.jpg') no-repeat center center
+    background-size: contain
+  &.l03
+    background: url('#{$imagePath}gallery/l03_shed.jpg') no-repeat center center
+    background-size: contain
+  &.l04
+    background: url('#{$imagePath}gallery/l04_remarkables.jpg') no-repeat center center
+    background-size: contain
+  &.l05
+    background: url('#{$imagePath}gallery/l05_wood.jpg') no-repeat center center
+    background-size: contain
+  &.l06
+    background: url('#{$imagePath}gallery/l06_canterbury.jpg') no-repeat center center
+    background-size: contain
+  &.l07
+    background: url('#{$imagePath}gallery/l07_milford.jpg') no-repeat center center
+    background-size: contain
+  &.t01
+    background: url('#{$imagePath}gallery/t01_assasin.jpg') no-repeat center center
+    background-size: contain
+  &.t02
+    background: url('#{$imagePath}gallery/t02_train.jpg') no-repeat center center
+    background-size: contain
+  &.t03
+    background: url('#{$imagePath}gallery/t03_sandune.jpg') no-repeat center center
+    background-size: contain
+  &.t04
+    background: url('#{$imagePath}gallery/t04_oldlady.jpg') no-repeat center center
+    background-size: contain
+  &.t05
+    background: url('#{$imagePath}gallery/t05_fish.jpg') no-repeat center center
+    background-size: contain
+  &.t06
+    background: url('#{$imagePath}gallery/t06_haunted.jpg') no-repeat center center
+    background-size: contain
+  &.t07
+    background: url('#{$imagePath}gallery/t07_boat.jpg') no-repeat center center
     background-size: contain
 
 

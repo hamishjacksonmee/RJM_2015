@@ -1,3 +1,21 @@
+<!--
+/****************************************
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+A wee gift to the old dog.
+
+
+Jacksonmee.com was built and Designed By:
+
+Hamsish Jackson-Mee
+itshamish.com
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*****************************************/
+-->
+
 <?php
 
 include('config.php');
@@ -46,25 +64,25 @@ $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <?php endif ?>
 
-  <link rel="icon" href="<?php echo IMAGES_PATH ?>layout/favicon.ico" type="image/x-icon"/>
+  <link rel="icon" href="<?php echo IMAGES_PATH ?>icons/favicon.png" type="image/x-icon"/>
 
-  <script src="<?php echo PATH ?>dist/javascripts/vendor/modernizr.js" type="text/javascript"></script>
+  <script src="<?php echo PATH ?>dist/javascripts/vendor/modernizr.custom.js" type="text/javascript"></script>
 
   <?php foreach ($assets['stylesheets'] as $file_path) : ?>
     <link rel="stylesheet" href="<?php echo $file_path ?>" type="text/css" />
   <?php endforeach ?>
 
-  <!--[if lt IE 9]>
-    <script src="<?php echo PATH ?>dist/javascripts/vendor/html5shiv.min.js" type="text/javascript"></script>
-  <![endif]-->
-
 </head>
 <body class="<?php echo $controller; ?>" style="display: none; opacity: 0;">
 
-  <div id="container" class="container">
+  <div class="no-js-fallback">
+    <h2 class="font-black-italic yellow">This website requires Javascript.<br>
+    Please upgrade your browser or turn on Javascript, thanks.</h2>
+    <p>Robert Jackson-Mee<br>
+    robjacksonmee@xtra.co.nz</p>
+  </div>
 
-    <div class="preloader--wrapper">
-    </div>
+  <div id="container" class="container">
 
     <a href="#site-nav" class="nav--trigger">
       <span class="menu-btn"></span>

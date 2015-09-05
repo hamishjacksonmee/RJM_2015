@@ -21,7 +21,7 @@ if (IS_DEVELOPMENT) {
   ini_set('display_errors', 'on');
 
 } elseif (IS_STAGING) {
-  define('PATH', 'http://itshamish.com/rjm-2015/');
+  define('PATH', 'http://staging.itshamish.com/jacksonmee.com/');
   define('EMAIL', 'hamishjacksonmee@yahoo.co.nz');
 
 } else {
@@ -37,11 +37,11 @@ if (IS_DEVELOPMENT) {
   $js_path = PATH.'src/js/';
   $css_path = PATH.'src/css/';
   $assets['javascripts'] = array(
-    $js_path.'vendor/jquery-1.11.1.min.js',
-    $js_path.'vendor/EasePack.min.js',
-    $js_path.'vendor/CSSPlugin.min.js',
-    $js_path.'vendor/TweenLite.min.js',
-    $js_path.'vendor/slick.min.js',
+    $js_path.'vendor/1.jquery-1.11.1.min.js',
+    $js_path.'vendor/2.CSSPlugin.min.js',
+    $js_path.'vendor/3.EasePack.min.js',
+    $js_path.'vendor/4.TweenLite.min.js',
+    $js_path.'vendor/5.slick.min.js',
     $js_path.'main.js'
   );
   $assets['stylesheets'] = array(

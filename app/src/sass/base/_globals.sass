@@ -18,6 +18,18 @@ body
     background-color: #000000
     color: #ffffff
 
+    .no-js &
+        display: block !important
+        opacity: 1 !important
+
+        .container
+            display: none !important
+
+        .no-js-fallback
+            display: block !important
+
+
+
 h1
     font-size: 3em
     margin: 0
@@ -42,6 +54,26 @@ ul
 
 a
     text-decoration: none
+
+
+.no-js-fallback
+    display: none
+    height: auto
+    width: 100%
+    text-align: center
+
+    h2
+        line-height: 1.5
+        padding-top: 100px
+        letter-spacing: 1px
+
+    p
+        padding-top: 100px
+
+
+.no-page
+    padding-top: 100px
+    text-align: center
 
 
 .page--wrapper
