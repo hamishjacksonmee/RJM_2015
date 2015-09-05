@@ -6,7 +6,7 @@
 A wee gift to the old dog.
 
 
-Jacksonmee.com was built and Designed By:
+www.jacksonmee.com was built and Designed for Robert Jackson-Mee by:
 
 Hamsish Jackson-Mee
 itshamish.com
@@ -31,14 +31,14 @@ $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
   <title>Robert Jackson-Mee | International Photographer</title>
   <meta charset="utf-8">
 
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <meta name="description" content="Portfolio Site for Robert Jackson-Mee. International Photographer.">
+  <meta name="keywords" content="Jacksonmee, Jackson-Mee, Robert Jackson-Mee, photography, international, photographer, portfolio, directing, rjm, rjm photography">
 
-  <meta property="og:title" content="" />
+  <meta property="og:title" content="Robert Jackson-Mee" />
   <meta property="og:site_name" content="" />
-  <meta property="og:url" content="" />
-  <meta property="og:description" content="" />
-  <meta property="og:image" content="" />
+  <meta property="og:url" content="www.jacksonmee.com" />
+  <meta property="og:description" content="Portfolio Site for Robert Jackson-Mee. International Photographer." />
+  <meta property="og:image" content="<?php echo IMAGES_PATH; ?>gallery/t04_oldlady.jpg" />
 
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="language" content="en_EN" />
@@ -47,18 +47,6 @@ $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
   <meta name="googlebot" content="NOODP" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
-
-  <!-- <link rel="icon" type="image/gif" href="http://cdn-s.hellomonday.com/assets/images/icons/favicon.png" /> -->
-
-  <!-- <link rel="apple-touch-icon" href="http://cdn-s.hellomonday.com/assets/images/icons/apple-touch-icon-icon57.png" sizes="57x57">
-  <link rel="apple-touch-icon" href="http://cdn-s.hellomonday.com/assets/images/icons/apple-touch-icon-icon72.png" sizes="72x72">
-  <link rel="apple-touch-icon" href="http://cdn-s.hellomonday.com/assets/images/icons/apple-touch-icon-icon76.png" sizes="76x76">
-  <link rel="apple-touch-icon" href="http://cdn-s.hellomonday.com/assets/images/icons/apple-touch-icon-icon114.png" sizes="114x114">
-  <link rel="apple-touch-icon" href="http://cdn-s.hellomonday.com/assets/images/icons/apple-touch-icon-icon120.png" sizes="120x120">
-  <link rel="apple-touch-icon" href="http://cdn-s.hellomonday.com/assets/images/icons/apple-touch-icon-icon144.png" sizes="144x144">
-  <link rel="apple-touch-icon" href="http://cdn-s.hellomonday.com/assets/images/icons/apple-touch-icon-icon152.png" sizes="152x152"> -->
 
   <?php if (!IS_DEVELOPMENT) : ?>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -104,12 +92,13 @@ $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
 
 
   <script type="text/javascript">
-    // (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-    // function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-    // e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-    // e.src='https://www.google-analytics.com/analytics.js';
-    // r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-    // ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-51297480-2', 'auto');
+    ga('require','displayfeatures');
+    ga('send', 'pageview');
   </script>
 </body>
 </html>
