@@ -521,132 +521,137 @@ function setDimensions() {
 
 // ----------------- Events & initialize functions
 
-$(function() {
+(function() {
 
-    // Global variables
+    $(function() {
 
-    var $body = $('body'),
-        $main = $('.page--wrapper');
+        // Global variables
 
-    if( !$body.hasClass('all') && !$body.hasClass('studio') && !$body.hasClass('landscape') && !$body.hasClass('travel') && !$body.hasClass('categories') && !$body.hasClass('home') && !$body.hasClass() ){
-        $main.append('<h2 class="font-black-italic yellow no-page">The page you are looking for does not exist.</h2>');
-    }
+        var $body = $('body'),
+            $main = $('.page--wrapper');
 
-
-    // Page transitions
-
-    //$body.css('display', 'none');
-
-    TweenLite.to( $body, 0.5, {
-        opacity: 1,
-        display: 'block',
-        onComplete: function(){
-            if( $body.hasClass('all') || $body.hasClass('studio') || $body.hasClass('landscape') || $body.hasClass('travel') ){
-                initSlider();
-            }
+        if( !$body.hasClass('all') && !$body.hasClass('studio') && !$body.hasClass('landscape') && !$body.hasClass('travel') && !$body.hasClass('categories') && !$body.hasClass('home') && !$body.hasClass() ){
+            $main.append('<h2 class="font-black-italic yellow no-page">The page you are looking for does not exist.</h2>');
         }
-    });
-
-    $('a.do-fade').click(function(event){
-        event.preventDefault();
-        linkLocation = this.href;
-        $body.fadeOut(500, redirectPage);
-    });
-
-    function redirectPage() {
-        window.location = linkLocation;
-    }
 
 
-    // Init Functions
+        // Page transitions
 
-    setDimensions();
+        TweenLite.to( $body, 0.5, {
+            opacity: 1,
+            display: 'block',
+            onComplete: function(){
+                if( $body.hasClass('all') || $body.hasClass('studio') || $body.hasClass('landscape') || $body.hasClass('travel') ){
+                    initSlider();
+                } else if ( $body.hasClass('home') && $('html').hasClass('preserve-3d') ) {
+                    introEffect();
+                }
+            }
+        });
 
-    if( $body.hasClass('home') && $('html').hasClass('preserve-3d') ){
-        introEffect();
-    }
+        $('a.do-fade').click(function(event){
+            event.preventDefault();
+            linkLocation = this.href;
+            $body.fadeOut(500, redirectPage);
+        });
 
-    if( $body.hasClass('categories') ){
-        showCategories();
-    }
+        function redirectPage() {
+            window.location = linkLocation;
+        }
 
 
-    // Events
+        // Init Functions
 
-    $(window).on('resize', function(){
         setDimensions();
 
-    });
-
-    $('.intro--enter').on('click', function(event){
-        event.preventDefault();
-        showCategories();
-    });
-
-    $('.intro--exit').on('click', function(event){
-        event.preventDefault();
-        hideCategories();
-    });
-
-    $('.nav--trigger').on('click', function(event){
-        event.preventDefault();
-        toggleMenu();
-    });
-
-    $('.gallery--nav-btn').on('click', function(){
-        initZoomGallery();
-    });
-
-    $('.zoom--exit').on('click', function(){
-        closeZoomGallery();
-    });
-
-    $('.gallery--previous').on('click', function(){
-        if(!$(this).hasClass('slick-disabled')) {
-            animateLeftArrow();
+        if( $body.hasClass('home') && $('html').hasClass('preserve-3d') ){
+            introEffect();
         }
-    });
 
-    $('.gallery--next').on('click', function(){
-        if(!$('.gallery--next').hasClass('slick-disabled')) {
-            animateRightArrow();
+        if( $body.hasClass('categories') ){
+            showCategories();
         }
-    });
-
-    $('.gallery--slide').dblclick( function(){
-        if( !$('.gallery--wrap').hasClass('zoomed-out') ) {
-            initZoomGallery();
-        }
-    });
-
-    $('.gallery--slide.slick-active').click( function(){
-        if( $('.gallery--wrap').hasClass('zoomed-out') ) {
-            closeZoomGallery();
-        }
-    });
 
 
-    var isDragging = false;
-    $('.gallery--slide')
-    .mousedown(function() {
-        $(window).mousemove(function() {
-            isDragging = true;
-            $(window).unbind('mousemove');
+        // Events
+
+        $(window).on('resize', function(){
+            setDimensions();
+
         });
-    })
-    .mouseup(function() {
-        var wasDragging = isDragging;
-        isDragging = false;
-        $(window).unbind('mousemove');
-        if (!wasDragging) {
+
+        $('.intro--enter').on('click', function(event){
+            event.preventDefault();
+            showCategories();
+        });
+
+        $('.intro--exit').on('click', function(event){
+            event.preventDefault();
+            hideCategories();
+        });
+
+        $('.nav--trigger').on('click', function(event){
+            event.preventDefault();
+            toggleMenu();
+        });
+
+        $('.gallery--nav-btn').on('click', function(){
+            initZoomGallery();
+        });
+
+        $('.zoom--exit').on('click', function(){
+            closeZoomGallery();
+        });
+
+        $('.gallery--previous').on('click', function(){
+            if(!$(this).hasClass('slick-disabled')) {
+                animateLeftArrow();
+            }
+        });
+
+        $('.gallery--next').on('click', function(){
+            if(!$('.gallery--next').hasClass('slick-disabled')) {
+                animateRightArrow();
+            }
+        });
+
+        $('.gallery--slide').dblclick( function(){
+            if( !$('.gallery--wrap').hasClass('zoomed-out') ) {
+                initZoomGallery();
+            }
+        });
+
+        $('.gallery--slide.slick-active').click( function(){
             if( $('.gallery--wrap').hasClass('zoomed-out') ) {
                 closeZoomGallery();
             }
-        }
+        });
+
+
+        var isDragging = false;
+        $('.gallery--slide')
+        .mousedown(function() {
+            $(window).mousemove(function() {
+                isDragging = true;
+                $(window).unbind('mousemove');
+            });
+        })
+        .mouseup(function() {
+            var wasDragging = isDragging;
+            isDragging = false;
+            $(window).unbind('mousemove');
+            if (!wasDragging) {
+                if( $('.gallery--wrap').hasClass('zoomed-out') ) {
+                    closeZoomGallery();
+                }
+            }
+        });
+
+
     });
 
+}).call(this);
 
-});
 
 
 /*  Detect "transform-style: preserve-3d" support, or update csstransforms3d for IE10 ? #762

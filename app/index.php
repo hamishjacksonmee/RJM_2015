@@ -1,6 +1,5 @@
 <!--
 /****************************************
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 
 A wee gift to the old dog.
@@ -11,8 +10,10 @@ www.jacksonmee.com was built and Designed for Robert Jackson-Mee by:
 Hamsish Jackson-Mee
 itshamish.com
 
+@license Copyright (c) 2015, Robert Jackson-Mee. All rights reserved.
+The resuse of any image included on this site is strictly forbidden.
 
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 *****************************************/
 -->
 
@@ -38,7 +39,6 @@ $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
   <meta property="og:site_name" content="" />
   <meta property="og:url" content="www.jacksonmee.com" />
   <meta property="og:description" content="Portfolio Site for Robert Jackson-Mee. International Photographer." />
-  <meta property="og:image" content="<?php echo IMAGES_PATH; ?>gallery/t04_oldlady.jpg" />
 
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="language" content="en_EN" />
