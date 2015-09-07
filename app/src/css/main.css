@@ -176,6 +176,10 @@ a {
   width: 100%;
   height: 100%;
   display: block; }
+  @media screen and (min-width: 767px) {
+    .nav--open .bg--line-wrap {
+      display: block !important;
+      opacity: 1 !important; } }
 
 .bg--line {
   position: absolute;
@@ -184,6 +188,10 @@ a {
   height: 100%;
   opacity: 0.15;
   background-color: #f6f930; }
+  .nav--wrapper .bg--line {
+    background-color: rgba(115, 64, 91, 0.6); }
+  .about .bg--line {
+    z-index: 99; }
   .bg--line.left {
     left: 25%; }
   .bg--line.mid {
@@ -331,8 +339,7 @@ a {
   width: 50%;
   display: inline-block;
   padding-top: 100px;
-  vertical-align: top;
-  color: #3a1227; }
+  vertical-align: top; }
   .half-block.nav--left {
     padding-left: 25%; }
   .half-block.nav--right {
@@ -354,15 +361,35 @@ a {
         padding-left: 30px; }
       .half-block.home-link {
         position: absolute;
-        top: 12px;
+        top: 0;
         right: 0;
         text-align: right;
         text-decoration: none; } }
 
 .nav--home-btn {
   font-size: 1.1em;
-  text-decoration: underline;
-  font-weight: 300; }
+  font-weight: 300;
+  display: block; }
+  .nav--home-btn:hover:before {
+    -webkit-transform: scaleY(3);
+        -ms-transform: scaleY(3);
+            transform: scaleY(3);
+    opacity: 1;
+    width: 60%; }
+  .nav--home-btn:before {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 1px;
+    position: relative;
+    background-color: #73405b;
+    margin: 5px 0;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+    opacity: 0.6; }
+    @media screen and (max-width: 767px) {
+      .nav--home-btn:before {
+        display: none; } }
 
 .nav--detail {
   font-size: 1.1em;
@@ -1564,3 +1591,46 @@ a {
   .gallery--image.t07 {
     background: url("../../dist/images/gallery/t07_boat.jpg") no-repeat center center;
     background-size: contain; }
+
+.about--wrap {
+  padding-top: 100px;
+  position: relative;
+  width: 100%; }
+
+.about--shoot-locations {
+  position: relative;
+  width: 100%; }
+
+.map-wrap {
+  width: 100%;
+  position: relative;
+  max-width: 1440px;
+  margin: 20px auto; }
+  .map-wrap img {
+    width: 100%;
+    opacity: 0.3; }
+
+.map-locations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.location {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(115, 64, 91, 0.3); }
+  .location:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    content: "";
+    margin: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #73405b; }

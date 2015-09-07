@@ -530,7 +530,7 @@ function setDimensions() {
         var $body = $('body'),
             $main = $('.page--wrapper');
 
-        if( !$body.hasClass('all') && !$body.hasClass('studio') && !$body.hasClass('landscape') && !$body.hasClass('travel') && !$body.hasClass('categories') && !$body.hasClass('home') && !$body.hasClass() ){
+        if( !$body.hasClass('all') && !$body.hasClass('studio') && !$body.hasClass('landscape') && !$body.hasClass('travel') && !$body.hasClass('categories') && !$body.hasClass('home') && !$body.hasClass('about') && !$body.hasClass() ){
             $main.append('<h2 class="font-black-italic yellow no-page">The page you are looking for does not exist.</h2>');
         }
 

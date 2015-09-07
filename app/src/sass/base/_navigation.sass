@@ -121,7 +121,6 @@
 	display: inline-block
 	padding-top: 100px
 	vertical-align: top
-	color: $maroon
 
 	&.nav--left
 		padding-left: 25%
@@ -144,14 +143,33 @@
 			padding-right: 30px
 			padding-left: 30px
 		&.home-link
-			+position(absolute,12px,0)
+			+position(absolute,0,0)
 			text-align: right
 			text-decoration: none
 
 .nav--home-btn
 	font-size: 1.1em
-	text-decoration: underline
 	font-weight: 300
+	display: block
+
+	&:hover
+		&:before
+			transform: scaleY(3)
+			opacity: 1
+			width: 60%
+
+	&:before
+		content: ""
+		display: block
+		+size(50%,1px)
+		position: relative
+		background-color: $ltMaroon
+		margin: 5px 0
+		transition: all 0.3s
+		opacity: 0.6
+
+		+max-screen($small)
+			display: none
 
 .nav--detail
 	font-size: 1.1em

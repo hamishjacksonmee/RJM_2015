@@ -104,11 +104,22 @@ a
     +square(100%)
     display: block
 
+    +min-screen($small)
+        .nav--open &
+            display: block !important
+            opacity: 1 !important
+
 .bg--line
     +position(absolute, 0)
     +size(1px, 100%)
     opacity: 0.15
     background-color: $yellow
+
+    .nav--wrapper &
+        background-color: rgba($ltMaroon,0.6)
+
+    .about &
+        z-index: 99
 
     &.left
         left: 25%

@@ -1,0 +1,41 @@
+// ABOUT
+// -----------------
+
+.about--wrap
+  padding-top: 100px
+  position: relative
+  width: 100%
+
+.about--shoot-locations
+  position: relative
+  width: 100%
+
+.map-wrap
+  width: 100%
+  position: relative
+  max-width: 1440px
+  margin: 20px auto
+
+  img
+    width: 100%
+    opacity: 0.3
+
+.map-locations
+  +position(absolute, 0, null, null, 0)
+  +square(100%)
+
+.location
+  +position(absolute)
+  +square(40px)
+  border-radius: 50%
+  background-color: rgba($ltMaroon,0.3)
+
+  &:after
+    +position(absolute, 0, 0)
+    display: block
+    content: ""
+    margin: 15px
+    +square(10px)
+    border-radius: 50%
+    background-color: $ltMaroon
+
