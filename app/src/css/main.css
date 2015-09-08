@@ -1593,7 +1593,7 @@ a {
     background-size: contain; }
 
 .about--wrap {
-  padding-top: 100px;
+  padding-top: 90px;
   position: relative;
   width: 100%; }
 
@@ -1605,10 +1605,25 @@ a {
   width: 100%;
   position: relative;
   max-width: 1440px;
-  margin: 20px auto; }
+  margin: 0 auto; }
   .map-wrap img {
     width: 100%;
-    opacity: 0.3; }
+    display: block;
+    opacity: 0.25; }
+
+.map-base-img {
+  -webkit-animation: imgBack 5s infinite;
+          animation: imgBack 5s infinite;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.map-locations-img {
+  -webkit-animation: imgFront 5s infinite;
+          animation: imgFront 5s infinite;
+  position: absolute;
+  top: 0;
+  left: 0; }
 
 .map-locations {
   position: absolute;
@@ -1621,8 +1636,21 @@ a {
   position: absolute;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  background-color: rgba(115, 64, 91, 0.3); }
+  border-radius: 50%; }
+  .location:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    content: "";
+    width: 10px;
+    height: 10px;
+    margin: 15px;
+    border-radius: 50%;
+    background-color: #73405b;
+    opacity: 0;
+    -webkit-animation: outerPulse 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
+            animation: outerPulse 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1); }
   .location:after {
     position: absolute;
     top: 0;
@@ -1633,4 +1661,254 @@ a {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #73405b; }
+    opacity: 0;
+    background-color: #73405b;
+    -webkit-animation: innerPulse 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
+            animation: innerPulse 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1); }
+  .location.loc-1 {
+    top: 47%;
+    left: 64%; }
+  .location.loc-2 {
+    top: 36%;
+    left: 74%; }
+    .location.loc-2:before, .location.loc-2:after {
+      -webkit-animation-delay: 0.1s;
+              animation-delay: 0.1s; }
+  .location.loc-3 {
+    top: 29%;
+    left: 86%; }
+    .location.loc-3:before, .location.loc-3:after {
+      -webkit-animation-delay: 0.3s;
+              animation-delay: 0.3s; }
+  .location.loc-4 {
+    top: 25%;
+    left: 88%; }
+    .location.loc-4:before, .location.loc-4:after {
+      -webkit-animation-delay: 0.4s;
+              animation-delay: 0.4s; }
+  .location.loc-5 {
+    top: 80%;
+    left: 13%; }
+    .location.loc-5:before, .location.loc-5:after {
+      -webkit-animation-delay: 0.5s;
+              animation-delay: 0.5s; }
+  .location.loc-6 {
+    top: 77%;
+    left: 13.5%; }
+    .location.loc-6:before, .location.loc-6:after {
+      -webkit-animation-delay: 0.6s;
+              animation-delay: 0.6s; }
+  .location.loc-7 {
+    top: 79.5%;
+    left: 15%; }
+    .location.loc-7:before, .location.loc-7:after {
+      -webkit-animation-delay: 0.7s;
+              animation-delay: 0.7s; }
+  .location.loc-8 {
+    top: 77%;
+    left: 15.5%; }
+    .location.loc-8:before, .location.loc-8:after {
+      -webkit-animation-delay: 0.8s;
+              animation-delay: 0.8s; }
+  .location.loc-9 {
+    top: 75%;
+    left: 15.8%; }
+    .location.loc-9:before, .location.loc-9:after {
+      -webkit-animation-delay: 0.9s;
+              animation-delay: 0.9s; }
+  .location.loc-10 {
+    top: 87%;
+    left: 55.2%; }
+    .location.loc-10:before, .location.loc-10:after {
+      -webkit-animation-delay: 1s;
+              animation-delay: 1s; }
+  .location.loc-11 {
+    top: 89%;
+    left: 54.6%; }
+    .location.loc-11:before, .location.loc-11:after {
+      -webkit-animation-delay: 1.1s;
+              animation-delay: 1.1s; }
+  .location.loc-12 {
+    top: 90%;
+    left: 54%; }
+    .location.loc-12:before, .location.loc-12:after {
+      -webkit-animation-delay: 1.2s;
+              animation-delay: 1.2s; }
+  .location.loc-13 {
+    top: 84%;
+    left: 55.5%; }
+    .location.loc-13:before, .location.loc-13:after {
+      -webkit-animation-delay: 1.3s;
+              animation-delay: 1.3s; }
+  .location.loc-14 {
+    top: 84%;
+    left: 48.5%; }
+    .location.loc-14:before, .location.loc-14:after {
+      -webkit-animation-delay: 1.4s;
+              animation-delay: 1.4s; }
+  .location.loc-15 {
+    top: 82%;
+    left: 49%; }
+    .location.loc-15:before, .location.loc-15:after {
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
+  .location.loc-16 {
+    top: 80%;
+    left: 49.5%; }
+    .location.loc-16:before, .location.loc-16:after {
+      -webkit-animation-delay: 0.4s;
+              animation-delay: 0.4s; }
+  .location.loc-17 {
+    top: 78%;
+    left: 49.5%; }
+    .location.loc-17:before, .location.loc-17:after {
+      -webkit-animation-delay: 0.7s;
+              animation-delay: 0.7s; }
+  .location.loc-18 {
+    top: 75%;
+    left: 48.5%; }
+    .location.loc-18:before, .location.loc-18:after {
+      -webkit-animation-delay: 0.5s;
+              animation-delay: 0.5s; }
+  .location.loc-19 {
+    top: 81%;
+    left: 45.5%; }
+    .location.loc-19:before, .location.loc-19:after {
+      -webkit-animation-delay: 0.9s;
+              animation-delay: 0.9s; }
+  .location.loc-20 {
+    top: 78%;
+    left: 39%; }
+    .location.loc-20:before, .location.loc-20:after {
+      -webkit-animation-delay: 1s;
+              animation-delay: 1s; }
+  .location.loc-21 {
+    top: 79%;
+    left: 57%; }
+    .location.loc-21:before, .location.loc-21:after {
+      -webkit-animation-delay: 1.1s;
+              animation-delay: 1.1s; }
+  .location.loc-22 {
+    top: 74%;
+    left: 54%; }
+    .location.loc-22:before, .location.loc-22:after {
+      -webkit-animation-delay: 1.2s;
+              animation-delay: 1.2s; }
+  .location.loc-23 {
+    top: 71%;
+    left: 57%; }
+    .location.loc-23:before, .location.loc-23:after {
+      -webkit-animation-delay: 1.3s;
+              animation-delay: 1.3s; }
+  .location.loc-24 {
+    top: 67%;
+    left: 52%; }
+    .location.loc-24:before, .location.loc-24:after {
+      -webkit-animation-delay: 1.4s;
+              animation-delay: 1.4s; }
+  .location.loc-25 {
+    top: 60%;
+    left: 51%; }
+    .location.loc-25:before, .location.loc-25:after {
+      -webkit-animation-delay: 1.6s;
+              animation-delay: 1.6s; }
+  .location.loc-26 {
+    top: 64.5%;
+    left: 47.7%; }
+    .location.loc-26:before, .location.loc-26:after {
+      -webkit-animation-delay: 0.1s;
+              animation-delay: 0.1s; }
+  .location.loc-27 {
+    top: 63%;
+    left: 46%; }
+    .location.loc-27:before, .location.loc-27:after {
+      -webkit-animation-delay: 1.1s;
+              animation-delay: 1.1s; }
+  .location.loc-28 {
+    top: 56%;
+    left: 47%; }
+    .location.loc-28:before, .location.loc-28:after {
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
+  .location.loc-29 {
+    top: 62%;
+    left: 38.5%; }
+    .location.loc-29:before, .location.loc-29:after {
+      -webkit-animation-delay: 0.8s;
+              animation-delay: 0.8s; }
+  .location.loc-30 {
+    top: 58%;
+    left: 39%; }
+    .location.loc-30:before, .location.loc-30:after {
+      -webkit-animation-delay: 1.4s;
+              animation-delay: 1.4s; }
+
+@-webkit-keyframes imgBack {
+  0% {
+    opacity: 0.6; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0.6; } }
+
+@keyframes imgBack {
+  0% {
+    opacity: 0.6; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0.6; } }
+@-webkit-keyframes imgFront {
+  0% {
+    opacity: 0.3; }
+  50% {
+    opacity: 0.9; }
+  100% {
+    opacity: 0.3; } }
+@keyframes imgFront {
+  0% {
+    opacity: 0.3; }
+  50% {
+    opacity: 0.9; }
+  100% {
+    opacity: 0.3; } }
+@-webkit-keyframes innerPulse {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1); }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2); } }
+@keyframes innerPulse {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1); }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2); } }
+@-webkit-keyframes outerPulse {
+  0% {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+    opacity: 0.4; }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(10);
+            transform: scale(10); } }
+@keyframes outerPulse {
+  0% {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+    opacity: 0.4; }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(10);
+            transform: scale(10); } }

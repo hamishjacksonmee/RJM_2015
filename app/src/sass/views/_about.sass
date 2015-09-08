@@ -2,7 +2,7 @@
 // -----------------
 
 .about--wrap
-  padding-top: 100px
+  padding-top: 90px
   position: relative
   width: 100%
 
@@ -14,11 +14,19 @@
   width: 100%
   position: relative
   max-width: 1440px
-  margin: 20px auto
+  margin: 0 auto
 
   img
     width: 100%
-    opacity: 0.3
+    display: block
+    opacity: 0.25
+
+.map-base-img
+  animation: imgBack 5s infinite
+  +position(absolute, 0, null, null, 0)
+.map-locations-img
+  animation: imgFront 5s infinite
+  +position(absolute, 0, null, null, 0)
 
 .map-locations
   +position(absolute, 0, null, null, 0)
@@ -28,7 +36,17 @@
   +position(absolute)
   +square(40px)
   border-radius: 50%
-  background-color: rgba($ltMaroon,0.3)
+
+  &:before
+    +position(absolute, 0, 0)
+    display: block
+    content: ""
+    +square(10px)
+    margin: 15px
+    border-radius: 50%
+    background-color: $ltMaroon
+    opacity: 0
+    animation: outerPulse 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1.000)
 
   &:after
     +position(absolute, 0, 0)
@@ -37,5 +55,220 @@
     margin: 15px
     +square(10px)
     border-radius: 50%
+    opacity: 0
     background-color: $ltMaroon
+    animation: innerPulse 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1.000)
+
+  &.loc-1
+    top: 47%
+    left: 64%
+  &.loc-2
+    top: 36%
+    left: 74%
+    &:before, &:after
+      animation-delay: 0.1s
+  &.loc-3
+    top: 29%
+    left: 86%
+    &:before, &:after
+      animation-delay: 0.3s
+  &.loc-4
+    top: 25%
+    left: 88%
+    &:before, &:after
+      animation-delay: 0.4s
+  &.loc-5
+    top: 80%
+    left: 13%
+    &:before, &:after
+      animation-delay: 0.5s
+  &.loc-6
+    top: 77%
+    left: 13.5%
+    &:before, &:after
+      animation-delay: 0.6s
+  &.loc-7
+    top: 79.5%
+    left: 15%
+    &:before, &:after
+      animation-delay: 0.7s
+  &.loc-8
+    top: 77%
+    left: 15.5%
+    &:before, &:after
+      animation-delay: 0.8s
+  &.loc-9
+    top: 75%
+    left: 15.8%
+    &:before, &:after
+      animation-delay: 0.9s
+  &.loc-10
+    top: 87%
+    left: 55.2%
+    &:before, &:after
+      animation-delay: 1s
+  &.loc-11
+    top: 89%
+    left: 54.6%
+    &:before, &:after
+      animation-delay: 1.1s
+  &.loc-12
+    top: 90%
+    left: 54%
+    &:before, &:after
+      animation-delay: 1.2s
+  &.loc-13
+    top: 84%
+    left: 55.5%
+    &:before, &:after
+      animation-delay: 1.3s
+  &.loc-14
+    top: 84%
+    left: 48.5%
+    &:before, &:after
+      animation-delay: 1.4s
+  &.loc-15
+    top: 82%
+    left: 49%
+    &:before, &:after
+      animation-delay: 0.2s
+  &.loc-16
+    top: 80%
+    left: 49.5%
+    &:before, &:after
+      animation-delay: 0.4s
+  &.loc-17
+    top: 78%
+    left: 49.5%
+    &:before, &:after
+      animation-delay: 0.7s
+  &.loc-18
+    top: 75%
+    left: 48.5%
+    &:before, &:after
+      animation-delay: 0.5s
+  &.loc-19
+    top: 81%
+    left: 45.5%
+    &:before, &:after
+      animation-delay: 0.9s
+  &.loc-20
+    top: 78%
+    left: 39%
+    &:before, &:after
+      animation-delay: 1s
+  &.loc-21
+    top: 79%
+    left: 57%
+    &:before, &:after
+      animation-delay: 1.1s
+  &.loc-22
+    top: 74%
+    left: 54%
+    &:before, &:after
+      animation-delay: 1.2s
+  &.loc-23
+    top: 71%
+    left: 57%
+    &:before, &:after
+      animation-delay: 1.3s
+  &.loc-24
+    top: 67%
+    left: 52%
+    &:before, &:after
+      animation-delay: 1.4s
+  &.loc-25
+    top: 60%
+    left: 51%
+    &:before, &:after
+      animation-delay: 1.6s
+
+
+  &.loc-26
+    top: 64.5%
+    left: 47.7%
+    &:before, &:after
+      animation-delay: 0.1s
+  &.loc-27
+    top: 63%
+    left: 46%
+    &:before, &:after
+      animation-delay: 1.1s
+  &.loc-28
+    top: 56%
+    left: 47%
+    &:before, &:after
+      animation-delay: 0.2s
+  &.loc-29
+    top: 62%
+    left: 38.5%
+    &:before, &:after
+      animation-delay: 0.8s
+  &.loc-30
+    top: 58%
+    left: 39%
+    &:before, &:after
+      animation-delay: 1.4s
+  // &.loc-31
+  //   top: 60%
+  //   left: 51%
+  //   &:before, &:after
+  //     animation-delay: 0.6s
+  // &.loc-32
+  //   top: 78%
+  //   left: 39%
+  //   &:before, &:after
+  //     animation-delay: 1s
+  // &.loc-33
+  //   top: 79%
+  //   left: 57%
+  //   &:before, &:after
+  //     animation-delay: 0.4s
+  // &.loc-34
+  //   top: 74%
+  //   left: 54%
+  //   &:before, &:after
+  //     animation-delay: 0.2s
+  // &.loc-35
+  //   top: 71%
+  //   left: 57%
+  //   &:before, &:after
+  //     animation-delay: 1.3s
+
+
+@keyframes imgBack
+  0%
+    opacity: 0.6
+  50%
+    opacity: 1
+  100%
+    opacity: 0.6
+
+@keyframes imgFront
+  0%
+    opacity: 0.3
+  50%
+    opacity: 0.9
+  100%
+    opacity: 0.3
+
+
+@keyframes innerPulse
+  0%
+    opacity: 0
+    transform: scale(0.1)
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+    transform: scale(1.2)
+
+@keyframes outerPulse
+  0%
+    transform: scale(0.2)
+    opacity: 0.4
+  100%
+    opacity: 0
+    transform: scale(10)
+
 
