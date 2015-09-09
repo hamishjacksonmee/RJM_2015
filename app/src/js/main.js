@@ -486,42 +486,70 @@ function closeZoomGallery() {
 
 // ----------------- Preloader
 
-function startLoader() {
+function startLoader(pageName) {
 
-    // Images will not begin downloading until we tell the loader to start.
-    var loader = new PxLoader(),
-        startImg = loader.addImage('dist/images/layout/megan2.jpg'),
-        catImgOne = loader.addImage('dist/images/categories/cat_all2.jpg'),
-        catImgTwo = loader.addImage('dist/images/categories/cat_landscape2.jpg'),
-        catImgThree = loader.addImage('dist/images/categories/cat_studio2.jpg'),
-        catImgFour = loader.addImage('dist/images/categories/cat_travel2.jpg'),
-        $preloader = $('.preloader'),
-        $preloaderLines = $preloader.find('.load-line'),
-        $preloaderSections = $preloader.find('.preloader-q');
+  // Images will not begin downloading until we tell the loader to start.
+  var loader = new PxLoader(),
+      $preloader = $('.preloader'),
+      $preloaderLines = $preloader.find('.load-line'),
+      $preloaderSections = $preloader.find('.preloader-q'),
+      imgOne, imgTwo, imgThree, imgFour, imgFive;
 
-    TweenLite.to( $preloader, 0.1, {
-        opacity: 1
-    });
+  if( pageName === 'home' ) {
+    imgOne = loader.addImage('dist/images/layout/megan2.jpg');
+    imgTwo = loader.addImage('dist/images/categories/cat_all2.jpg');
+    imgThree = loader.addImage('dist/images/categories/cat_landscape2.jpg');
+    imgFour = loader.addImage('dist/images/categories/cat_studio2.jpg');
+    imgFive = loader.addImage('dist/images/categories/cat_travel2.jpg');
+  } else if( pageName === 'about' ) {
+    imgOne = loader.addImage('dist/images/layout/world-map.svg');
+  } else if( pageName === 'all' ) {
+    imgOne = loader.addImage('dist/images/gallery/s01_man.jpg');
+    imgTwo = loader.addImage('dist/images/gallery/l01_sheep.jpg');
+    imgThree = loader.addImage('dist/images/gallery/t01_assasin.jpg');
+  } else if( pageName === 'studio' ) {
+    imgOne = loader.addImage('dist/images/gallery/s01_man.jpg');
+    imgTwo = loader.addImage('dist/images/gallery/s02_woman.jpg');
+    imgThree = loader.addImage('dist/images/gallery/s03_guiness.jpg');
+  } else if( pageName === 'landscape' ) {
+    imgOne = loader.addImage('dist/images/gallery/l01_sheep.jpg');
+    imgTwo = loader.addImage('dist/images/gallery/l02_basin.jpg');
+    imgThree = loader.addImage('dist/images/gallery/l03_shed.jpg');
+  } else if( pageName === 'travel' ) {
+    imgOne = loader.addImage('dist/images/gallery/t01_assasin.jpg');
+    imgTwo = loader.addImage('dist/images/gallery/t02_train.jpg');
+    imgThree = loader.addImage('dist/images/gallery/t03_sandune.jpg');
+  } else if( pageName === 'categories' ) {
+    imgOne = loader.addImage('dist/images/categories/cat_all2.jpg');
+    imgTwo = loader.addImage('dist/images/categories/cat_landscape2.jpg');
+    imgThree = loader.addImage('dist/images/categories/cat_studio2.jpg');
+    imgFour = loader.addImage('dist/images/categories/cat_travel2.jpg');
+  } else {
+    imgOne = loader.addImage('dist/images/categories/nav_cat_all.jpg');
+    imgTwo = loader.addImage('dist/images/categories/nav_cat_landscape.jpg');
+    imgThree = loader.addImage('dist/images/categories/nav_cat_studio.jpg');
+    imgFour = loader.addImage('dist/images/categories/nav_cat_travel.jpg');
+  }
 
-    // callback that will be run once images are ready
-    loader.addCompletionListener(function() {
+  // callback that will be run once images are ready
+  loader.addCompletionListener(function() {
 
-        setTimeout(function() {
-            TweenLite.to( $preloaderLines, 0.8, {
-                opacity: 0
-            });
-            TweenLite.to( $preloaderSections, 0.8, {
-                width: 0,
-                ease: Power2.easeOut,
-                onComplete: function(){
-                    $preloader.css('display', 'none');
-                }
-            });
-        }, 1000);
+      setTimeout(function() {
+          TweenLite.to( $preloaderLines, 0.8, {
+              opacity: 0
+          });
+          TweenLite.to( $preloaderSections, 0.8, {
+              width: 0,
+              ease: Power2.easeOut,
+              onComplete: function(){
+                  $preloader.css('display', 'none');
+              }
+          });
+      }, 1500);
 
-    });
+  });
 
-    loader.start();
+  loader.start();
 
 }
 
@@ -571,7 +599,9 @@ function setDimensions() {
         // Global variables
 
         var $body = $('body'),
-            $main = $('.page--wrapper');
+            $main = $('.page--wrapper'),
+            pageName = $body.attr('class');
+
 
         if( !$body.hasClass('all') && !$body.hasClass('studio') && !$body.hasClass('landscape') && !$body.hasClass('travel') && !$body.hasClass('categories') && !$body.hasClass('home') && !$body.hasClass('about') && !$body.hasClass() ){
             $main.append('<h2 class="font-black-italic yellow no-page">The page you are looking for does not exist.</h2>');
@@ -606,7 +636,7 @@ function setDimensions() {
         // Init Functions
 
         setDimensions();
-        startLoader();
+        startLoader(pageName);
 
         if( $body.hasClass('home') && $('html').hasClass('preserve-3d') ){
             introEffect();

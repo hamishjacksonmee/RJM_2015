@@ -559,8 +559,7 @@ a {
   bottom: 0;
   left: 0;
   overflow: hidden;
-  z-index: 999;
-  opacity: 0; }
+  z-index: 999; }
 
 .preloader-filler {
   position: relative;
@@ -602,20 +601,20 @@ a {
   .load-line:nth-child(1) {
     left: 25%; }
     .load-line:nth-child(1) .load-line-inner {
-      -webkit-animation: preload infinite 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-              animation: preload infinite 1s cubic-bezier(0.645, 0.045, 0.355, 1); }
+      -webkit-animation: preload infinite 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+              animation: preload infinite 1.5s cubic-bezier(0.645, 0.045, 0.355, 1); }
   .load-line:nth-child(2) {
     left: 50%; }
     .load-line:nth-child(2) .load-line-inner {
-      -webkit-animation: preload infinite 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-              animation: preload infinite 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+      -webkit-animation: preload infinite 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+              animation: preload infinite 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
       -webkit-animation-delay: 0.1s;
               animation-delay: 0.1s; }
   .load-line:nth-child(3) {
     left: 75%; }
     .load-line:nth-child(3) .load-line-inner {
-      -webkit-animation: preload infinite 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-              animation: preload infinite 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+      -webkit-animation: preload infinite 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+              animation: preload infinite 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
       -webkit-animation-delay: 0.2s;
               animation-delay: 0.2s; }
 
