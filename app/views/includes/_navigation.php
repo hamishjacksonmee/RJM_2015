@@ -8,7 +8,7 @@
 
 	<div class="nav--left half-block">
 		<h3 class="maroon">Portfolio of<br />
-		<span class="maroon font-bold">Robert Jackson-Mee</span><br />
+		<span class="maroon font-bold">Robert Jackson-Mee.</span><br />
 		International<br />
 		Photographer
 		</h3>

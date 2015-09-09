@@ -46,15 +46,73 @@
                 <span class="location loc-28"></span>
                 <span class="location loc-29"></span>
                 <span class="location loc-30"></span>
-                <!-- <span class="location loc-31"></span>
+                <span class="location loc-31"></span>
                 <span class="location loc-32"></span>
                 <span class="location loc-33"></span>
                 <span class="location loc-34"></span>
-                <span class="location loc-35"></span> -->
+                <span class="location loc-35"></span>
+                <span class="location loc-36"></span>
+                <span class="location loc-37"></span>
+                <span class="location loc-38"></span>
+                <span class="location loc-39"></span>
+                <span class="location loc-40"></span>
+                <span class="location loc-41"></span>
+                <span class="location loc-42"></span>
+                <span class="location loc-43"></span>
+                <span class="location loc-44"></span>
+                <span class="location loc-45"></span>
+                <span class="location loc-46"></span>
+                <span class="location loc-47"></span>
+                <span class="location loc-48"></span>
+                <span class="location loc-49"></span>
+                <span class="location loc-50"></span>
+                <span class="location loc-51"></span>
+                <span class="location loc-52"></span>
+                <span class="location loc-53"></span>
+                <span class="location loc-54"></span>
+                <span class="location loc-55"></span>
+                <span class="location loc-56"></span>
+                <span class="location loc-57"></span>
+                <span class="location loc-58"></span>
+                <span class="location loc-59"></span>
+                <span class="location loc-60"></span>
+                <span class="location loc-61"></span>
+                <span class="location loc-62"></span>
+                <span class="location loc-63"></span>
+                <span class="location loc-64"></span>
+                <span class="location loc-65"></span>
+                <span class="location loc-66"></span>
+                <span class="location loc-67"></span>
+                <span class="location loc-68"></span>
+                <span class="location loc-69"></span>
+                <span class="location loc-70"></span>
+                <span class="location loc-71"></span>
+                <span class="location loc-72"></span>
+                <span class="location loc-73"></span>
+                <span class="location loc-74"></span>
+                <span class="location loc-75"></span>
+                <span class="location loc-76"></span>
+                <span class="location loc-77"></span>
+                <span class="location loc-78"></span>
             </div>
-            <!-- <img class="map-base-img" src="<?php echo IMAGES_PATH; ?>layout/map-base.jpg" alt="World Map" />
-            <img class="map-locations-img" src="<?php echo IMAGES_PATH; ?>layout/map-locations.png" alt="Shoot Locations" /> -->
         </div>
+        <p class="yellow font-bold font-large half-block nav--left client-list">
+            <span class="super-large">30</span>
+            years as an advertising photographer
+        </p
+        ><p class="yellow half-block nav--left client-list">
+            <span class="font-black-italic font-large">Clients:</span>
+            <br><br>
+            Saatchi &amp; Saatchi<br><br>
+            Leo Burnett<br><br>
+            DDB<br><br>
+            Colenso<br><br>
+            Ogilvy &amp; Mather<br><br>
+            Mojo<br><br>
+            Whybin BBDO<br><br>
+            O &amp; M<br><br>
+        </p
+        >
     </section>
 
 </div>

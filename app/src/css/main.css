@@ -105,6 +105,8 @@ body {
       display: none !important; }
     .no-js body .no-js-fallback {
       display: block !important; }
+    .no-js body .preloader {
+      display: none !important; }
 
 h1 {
   font-size: 3em;
@@ -550,6 +552,109 @@ a {
 .slick-arrow.slick-hidden {
   display: none; }
 
+.preloader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 999;
+  opacity: 0; }
+
+.preloader-filler {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block; }
+
+.preloader-q {
+  position: absolute;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  display: block;
+  background-color: #1b0d18; }
+  .preloader-q:nth-child(1) {
+    left: 0; }
+  .preloader-q:nth-child(2) {
+    left: 25%; }
+  .preloader-q:nth-child(3) {
+    left: 50%; }
+  .preloader-q:nth-child(4) {
+    left: 75%; }
+
+.load-line-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block; }
+
+.load-line {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  display: block;
+  background-color: rgba(246, 249, 48, 0.2); }
+  .load-line:nth-child(1) {
+    left: 25%; }
+    .load-line:nth-child(1) .load-line-inner {
+      -webkit-animation: preload infinite 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+              animation: preload infinite 1s cubic-bezier(0.645, 0.045, 0.355, 1); }
+  .load-line:nth-child(2) {
+    left: 50%; }
+    .load-line:nth-child(2) .load-line-inner {
+      -webkit-animation: preload infinite 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+              animation: preload infinite 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+      -webkit-animation-delay: 0.1s;
+              animation-delay: 0.1s; }
+  .load-line:nth-child(3) {
+    left: 75%; }
+    .load-line:nth-child(3) .load-line-inner {
+      -webkit-animation: preload infinite 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+              animation: preload infinite 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
+
+.load-line-inner {
+  position: absolute;
+  top: 50%;
+  width: 1px;
+  height: 100px;
+  display: block;
+  background-color: #f6f930;
+  margin-top: -50px;
+  -webkit-transform: translateY(-200%);
+      -ms-transform: translateY(-200%);
+          transform: translateY(-200%); }
+  @media screen and (max-width: 767px) {
+    .load-line-inner {
+      height: 50px; } }
+
+@-webkit-keyframes preload {
+  0% {
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%); }
+  50% {
+    -webkit-transform: translateY(200%);
+            transform: translateY(200%); }
+  100% {
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%); } }
+
+@keyframes preload {
+  0% {
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%); }
+  50% {
+    -webkit-transform: translateY(200%);
+            transform: translateY(200%); }
+  100% {
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%); } }
 .intro--wrap {
   position: relative;
   width: 100%;
@@ -893,22 +998,22 @@ a {
   background: linear-gradient(to right, black 0%, transparent 50%, transparent 100%);
   margin-left: -1px; }
 .cell:nth-child(1) .cell-inner {
-  background: url("../../dist/images/categories/cat_all.jpg") no-repeat center center; }
+  background: url("../../dist/images/categories/cat_all2.jpg") no-repeat center center; }
 .cell:nth-child(1) .cell-hover {
   border-left: none; }
 
 .cell:nth-child(2) .cell-inner {
-  background: url("../../dist/images/categories/cat_studio.jpg") no-repeat center center; }
+  background: url("../../dist/images/categories/cat_studio2.jpg") no-repeat center center; }
 
 .cell:nth-child(3) .cell-inner {
-  background: url("../../dist/images/categories/cat_landscape.jpg") no-repeat center center; }
+  background: url("../../dist/images/categories/cat_landscape2.jpg") no-repeat center center; }
 
 .cell:nth-child(4) .cell-content {
   background: -webkit-linear-gradient(right, black 0%, transparent 50%, transparent 100%);
   background: linear-gradient(to left, black 0%, transparent 50%, transparent 100%);
   margin-left: 1px; }
 .cell:nth-child(4) .cell-inner {
-  background: url("../../dist/images/categories/cat_travel.jpg") no-repeat center center; }
+  background: url("../../dist/images/categories/cat_travel2.jpg") no-repeat center center; }
 
 .cell-hover {
   width: 100%;
@@ -1596,6 +1701,20 @@ a {
   padding-top: 90px;
   position: relative;
   width: 100%; }
+  @media screen and (max-width: 767px) {
+    .about--wrap .nav--left {
+      padding-top: 10px; } }
+  .about--wrap p {
+    box-sizing: border-box;
+    display: in; }
+
+.super-large {
+  font-size: 14rem;
+  line-height: 0.9;
+  display: block; }
+  @media screen and (max-width: 767px) {
+    .super-large {
+      font-size: 6rem; } }
 
 .about--shoot-locations {
   position: relative;
@@ -1610,6 +1729,13 @@ a {
     width: 100%;
     display: block;
     opacity: 0.25; }
+
+.client-list {
+  padding-bottom: 150px; }
+  @media screen and (max-width: 767px) {
+    .client-list {
+      padding-bottom: 40px;
+      padding-top: 30px !important; } }
 
 .map-base-img {
   -webkit-animation: imgBack 5s infinite;
@@ -1842,6 +1968,294 @@ a {
     .location.loc-30:before, .location.loc-30:after {
       -webkit-animation-delay: 1.4s;
               animation-delay: 1.4s; }
+  .location.loc-31 {
+    top: 55%;
+    left: 41%; }
+    .location.loc-31:before, .location.loc-31:after {
+      -webkit-animation-delay: 0.6s;
+              animation-delay: 0.6s; }
+  .location.loc-32 {
+    top: 50%;
+    left: 40.5%; }
+    .location.loc-32:before, .location.loc-32:after {
+      -webkit-animation-delay: 1s;
+              animation-delay: 1s; }
+  .location.loc-33 {
+    top: 44.5%;
+    left: 40.5%; }
+    .location.loc-33:before, .location.loc-33:after {
+      -webkit-animation-delay: 0.4s;
+              animation-delay: 0.4s; }
+  .location.loc-34 {
+    top: 62%;
+    left: 35%; }
+    .location.loc-34:before, .location.loc-34:after {
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
+  .location.loc-35 {
+    top: 57%;
+    left: 34.5%; }
+    .location.loc-35:before, .location.loc-35:after {
+      -webkit-animation-delay: 1.3s;
+              animation-delay: 1.3s; }
+  .location.loc-36 {
+    top: 53%;
+    left: 34%; }
+    .location.loc-36:before, .location.loc-36:after {
+      -webkit-animation-delay: 0.9s;
+              animation-delay: 0.9s; }
+  .location.loc-37 {
+    top: 50%;
+    left: 36%; }
+    .location.loc-37:before, .location.loc-37:after {
+      -webkit-animation-delay: 0.6s;
+              animation-delay: 0.6s; }
+  .location.loc-38 {
+    top: 53%;
+    left: 36%; }
+    .location.loc-38:before, .location.loc-38:after {
+      -webkit-animation-delay: 1.3s;
+              animation-delay: 1.3s; }
+  .location.loc-39 {
+    top: 49%;
+    left: 33%; }
+    .location.loc-39:before, .location.loc-39:after {
+      -webkit-animation-delay: 0.4s;
+              animation-delay: 0.4s; }
+  .location.loc-40 {
+    top: 43%;
+    left: 33%; }
+    .location.loc-40:before, .location.loc-40:after {
+      -webkit-animation-delay: 0.8s;
+              animation-delay: 0.8s; }
+  .location.loc-41 {
+    top: 38%;
+    left: 38%; }
+    .location.loc-41:before, .location.loc-41:after {
+      -webkit-animation-delay: 1.5s;
+              animation-delay: 1.5s; }
+  .location.loc-42 {
+    top: 57.5%;
+    left: 27%; }
+    .location.loc-42:before, .location.loc-42:after {
+      -webkit-animation-delay: 0.1s;
+              animation-delay: 0.1s; }
+  .location.loc-43 {
+    top: 56%;
+    left: 29%; }
+    .location.loc-43:before, .location.loc-43:after {
+      -webkit-animation-delay: 0.6s;
+              animation-delay: 0.6s; }
+  .location.loc-44 {
+    top: 52%;
+    left: 28%; }
+    .location.loc-44:before, .location.loc-44:after {
+      -webkit-animation-delay: 1.3s;
+              animation-delay: 1.3s; }
+  .location.loc-45 {
+    top: 32%;
+    left: 36%; }
+    .location.loc-45:before, .location.loc-45:after {
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
+  .location.loc-46 {
+    top: 32%;
+    left: 32%; }
+    .location.loc-46:before, .location.loc-46:after {
+      -webkit-animation-delay: 1.2s;
+              animation-delay: 1.2s; }
+  .location.loc-47 {
+    top: 27%;
+    left: 38%; }
+    .location.loc-47:before, .location.loc-47:after {
+      -webkit-animation-delay: 1.1s;
+              animation-delay: 1.1s; }
+  .location.loc-48 {
+    top: 26%;
+    left: 44%; }
+    .location.loc-48:before, .location.loc-48:after {
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
+  .location.loc-49 {
+    top: 28%;
+    left: 45.5%; }
+    .location.loc-49:before, .location.loc-49:after {
+      -webkit-animation-delay: 0.5s;
+              animation-delay: 0.5s; }
+  .location.loc-50 {
+    top: 29.5%;
+    left: 45%; }
+    .location.loc-50:before, .location.loc-50:after {
+      -webkit-animation-delay: 1.1s;
+              animation-delay: 1.1s; }
+  .location.loc-51 {
+    top: 31%;
+    left: 44%; }
+    .location.loc-51:before, .location.loc-51:after {
+      -webkit-animation-delay: 1.3s;
+              animation-delay: 1.3s; }
+  .location.loc-52 {
+    top: 32%;
+    left: 43%; }
+    .location.loc-52:before, .location.loc-52:after {
+      -webkit-animation-delay: 0.5s;
+              animation-delay: 0.5s; }
+  .location.loc-53 {
+    top: 37%;
+    left: 42.5%; }
+    .location.loc-53:before, .location.loc-53:after {
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
+  .location.loc-54 {
+    top: 37%;
+    left: 46%; }
+    .location.loc-54:before, .location.loc-54:after {
+      -webkit-animation-delay: 1.6s;
+              animation-delay: 1.6s; }
+  .location.loc-55 {
+    top: 56%;
+    left: 20%; }
+    .location.loc-55:before, .location.loc-55:after {
+      -webkit-animation-delay: 0.6s;
+              animation-delay: 0.6s; }
+  .location.loc-56 {
+    top: 51%;
+    left: 19%; }
+    .location.loc-56:before, .location.loc-56:after {
+      -webkit-animation-delay: 1.1s;
+              animation-delay: 1.1s; }
+  .location.loc-57 {
+    top: 40%;
+    left: 22%; }
+    .location.loc-57:before, .location.loc-57:after {
+      -webkit-animation-delay: 1.4s;
+              animation-delay: 1.4s; }
+  .location.loc-58 {
+    top: 40%;
+    left: 20%; }
+    .location.loc-58:before, .location.loc-58:after {
+      -webkit-animation-delay: 0.3s;
+              animation-delay: 0.3s; }
+  .location.loc-59 {
+    top: 42%;
+    left: 20.5%; }
+    .location.loc-59:before, .location.loc-59:after {
+      -webkit-animation-delay: 0.7s;
+              animation-delay: 0.7s; }
+  .location.loc-60 {
+    top: 44%;
+    left: 18%; }
+    .location.loc-60:before, .location.loc-60:after {
+      -webkit-animation-delay: 1.1s;
+              animation-delay: 1.1s; }
+  .location.loc-61 {
+    top: 41%;
+    left: 17.5%; }
+    .location.loc-61:before, .location.loc-61:after {
+      -webkit-animation-delay: 1.1s;
+              animation-delay: 1.1s; }
+  .location.loc-62 {
+    top: 41%;
+    left: 16%; }
+    .location.loc-62:before, .location.loc-62:after {
+      -webkit-animation-delay: 0.1s;
+              animation-delay: 0.1s; }
+  .location.loc-63 {
+    top: 39.5%;
+    left: 13.5%; }
+    .location.loc-63:before, .location.loc-63:after {
+      -webkit-animation-delay: 0.9s;
+              animation-delay: 0.9s; }
+  .location.loc-64 {
+    top: 37%;
+    left: 14%; }
+    .location.loc-64:before, .location.loc-64:after {
+      -webkit-animation-delay: 1.3s;
+              animation-delay: 1.3s; }
+  .location.loc-65 {
+    top: 35.5%;
+    left: 11.5%; }
+    .location.loc-65:before, .location.loc-65:after {
+      -webkit-animation-delay: 0.7s;
+              animation-delay: 0.7s; }
+  .location.loc-66 {
+    top: 30%;
+    left: 13%; }
+    .location.loc-66:before, .location.loc-66:after {
+      -webkit-animation-delay: 1.2s;
+              animation-delay: 1.2s; }
+  .location.loc-67 {
+    top: 24%;
+    left: 13%; }
+    .location.loc-67:before, .location.loc-67:after {
+      -webkit-animation-delay: 1.4s;
+              animation-delay: 1.4s; }
+  .location.loc-68 {
+    top: 33%;
+    left: 10%; }
+    .location.loc-68:before, .location.loc-68:after {
+      -webkit-animation-delay: 0.3s;
+              animation-delay: 0.3s; }
+  .location.loc-69 {
+    top: 35%;
+    left: 7%; }
+    .location.loc-69:before, .location.loc-69:after {
+      -webkit-animation-delay: 0.7s;
+              animation-delay: 0.7s; }
+  .location.loc-70 {
+    top: 35%;
+    left: 6%; }
+    .location.loc-70:before, .location.loc-70:after {
+      -webkit-animation-delay: 1.5s;
+              animation-delay: 1.5s; }
+  .location.loc-71 {
+    top: 32%;
+    left: 6%; }
+    .location.loc-71:before, .location.loc-71:after {
+      -webkit-animation-delay: 1.4s;
+              animation-delay: 1.4s; }
+  .location.loc-72 {
+    top: 32%;
+    left: 7.5%; }
+    .location.loc-72:before, .location.loc-72:after {
+      -webkit-animation-delay: 0.4s;
+              animation-delay: 0.4s; }
+  .location.loc-73 {
+    top: 28%;
+    left: 8.5%; }
+    .location.loc-73:before, .location.loc-73:after {
+      -webkit-animation-delay: 0.6s;
+              animation-delay: 0.6s; }
+  .location.loc-74 {
+    top: 26.5%;
+    left: 10%; }
+    .location.loc-74:before, .location.loc-74:after {
+      -webkit-animation-delay: 1.1s;
+              animation-delay: 1.1s; }
+  .location.loc-75 {
+    top: 24%;
+    left: 9.5%; }
+    .location.loc-75:before, .location.loc-75:after {
+      -webkit-animation-delay: 0.3s;
+              animation-delay: 0.3s; }
+  .location.loc-76 {
+    top: 21%;
+    left: 8.5%; }
+    .location.loc-76:before, .location.loc-76:after {
+      -webkit-animation-delay: 1.5s;
+              animation-delay: 1.5s; }
+  .location.loc-77 {
+    top: 23%;
+    left: 7.5%; }
+    .location.loc-77:before, .location.loc-77:after {
+      -webkit-animation-delay: 1.2s;
+              animation-delay: 1.2s; }
+  .location.loc-78 {
+    top: 29%;
+    left: 10%; }
+    .location.loc-78:before, .location.loc-78:after {
+      -webkit-animation-delay: 0.4s;
+              animation-delay: 0.4s; }
 
 @-webkit-keyframes imgBack {
   0% {

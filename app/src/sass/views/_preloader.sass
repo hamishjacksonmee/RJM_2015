@@ -1,0 +1,73 @@
+// PRELOADER
+// -----------------
+
+.preloader
+  +position(fixed, 0, 0, 0, 0)
+  overflow: hidden
+  z-index: 999
+  opacity: 0
+
+.preloader-filler
+  +position(relative)
+  +square(100%)
+  display: block
+
+.preloader-q
+  +position(absolute,0)
+  +size(25%,100%)
+  display: block
+  background-color: $dkMaroon
+  &:nth-child(1)
+    left: 0
+  &:nth-child(2)
+    left: 25%
+  &:nth-child(3)
+    left: 50%
+  &:nth-child(4)
+    left: 75%
+
+.load-line-wrap
+  +position(absolute,0, null, null,0)
+  +square(100%)
+  display: block
+
+.load-line
+  +position(absolute, 0)
+  +size(1px,100%)
+  display: block
+  background-color: rgba($yellow,0.2)
+
+  &:nth-child(1)
+    left: 25%
+    .load-line-inner
+      animation: preload infinite 1s cubic-bezier(0.645, 0.045, 0.355, 1.000)
+  &:nth-child(2)
+    left: 50%
+    .load-line-inner
+      animation: preload infinite 1s cubic-bezier(0.645, 0.045, 0.355, 1.000)
+      animation-delay: 0.1s
+  &:nth-child(3)
+    left: 75%
+    .load-line-inner
+      animation: preload infinite 1s cubic-bezier(0.645, 0.045, 0.355, 1.000)
+      animation-delay: 0.2s
+
+.load-line-inner
+  +position(absolute,50%)
+  +size(1px, 100px)
+  display: block
+  background-color: $yellow
+  margin-top: -50px
+  transform: translateY(-200%)
+
+  +max-screen($small)
+    height: 50px
+
+
+@keyframes preload
+  0%
+    transform: translateY(-200%)
+  50%
+    transform: translateY(200%)
+  100%
+    transform: translateY(-200%)

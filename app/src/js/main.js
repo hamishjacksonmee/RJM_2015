@@ -483,6 +483,49 @@ function closeZoomGallery() {
 }
 
 
+
+// ----------------- Preloader
+
+function startLoader() {
+
+    // Images will not begin downloading until we tell the loader to start.
+    var loader = new PxLoader(),
+        startImg = loader.addImage('dist/images/layout/megan2.jpg'),
+        catImgOne = loader.addImage('dist/images/categories/cat_all2.jpg'),
+        catImgTwo = loader.addImage('dist/images/categories/cat_landscape2.jpg'),
+        catImgThree = loader.addImage('dist/images/categories/cat_studio2.jpg'),
+        catImgFour = loader.addImage('dist/images/categories/cat_travel2.jpg'),
+        $preloader = $('.preloader'),
+        $preloaderLines = $preloader.find('.load-line'),
+        $preloaderSections = $preloader.find('.preloader-q');
+
+    TweenLite.to( $preloader, 0.1, {
+        opacity: 1
+    });
+
+    // callback that will be run once images are ready
+    loader.addCompletionListener(function() {
+
+        setTimeout(function() {
+            TweenLite.to( $preloaderLines, 0.8, {
+                opacity: 0
+            });
+            TweenLite.to( $preloaderSections, 0.8, {
+                width: 0,
+                ease: Power2.easeOut,
+                onComplete: function(){
+                    $preloader.css('display', 'none');
+                }
+            });
+        }, 1000);
+
+    });
+
+    loader.start();
+
+}
+
+
 // ----------------- Height Items
 
 function setDimensions() {
@@ -563,6 +606,7 @@ function setDimensions() {
         // Init Functions
 
         setDimensions();
+        startLoader();
 
         if( $body.hasClass('home') && $('html').hasClass('preserve-3d') ){
             introEffect();

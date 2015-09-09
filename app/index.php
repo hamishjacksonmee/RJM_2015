@@ -11,7 +11,7 @@ Hamsish Jackson-Mee
 itshamish.com
 
 @license Copyright (c) 2015, Robert Jackson-Mee. All rights reserved.
-The resuse of any image included on this site is strictly forbidden.
+All uses of the images on this site is strictly forbidden.
 
 
 *****************************************/
@@ -72,6 +72,26 @@ $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
   </div>
 
   <div id="container" class="container">
+
+    <div class="preloader">
+      <div class="preloader-filler">
+        <span class="preloader-q"></span>
+        <span class="preloader-q"></span>
+        <span class="preloader-q"></span>
+        <span class="preloader-q"></span>
+      </div>
+      <div class="load-line-wrap">
+        <span class="load-line">
+          <span class="load-line-inner"></span>
+        </span>
+        <span class="load-line">
+          <span class="load-line-inner"></span>
+        </span>
+        <span class="load-line">
+          <span class="load-line-inner"></span>
+        </span>
+      </div>
+    </div>
 
     <a href="#site-nav" class="nav--trigger">
       <span class="menu-btn"></span>
