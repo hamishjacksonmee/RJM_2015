@@ -37,7 +37,8 @@ $view = isset($q[1]) && $q[1] != '' ? $q[1] : null;
 
   <meta property="og:title" content="Robert Jackson-Mee" />
   <meta property="og:site_name" content="" />
-  <meta property="og:url" content="www.jacksonmee.com" />
+  <meta property="og:url" content="http://jacksonmee.com" />
+  <meta property="og:image" content="http://itshamish.com/jacksonmee.com/dist/images/layout/johna.jpg" />
   <meta property="og:description" content="Portfolio Site for Robert Jackson-Mee. International Photographer." />
 
   <meta name="apple-mobile-web-app-capable" content="yes" />
