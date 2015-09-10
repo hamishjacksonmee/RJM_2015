@@ -17,6 +17,7 @@
   +size(25%,100%)
   display: block
   background-color: $dkMaroon
+  transform: translateZ(0)
   &:nth-child(1)
     left: 0
   &:nth-child(2)
@@ -30,6 +31,7 @@
   +position(absolute,0, null, null,0)
   +square(100%)
   display: block
+  transform: translateZ(0)
 
 .load-line
   +position(absolute, 0)
@@ -40,16 +42,25 @@
   &:nth-child(1)
     left: 25%
     .load-line-inner
-      animation: preload infinite 1.5s cubic-bezier(0.645, 0.045, 0.355, 1.000)
+      animation-name: preload
+      animation-duration: 1.5s
+      animation-iteration-count: infinite
+      animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000)
   &:nth-child(2)
     left: 50%
     .load-line-inner
-      animation: preload infinite 1.5s cubic-bezier(0.645, 0.045, 0.355, 1.000)
+      animation-name: preload
+      animation-duration: 1.5s
+      animation-iteration-count: infinite
+      animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000)
       animation-delay: 0.1s
   &:nth-child(3)
     left: 75%
     .load-line-inner
-      animation: preload infinite 1.5s cubic-bezier(0.645, 0.045, 0.355, 1.000)
+      animation-name: preload
+      animation-duration: 1.5s
+      animation-iteration-count: infinite
+      animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000)
       animation-delay: 0.2s
 
 .load-line-inner

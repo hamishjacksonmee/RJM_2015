@@ -18,6 +18,8 @@
   font-size: 14rem
   line-height: 0.9
   display: block
+  margin-left: -5px
+  margin-top: -10px
   +max-screen($small)
     font-size: 6rem
 
@@ -67,7 +69,10 @@
     border-radius: 50%
     background-color: $ltMaroon
     opacity: 0
-    animation: outerPulse 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1.000)
+    animation-name: outerPulse
+    animation-duration: 2s
+    animation-iteration-count: infinite
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000)
 
   &:after
     +position(absolute, 0, 0)
@@ -78,7 +83,10 @@
     border-radius: 50%
     opacity: 0
     background-color: $ltMaroon
-    animation: innerPulse 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1.000)
+    animation-name: innerPulse
+    animation-duration: 2s
+    animation-iteration-count: infinite
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000)
 
   &.loc-1
     top: 47%

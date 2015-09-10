@@ -97,8 +97,8 @@
             </div>
         </div>
         <p class="yellow font-bold font-large half-block nav--left client-list">
-            <span class="super-large">30</span>
-            years as an advertising photographer
+            <span class="super-large">35</span>
+            years as an advertising<br>photographer
         </p
         ><p class="yellow half-block nav--left client-list">
             <span class="font-black-italic font-large">Clients:</span>
@@ -106,13 +106,19 @@
             Saatchi &amp; Saatchi<br><br>
             Leo Burnett<br><br>
             DDB<br><br>
-            Colenso<br><br>
+            FCB<br><br>
+            BTL<br><br>
+            Colenso BBDO<br><br>
             Ogilvy &amp; Mather<br><br>
             Mojo<br><br>
             Whybin BBDO<br><br>
+            Clemenger BBDO<br><br>
             O &amp; M<br><br>
-        </p
-        >
+            M&amp;C Saatchi<br><br>
+            RAPP<br><br>
+            DRAFT<br><br>
+            GREY.<br><br>
+        </p>
     </section>
 
 </div>

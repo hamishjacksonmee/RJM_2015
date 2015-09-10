@@ -209,7 +209,9 @@ a {
   height: 50px;
   z-index: 99;
   -webkit-transition: all 0.5s;
-          transition: all 0.5s; }
+          transition: all 0.5s;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0); }
   .no-touch .nav--trigger:hover .menu-btn::after,
   .no-touch .nav--trigger:hover .menu-btn::before {
     background-color: #f6f930; }
@@ -573,7 +575,9 @@ a {
   width: 25%;
   height: 100%;
   display: block;
-  background-color: #1b0d18; }
+  background-color: #1b0d18;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0); }
   .preloader-q:nth-child(1) {
     left: 0; }
   .preloader-q:nth-child(2) {
@@ -589,7 +593,9 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  display: block; }
+  display: block;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0); }
 
 .load-line {
   position: absolute;
@@ -601,20 +607,38 @@ a {
   .load-line:nth-child(1) {
     left: 25%; }
     .load-line:nth-child(1) .load-line-inner {
-      -webkit-animation: preload infinite 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-              animation: preload infinite 1.5s cubic-bezier(0.645, 0.045, 0.355, 1); }
+      -webkit-animation-name: preload;
+              animation-name: preload;
+      -webkit-animation-duration: 1.5s;
+              animation-duration: 1.5s;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+              animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
   .load-line:nth-child(2) {
     left: 50%; }
     .load-line:nth-child(2) .load-line-inner {
-      -webkit-animation: preload infinite 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-              animation: preload infinite 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+      -webkit-animation-name: preload;
+              animation-name: preload;
+      -webkit-animation-duration: 1.5s;
+              animation-duration: 1.5s;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+              animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
       -webkit-animation-delay: 0.1s;
               animation-delay: 0.1s; }
   .load-line:nth-child(3) {
     left: 75%; }
     .load-line:nth-child(3) .load-line-inner {
-      -webkit-animation: preload infinite 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-              animation: preload infinite 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+      -webkit-animation-name: preload;
+              animation-name: preload;
+      -webkit-animation-duration: 1.5s;
+              animation-duration: 1.5s;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+              animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
       -webkit-animation-delay: 0.2s;
               animation-delay: 0.2s; }
 
@@ -1561,7 +1585,9 @@ a {
   user-select: none;
   outline: none;
   -webkit-transition: -webkit-transform 500ms;
-          transition: transform 500ms; }
+          transition: transform 500ms;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0); }
   @media screen and (max-width: 767px) {
     .gallery--slide {
       padding: 80px 10px; } }
@@ -1583,7 +1609,9 @@ a {
   height: 100%;
   display: block;
   -webkit-transition: -webkit-transform 500ms;
-          transition: transform 500ms; }
+          transition: transform 500ms;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0); }
   .gallery--image.s01 {
     background: url("../../dist/images/gallery/s01_man.jpg") no-repeat center center;
     background-size: contain; }
@@ -1710,7 +1738,9 @@ a {
 .super-large {
   font-size: 14rem;
   line-height: 0.9;
-  display: block; }
+  display: block;
+  margin-left: -5px;
+  margin-top: -10px; }
   @media screen and (max-width: 767px) {
     .super-large {
       font-size: 6rem; } }
@@ -1774,8 +1804,14 @@ a {
     border-radius: 50%;
     background-color: #73405b;
     opacity: 0;
-    -webkit-animation: outerPulse 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
-            animation: outerPulse 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1); }
+    -webkit-animation-name: outerPulse;
+            animation-name: outerPulse;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
   .location:after {
     position: absolute;
     top: 0;
@@ -1788,8 +1824,14 @@ a {
     border-radius: 50%;
     opacity: 0;
     background-color: #73405b;
-    -webkit-animation: innerPulse 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
-            animation: innerPulse 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1); }
+    -webkit-animation-name: innerPulse;
+            animation-name: innerPulse;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
   .location.loc-1 {
     top: 47%;
     left: 64%; }
