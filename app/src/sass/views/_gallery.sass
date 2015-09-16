@@ -74,38 +74,34 @@
   +position(absolute, 0, null, null, 0)
   overflow: hidden
 
-  &.zoomed-out
-    .slick-list
-      transform: scale(0.25)
-      +max-screen($small)
-        transform: scale(0.5)
-    .slick-dots
-      opacity: 1
-      transform: translate(-50%,0)
-    .gallery--side
-      opacity: 0
-    .zoom--content
-      opacity: 1
-      transform: translateY(0)
-    .zoom--exit
-      opacity: 1
-      transform: translateY(0)
-    // .gallery--nav-btn
-    //   //transform: translateY(100px)
-    // .zoom--exit
+  .csstransforms &
 
-    // .gallery--side
-    //   opacity: 0
-    .gallery--image-wrap
-      border-color: rgba($maroon,1)
-    .gallery--image
-      transform: scale(2)
-    .gallery--slide
-      transform: scale(0.7)
-      &.slick-active
-        transform: scale(1)
-        .gallery--image-wrap
-          border-color: rgba($yellow,1)
+    &.zoomed-out
+      .slick-list
+        transform: scale(0.25)
+        +max-screen($small)
+          transform: scale(0.5)
+      .slick-dots
+        opacity: 1
+        transform: translate(-50%,0)
+      .gallery--side
+        opacity: 0
+      .zoom--content
+        opacity: 1
+        transform: translateY(0)
+      .zoom--exit
+        opacity: 1
+        transform: translateY(0)
+      .gallery--image-wrap
+        border-color: rgba($maroon,1)
+      .gallery--image
+        transform: scale(2)
+      .gallery--slide
+        transform: scale(0.7)
+        &.slick-active
+          transform: scale(1)
+          .gallery--image-wrap
+            border-color: rgba($yellow,1)
 
 .gallery--side
   display: table
@@ -142,6 +138,10 @@
   +square(50px)
   text-align: center
   cursor: pointer
+  display: none
+
+  .csstransforms &
+    display: block
 
   &:hover
     .thumbs-btn:before
@@ -388,7 +388,9 @@
   +no-select
   outline: none
   transition: transform 500ms
-  transform: translateZ(0)
+
+  +min-screen($small + 1)
+    transform: translateZ(0)
 
   +max-screen($small)
     padding: 80px 10px
@@ -399,15 +401,19 @@
   border: 8px rgba($black,0) solid
   transition: border-color 500ms
   overflow: hidden
-  backface-visibility: hidden
   box-sizing: border-box
-  //background-color: $black
+
+  +min-screen($small + 1)
+    backface-visibility: hidden
 
 .gallery--image
   +square(100%)
   display: block
   transition: transform 500ms
-  transform: translateZ(0)
+
+  +min-screen($small + 1)
+    transform: translateZ(0)
+
 
   &.s01
     background: url('#{$imagePath}gallery/s01_man.jpg') no-repeat center center

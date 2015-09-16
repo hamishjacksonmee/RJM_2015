@@ -26,7 +26,6 @@ function toggleMenu() {
 
 
 
-
 // ----------------- Categories
 
 function showCategories() {
@@ -525,10 +524,10 @@ function startLoader(pageName) {
     imgThree = loader.addImage('dist/images/categories/cat_studio2.jpg');
     imgFour = loader.addImage('dist/images/categories/cat_travel2.jpg');
   } else {
-    imgOne = loader.addImage('dist/images/categories/nav_cat_all.jpg');
-    imgTwo = loader.addImage('dist/images/categories/nav_cat_landscape.jpg');
-    imgThree = loader.addImage('dist/images/categories/nav_cat_studio.jpg');
-    imgFour = loader.addImage('dist/images/categories/nav_cat_travel.jpg');
+    imgOne = loader.addImage('dist/images/categories/nav_cat_all2.jpg');
+    imgTwo = loader.addImage('dist/images/categories/nav_cat_landscape2.jpg');
+    imgThree = loader.addImage('dist/images/categories/nav_cat_studio2.jpg');
+    imgFour = loader.addImage('dist/images/categories/nav_cat_travel2.jpg');
   }
 
   // callback that will be run once images are ready
